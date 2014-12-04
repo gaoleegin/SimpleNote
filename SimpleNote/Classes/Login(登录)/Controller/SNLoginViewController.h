@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SNLoginViewController.h
 //  SimpleNote
 //
 //  Created by Jason on 14/12/4.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SNLoginViewController : UIViewController
 
 @end
-
