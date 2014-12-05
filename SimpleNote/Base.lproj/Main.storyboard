@@ -74,7 +74,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t71-DR-9DD">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nld-6h-0c5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nld-6h-0c5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rik-sE-ak5">
@@ -99,7 +99,11 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nld-6h-0c5" secondAttribute="bottom" id="JvV-rk-YLd"/>
                                     <constraint firstAttribute="height" constant="64" id="P8f-pg-PkK"/>
+                                    <constraint firstAttribute="trailing" secondItem="nld-6h-0c5" secondAttribute="trailing" id="Xez-js-qWm"/>
+                                    <constraint firstItem="nld-6h-0c5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="YJY-Il-Gi2"/>
+                                    <constraint firstItem="nld-6h-0c5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="caq-6f-Uce"/>
                                     <constraint firstItem="rik-sE-ak5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" constant="17" id="lPm-Wq-LuF"/>
                                     <constraint firstItem="rik-sE-ak5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" constant="23" id="mXA-09-Xlk"/>
                                     <constraint firstAttribute="centerX" secondItem="MJU-Fk-B79" secondAttribute="centerX" id="pjP-a2-Ar4"/>
@@ -110,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="63" width="600" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell1" textLabel="kVH-8f-N2k" rowHeight="55" style="IBUITableViewCellStyleDefault" id="OxQ-sy-JMm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell1" textLabel="kVH-8f-N2k" rowHeight="55" style="IBUITableViewCellStyleDefault" id="OxQ-sy-JMm" customClass="SNListViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OxQ-sy-JMm" id="nwN-Mp-nAO">
@@ -126,7 +130,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell2" textLabel="0M3-Uv-ucI" rowHeight="55" style="IBUITableViewCellStyleDefault" id="4cc-bk-ljp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell2" textLabel="0M3-Uv-ucI" rowHeight="55" style="IBUITableViewCellStyleDefault" id="4cc-bk-ljp" customClass="SNListViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4cc-bk-ljp" id="ZRL-bg-3Fd">
@@ -212,11 +216,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sG4-ea-tAg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="536" translatesAutoresizingMaskIntoConstraints="NO" id="vCY-Ex-ZcW" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCY-Ex-ZcW" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="55" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-Sv-T9N" userLabel="底部按钮">
-                                                <rect key="frame" x="30" y="481" width="540" height="55"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jan-Sv-T9N" userLabel="底部按钮">
+                                                <rect key="frame" x="30" y="160" width="540" height="55"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-0s-j72">
                                                         <rect key="frame" x="495" y="13" width="15" height="30"/>
@@ -257,12 +261,18 @@
                                                     <constraint firstAttribute="trailing" secondItem="Czf-0s-j72" secondAttribute="trailing" constant="30" id="ryf-ge-5iX"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="426" placeholderIntrinsicHeight="184" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvX-6w-hGF">
-                                                <rect key="frame" x="30" y="48" width="540" height="403"/>
-                                                <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="82" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvX-6w-hGF" customClass="SNBodyLabel">
+                                                <rect key="frame" x="30" y="48" width="540" height="82"/>
+                                                <mutableString key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outlet property="arrowView" destination="Jan-Sv-T9N" id="a29-ta-SXD"/>
+                                                    <outlet property="cons" destination="cVe-sS-I8m" id="K1e-LK-13h"/>
+                                                    <outlet property="consTop" destination="dWc-aI-1Yz" id="jzz-YS-2ws"/>
+                                                    <outlet property="navBar" destination="fNM-ds-HAP" id="x4d-mZ-Ufr"/>
+                                                </connections>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -271,9 +281,9 @@
                                             <constraint firstItem="Jan-Sv-T9N" firstAttribute="top" secondItem="BvX-6w-hGF" secondAttribute="bottom" constant="30" id="cVe-sS-I8m"/>
                                             <constraint firstItem="BvX-6w-hGF" firstAttribute="top" secondItem="vCY-Ex-ZcW" secondAttribute="top" constant="48" id="dWc-aI-1Yz"/>
                                             <constraint firstAttribute="trailing" secondItem="Jan-Sv-T9N" secondAttribute="trailing" constant="30" id="fIg-Ef-xB5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jan-Sv-T9N" secondAttribute="bottom" id="fpF-L3-iuo"/>
                                             <constraint firstItem="Jan-Sv-T9N" firstAttribute="leading" secondItem="vCY-Ex-ZcW" secondAttribute="leading" constant="30" id="hRn-JT-sBA"/>
                                             <constraint firstItem="BvX-6w-hGF" firstAttribute="leading" secondItem="vCY-Ex-ZcW" secondAttribute="leading" constant="30" id="xns-gt-JKg"/>
-                                            <constraint firstAttribute="bottom" secondItem="Jan-Sv-T9N" secondAttribute="bottom" id="y0z-bQ-u8m"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -304,7 +314,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="bodyLabel" destination="BvX-6w-hGF" id="8Np-gV-lnd"/>
+                        <outlet property="bodyLabel" destination="BvX-6w-hGF" id="Px4-07-V0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttZ-5p-BC8" userLabel="First Responder" sceneMemberID="firstResponder"/>

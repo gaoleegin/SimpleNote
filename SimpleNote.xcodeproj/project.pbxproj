@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96CF4DC21A3099AF00D5A16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DC11A3099AF00D5A16B /* main.m */; };
-		96CF4DC51A3099AF00D5A16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DC41A3099AF00D5A16B /* AppDelegate.m */; };
-		96CF4DC81A3099AF00D5A16B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DC71A3099AF00D5A16B /* ViewController.m */; };
+		96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE11A3161B100ABF0B1 /* SNListViewController.m */; };
+		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
+		96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EED1A318C2600ABF0B1 /* SNListViewCell.m */; };
+		96599EF11A318D2700ABF0B1 /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF01A318D2700ABF0B1 /* SNNoteModel.m */; };
 		96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DC91A3099AF00D5A16B /* Main.storyboard */; };
 		96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCC1A3099AF00D5A16B /* Images.xcassets */; };
 		96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */; };
 		96CF4DDC1A3099AF00D5A16B /* SimpleNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DDB1A3099AF00D5A16B /* SimpleNoteTests.m */; };
+		96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DF81A309A5000D5A16B /* AppDelegate.m */; };
+		96CF4DFE1A309A5000D5A16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4DFB1A309A5000D5A16B /* main.m */; };
+		96CF4E011A309C3200D5A16B /* SNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4E001A309C3200D5A16B /* SNLoginViewController.m */; };
+		96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CF4E091A30A29300D5A16B /* SNNoteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +32,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96599EE01A3161B100ABF0B1 /* SNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewController.h; sourceTree = "<group>"; };
+		96599EE11A3161B100ABF0B1 /* SNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewController.m; sourceTree = "<group>"; };
+		96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBodyLabel.h; sourceTree = "<group>"; };
+		96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBodyLabel.m; sourceTree = "<group>"; };
+		96599EEC1A318C2600ABF0B1 /* SNListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewCell.h; sourceTree = "<group>"; };
+		96599EED1A318C2600ABF0B1 /* SNListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewCell.m; sourceTree = "<group>"; };
+		96599EEF1A318D2700ABF0B1 /* SNNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteModel.h; sourceTree = "<group>"; };
+		96599EF01A318D2700ABF0B1 /* SNNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteModel.m; sourceTree = "<group>"; };
 		96CF4DBC1A3099AF00D5A16B /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DC01A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96CF4DC11A3099AF00D5A16B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		96CF4DC31A3099AF00D5A16B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		96CF4DC41A3099AF00D5A16B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		96CF4DC61A3099AF00D5A16B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		96CF4DC71A3099AF00D5A16B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		96CF4DCA1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96CF4DCC1A3099AF00D5A16B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96CF4DCF1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		96CF4DD51A3099AF00D5A16B /* SimpleNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DDA1A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CF4DDB1A3099AF00D5A16B /* SimpleNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleNoteTests.m; sourceTree = "<group>"; };
+		96CF4DF71A309A5000D5A16B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		96CF4DF81A309A5000D5A16B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		96CF4DFB1A309A5000D5A16B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96CF4DFF1A309C3200D5A16B /* SNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLoginViewController.h; sourceTree = "<group>"; };
+		96CF4E001A309C3200D5A16B /* SNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLoginViewController.m; sourceTree = "<group>"; };
+		96CF4E081A30A29300D5A16B /* SNNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteViewController.h; sourceTree = "<group>"; };
+		96CF4E091A30A29300D5A16B /* SNNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +96,7 @@
 		96CF4DBE1A3099AF00D5A16B /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
-				96CF4DC31A3099AF00D5A16B /* AppDelegate.h */,
-				96CF4DC41A3099AF00D5A16B /* AppDelegate.m */,
-				96CF4DC61A3099AF00D5A16B /* ViewController.h */,
-				96CF4DC71A3099AF00D5A16B /* ViewController.m */,
+				96CF4DE51A309A5000D5A16B /* Classes */,
 				96CF4DC91A3099AF00D5A16B /* Main.storyboard */,
 				96CF4DCC1A3099AF00D5A16B /* Images.xcassets */,
 				96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */,
@@ -97,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				96CF4DC01A3099AF00D5A16B /* Info.plist */,
-				96CF4DC11A3099AF00D5A16B /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +128,188 @@
 				96CF4DDA1A3099AF00D5A16B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96CF4DE51A309A5000D5A16B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DEA1A309A5000D5A16B /* Main(导航) */,
+				96CF4DE61A309A5000D5A16B /* Login(登录) */,
+				96CF4DF21A309A5000D5A16B /* NoteList(日记列表) */,
+				96CF4DEE1A309A5000D5A16B /* Note(日记) */,
+				96CF4DF61A309A5000D5A16B /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		96CF4DE61A309A5000D5A16B /* Login(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DE71A309A5000D5A16B /* Controller */,
+				96CF4DE81A309A5000D5A16B /* Model */,
+				96CF4DE91A309A5000D5A16B /* View */,
+			);
+			path = "Login(登录)";
+			sourceTree = "<group>";
+		};
+		96CF4DE71A309A5000D5A16B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DFF1A309C3200D5A16B /* SNLoginViewController.h */,
+				96CF4E001A309C3200D5A16B /* SNLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CF4DE81A309A5000D5A16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CF4DE91A309A5000D5A16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CF4DEA1A309A5000D5A16B /* Main(导航) */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DEB1A309A5000D5A16B /* Controller */,
+				96CF4DEC1A309A5000D5A16B /* Model */,
+				96CF4DED1A309A5000D5A16B /* View */,
+			);
+			path = "Main(导航)";
+			sourceTree = "<group>";
+		};
+		96CF4DEB1A309A5000D5A16B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CF4DEC1A309A5000D5A16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CF4DED1A309A5000D5A16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CF4DEE1A309A5000D5A16B /* Note(日记) */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DEF1A309A5000D5A16B /* Controller */,
+				96CF4DF01A309A5000D5A16B /* Model */,
+				96CF4DF11A309A5000D5A16B /* View */,
+			);
+			path = "Note(日记)";
+			sourceTree = "<group>";
+		};
+		96CF4DEF1A309A5000D5A16B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4E081A30A29300D5A16B /* SNNoteViewController.h */,
+				96CF4E091A30A29300D5A16B /* SNNoteViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CF4DF01A309A5000D5A16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CF4DF11A309A5000D5A16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */,
+				96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CF4DF21A309A5000D5A16B /* NoteList(日记列表) */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DF31A309A5000D5A16B /* Controller */,
+				96CF4DF41A309A5000D5A16B /* Model */,
+				96CF4DF51A309A5000D5A16B /* View */,
+			);
+			path = "NoteList(日记列表)";
+			sourceTree = "<group>";
+		};
+		96CF4DF31A309A5000D5A16B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96599EE01A3161B100ABF0B1 /* SNListViewController.h */,
+				96599EE11A3161B100ABF0B1 /* SNListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CF4DF41A309A5000D5A16B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96599EEF1A318D2700ABF0B1 /* SNNoteModel.h */,
+				96599EF01A318D2700ABF0B1 /* SNNoteModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CF4DF51A309A5000D5A16B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96599EEC1A318C2600ABF0B1 /* SNListViewCell.h */,
+				96599EED1A318C2600ABF0B1 /* SNListViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CF4DF61A309A5000D5A16B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				96CF4DF71A309A5000D5A16B /* AppDelegate.h */,
+				96CF4DF81A309A5000D5A16B /* AppDelegate.m */,
+				96CF4DF91A309A5000D5A16B /* Category */,
+				96CF4DFA1A309A5000D5A16B /* Lib */,
+				96CF4DFB1A309A5000D5A16B /* main.m */,
+				96CF4DFC1A309A5000D5A16B /* Tool */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		96CF4DF91A309A5000D5A16B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		96CF4DFA1A309A5000D5A16B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		96CF4DFC1A309A5000D5A16B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +356,7 @@
 		96CF4DB41A3099AF00D5A16B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SN;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Jason’s Application House";
 				TargetAttributes = {
@@ -219,9 +413,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96CF4DC81A3099AF00D5A16B /* ViewController.m in Sources */,
-				96CF4DC51A3099AF00D5A16B /* AppDelegate.m in Sources */,
-				96CF4DC21A3099AF00D5A16B /* main.m in Sources */,
+				96599EF11A318D2700ABF0B1 /* SNNoteModel.m in Sources */,
+				96CF4DFE1A309A5000D5A16B /* main.m in Sources */,
+				96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */,
+				96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */,
+				96CF4E011A309C3200D5A16B /* SNLoginViewController.m in Sources */,
+				96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */,
+				96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */,
+				96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +613,7 @@
 				96CF4DE11A3099AF00D5A16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96CF4DE21A3099AF00D5A16B /* Build configuration list for PBXNativeTarget "SimpleNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +622,7 @@
 				96CF4DE41A3099AF00D5A16B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
