@@ -7,23 +7,24 @@
 //
 
 #import "SNNoteViewController.h"
+#import "SNNoteModel.h"
+#import "SNNoteView.h"
 
 @interface SNNoteViewController ()
 
 - (IBAction)back;
 
-@property (nonatomic, weak) IBOutlet UILabel *bodyLabel;
-
+@property (strong, nonatomic) IBOutlet SNNoteView *noteView;
 @end
 
 @implementation SNNoteViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.bodyLabel.text = [NSString stringWithFormat:@"安师大哈接收到就爱看是大街上大事件还打算科技活动啊手机卡大劫案斯柯达卡仕达啊接收到卡接收到安师大哈接收到就爱看是大仕达啊接收到卡接收到安师大哈接收到就爱看是大街上动啊手机卡大劫案收收到卡件还打算科技大劫案收收到卡接收到"];
-    
-    SNNoteViewController *preVc = [[SNNoteViewController alloc] init];
+    self.noteView.note = self.note;
+    NSLog(@"%@", [[UIApplication sharedApplication] keyWindow].subviews);
 }
 
 
@@ -40,4 +41,5 @@
 - (IBAction)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 @end

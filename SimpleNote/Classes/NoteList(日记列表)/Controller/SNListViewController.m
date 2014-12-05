@@ -10,6 +10,8 @@
 #import "SNNoteViewController.h"
 #import "SNListViewCell.h"
 #import "SNNoteModel.h"
+#import "UIView+tools.h"
+#import "Common.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -57,6 +59,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"list2Note" sender:indexPath];
     
+    SNNoteViewController *preVc = [[SNNoteViewController alloc] init];
+    SNNoteViewController *nextVc = [[SNNoteViewController alloc] init];
+    preVc.view.x = SCScreenWidth * (-1);
+    nextVc.view.x = SCScreenWidth * 0.5;
+    
+    [SCKeyWindow addSubview:preVc.view];
+    [SCKeyWindow addSubview:nextVc.view];
+
     // cell选中后恢复
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -64,6 +74,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SNNoteViewController *noteVc = segue.destinationViewController;
     noteVc.index = [sender row];
+    noteVc.note = self.notes[noteVc.index];
 }
 
 - (IBAction)back {

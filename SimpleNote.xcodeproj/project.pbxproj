@@ -11,6 +11,8 @@
 		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
 		96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EED1A318C2600ABF0B1 /* SNListViewCell.m */; };
 		96599EF11A318D2700ABF0B1 /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF01A318D2700ABF0B1 /* SNNoteModel.m */; };
+		96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF41A3191C000ABF0B1 /* UIView+tools.m */; };
+		96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF81A3194EA00ABF0B1 /* SNNoteView.m */; };
 		96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DC91A3099AF00D5A16B /* Main.storyboard */; };
 		96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCC1A3099AF00D5A16B /* Images.xcassets */; };
 		96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */; };
@@ -40,6 +42,11 @@
 		96599EED1A318C2600ABF0B1 /* SNListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewCell.m; sourceTree = "<group>"; };
 		96599EEF1A318D2700ABF0B1 /* SNNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteModel.h; sourceTree = "<group>"; };
 		96599EF01A318D2700ABF0B1 /* SNNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteModel.m; sourceTree = "<group>"; };
+		96599EF31A3191C000ABF0B1 /* UIView+tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+tools.h"; sourceTree = "<group>"; };
+		96599EF41A3191C000ABF0B1 /* UIView+tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+tools.m"; sourceTree = "<group>"; };
+		96599EF61A3191FF00ABF0B1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		96599EF71A3194EA00ABF0B1 /* SNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteView.h; sourceTree = "<group>"; };
+		96599EF81A3194EA00ABF0B1 /* SNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteView.m; sourceTree = "<group>"; };
 		96CF4DBC1A3099AF00D5A16B /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DC01A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CF4DCA1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96599EF21A3191C000ABF0B1 /* UIView扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				96599EF31A3191C000ABF0B1 /* UIView+tools.h */,
+				96599EF41A3191C000ABF0B1 /* UIView+tools.m */,
+			);
+			path = "UIView扩展";
+			sourceTree = "<group>";
+		};
 		96CF4DB31A3099AF00D5A16B = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +253,8 @@
 			children = (
 				96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */,
 				96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */,
+				96599EF71A3194EA00ABF0B1 /* SNNoteView.h */,
+				96599EF81A3194EA00ABF0B1 /* SNNoteView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +299,7 @@
 		96CF4DF61A309A5000D5A16B /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				96599EF61A3191FF00ABF0B1 /* Common.h */,
 				96CF4DF71A309A5000D5A16B /* AppDelegate.h */,
 				96CF4DF81A309A5000D5A16B /* AppDelegate.m */,
 				96CF4DF91A309A5000D5A16B /* Category */,
@@ -294,6 +313,7 @@
 		96CF4DF91A309A5000D5A16B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				96599EF21A3191C000ABF0B1 /* UIView扩展 */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -414,6 +434,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96599EF11A318D2700ABF0B1 /* SNNoteModel.m in Sources */,
+				96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */,
+				96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */,
 				96CF4DFE1A309A5000D5A16B /* main.m in Sources */,
 				96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */,
 				96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */,

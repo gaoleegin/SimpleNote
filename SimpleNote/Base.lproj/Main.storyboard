@@ -110,7 +110,7 @@
                                     <constraint firstAttribute="centerY" secondItem="MJU-Fk-B79" secondAttribute="centerY" id="x1B-EC-VB2"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-Wt-Vo8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-Wt-Vo8">
                                 <rect key="frame" x="0.0" y="63" width="600" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -155,9 +155,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aZE-Wt-Vo8" firstAttribute="leading" secondItem="naq-ir-zaI" secondAttribute="leading" id="Fjb-RF-3p7"/>
                             <constraint firstAttribute="trailing" secondItem="t71-DR-9DD" secondAttribute="trailing" id="TGv-Lk-onH"/>
+                            <constraint firstItem="v5d-3n-kIP" firstAttribute="top" secondItem="aZE-Wt-Vo8" secondAttribute="bottom" id="VCI-kB-buZ"/>
                             <constraint firstItem="t71-DR-9DD" firstAttribute="leading" secondItem="naq-ir-zaI" secondAttribute="leading" id="WmV-pd-k7a"/>
                             <constraint firstItem="t71-DR-9DD" firstAttribute="top" secondItem="QR5-pw-qOf" secondAttribute="bottom" id="bgb-XV-qNs"/>
+                            <constraint firstAttribute="trailing" secondItem="aZE-Wt-Vo8" secondAttribute="trailing" id="h07-t3-Bbk"/>
+                            <constraint firstItem="aZE-Wt-Vo8" firstAttribute="top" secondItem="QR5-pw-qOf" secondAttribute="bottom" constant="63" id="xnB-su-IxC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -176,7 +180,7 @@
                         <viewControllerLayoutGuide type="top" id="gHj-E5-k98"/>
                         <viewControllerLayoutGuide type="bottom" id="IpU-GL-2AZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vII-mb-l57">
+                    <view key="view" contentMode="scaleToFill" id="vII-mb-l57" customClass="SNNoteView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -263,7 +267,7 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="82" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvX-6w-hGF" customClass="SNBodyLabel">
                                                 <rect key="frame" x="30" y="48" width="540" height="82"/>
-                                                <mutableString key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</mutableString>
+                                                <string key="text">LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -296,6 +300,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fNM-ds-HAP" firstAttribute="leading" secondItem="vII-mb-l57" secondAttribute="leading" id="3K4-yp-kr2"/>
                             <constraint firstItem="fNM-ds-HAP" firstAttribute="top" secondItem="gHj-E5-k98" secondAttribute="bottom" id="Ce7-iJ-0Ps"/>
@@ -312,12 +317,18 @@
                                 <exclude reference="s6M-X8-vl6"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="date" destination="Oc7-ax-KTU" id="cvw-o5-7Ix"/>
+                            <outlet property="textLabel" destination="BvX-6w-hGF" id="Bcf-Kz-r7l"/>
+                            <outletCollection property="gestureRecognizers" destination="FJ1-cv-1oZ" appends="YES" id="eez-Ve-LQ9"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="bodyLabel" destination="BvX-6w-hGF" id="Px4-07-V0n"/>
+                        <outlet property="noteView" destination="vII-mb-l57" id="Lys-xN-zf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttZ-5p-BC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="FJ1-cv-1oZ"/>
             </objects>
             <point key="canvasLocation" x="1464" y="145"/>
         </scene>
