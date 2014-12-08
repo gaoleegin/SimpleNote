@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SNNoteModel : NSObject
+@interface SNDateModel : NSObject
 
 @property (nonatomic, copy) NSString *date;
 
-@property (nonatomic, copy) NSString *bodyText;
-
-+ (instancetype)noteWithDate:(NSString *)date
-                    bodyText:(NSString *)bodyText;
++ (instancetype)dateWithDict:(NSDictionary *)dict;
 @end

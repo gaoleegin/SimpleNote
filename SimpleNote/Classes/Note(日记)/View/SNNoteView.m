@@ -33,7 +33,7 @@
 - (void)setNote:(SNNoteModel *)note {
     _note = note;
     self.date.text = note.date;
-    self.textLabel.text = note.bodyText;
+    self.textLabel.text = note.body;
 }
 
 

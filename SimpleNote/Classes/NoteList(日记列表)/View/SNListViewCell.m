@@ -9,6 +9,13 @@
 #import "SNListViewCell.h"
 #import "SNNoteModel.h"
 
+@interface SNListViewCell()
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+
+@end
+
 @implementation SNListViewCell
 
 - (void)awakeFromNib {
@@ -23,7 +30,7 @@
 
 - (void)setNote:(SNNoteModel *)note {
     _note = note;
-    self.textLabel.text = note.date;
+    self.dateLabel.text = note.date;
 }
 
 @end

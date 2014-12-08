@@ -9,7 +9,7 @@
 #import "SNListViewController.h"
 #import "SNNoteViewController.h"
 #import "SNListViewCell.h"
-#import "SNNoteModel.h"
+#import "SNDateModel.h"
 #import "UIView+tools.h"
 #import "Common.h"
 
@@ -17,34 +17,27 @@
 
 - (IBAction)back;
 
-@property (nonatomic, strong) NSMutableArray *notes;
+@property (nonatomic, strong) NSMutableArray *dates;
 @end
 
 @implementation SNListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    SNNoteModel *note1 = [SNNoteModel noteWithDate:@"August 19th" bodyText:@"19号的日记"];
-    SNNoteModel *note2 = [SNNoteModel noteWithDate:@"August 20th" bodyText:@"20号的日记"];
-    SNNoteModel *note3 = [SNNoteModel noteWithDate:@"August 21th" bodyText:@"21号的日记"];
-    SNNoteModel *note4 = [SNNoteModel noteWithDate:@"August 22th" bodyText:@"22号的日记"];
-    SNNoteModel *note5 = [SNNoteModel noteWithDate:@"August 23th" bodyText:@"23号的日记"];
-    SNNoteModel *note6 = [SNNoteModel noteWithDate:@"August 24th" bodyText:@"24号的日记"];
-    SNNoteModel *note7 = [SNNoteModel noteWithDate:@"August 25th" bodyText:@"25号的日记"];
-    SNNoteModel *note8 = [SNNoteModel noteWithDate:@"August 26th" bodyText:@"26号的日记"];
-    SNNoteModel *note9 = [SNNoteModel noteWithDate:@"August 27th" bodyText:@"27号的日记"];
-    SNNoteModel *note10 = [SNNoteModel noteWithDate:@"August 28th" bodyText:@"28号的日记"];
-
-    [self.notes addObjectsFromArray:@[note1, note2, note3, note4, note5, note6, note7, note8, note9, note10]];
+    // 加载数据
+    NSArray *dateArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"date" ofType:@"plist"]];
+    for (NSDictionary *dict in dateArr) {
+        SNDateModel *dateM = [SNDateModel dateWithDict:dict];
+        [self.notes addObject:dateM];
+    }
 }
 
 #pragma mark - 懒加载
 - (NSMutableArray *)notes {
-    if (!_notes) {
-        _notes = [NSMutableArray array];
+    if (!_dates) {
+        _dates = [NSMutableArray array];
     }
-    return _notes;
+    return _dates;
 }
 
 
@@ -75,9 +68,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SNNoteViewController *noteVc = segue.destinationViewController;
-    
-    noteVc.index = (int)[sender row];
-    noteVc.notes = self.notes;
+    NSIndexPath *indexPath = sender;
+    noteVc.index = (int)indexPath.row;
 }
 
 
