@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class SNNoteModel;
+@class SNNoteModel, SNNoteView, SNListViewController;
 
 @interface SNNoteViewController : UIViewController
 
-@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, assign) int index;
 
-@property (nonatomic, strong) SNNoteModel *note;
+@property (nonatomic, strong) NSMutableArray *notes;
+
 
 @end

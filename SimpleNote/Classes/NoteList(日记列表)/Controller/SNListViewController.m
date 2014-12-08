@@ -29,7 +29,14 @@
     SNNoteModel *note2 = [SNNoteModel noteWithDate:@"August 20th" bodyText:@"20号的日记"];
     SNNoteModel *note3 = [SNNoteModel noteWithDate:@"August 21th" bodyText:@"21号的日记"];
     SNNoteModel *note4 = [SNNoteModel noteWithDate:@"August 22th" bodyText:@"22号的日记"];
-    [self.notes addObjectsFromArray:@[note1, note2, note3, note4]];
+    SNNoteModel *note5 = [SNNoteModel noteWithDate:@"August 23th" bodyText:@"23号的日记"];
+    SNNoteModel *note6 = [SNNoteModel noteWithDate:@"August 24th" bodyText:@"24号的日记"];
+    SNNoteModel *note7 = [SNNoteModel noteWithDate:@"August 25th" bodyText:@"25号的日记"];
+    SNNoteModel *note8 = [SNNoteModel noteWithDate:@"August 26th" bodyText:@"26号的日记"];
+    SNNoteModel *note9 = [SNNoteModel noteWithDate:@"August 27th" bodyText:@"27号的日记"];
+    SNNoteModel *note10 = [SNNoteModel noteWithDate:@"August 28th" bodyText:@"28号的日记"];
+
+    [self.notes addObjectsFromArray:@[note1, note2, note3, note4, note5, note6, note7, note8, note9, note10]];
 }
 
 #pragma mark - 懒加载
@@ -56,26 +63,23 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"list2Note" sender:indexPath];
-    
-    SNNoteViewController *preVc = [[SNNoteViewController alloc] init];
-    SNNoteViewController *nextVc = [[SNNoteViewController alloc] init];
-    preVc.view.x = SCScreenWidth * (-1);
-    nextVc.view.x = SCScreenWidth * 0.5;
-    
-    [SCKeyWindow addSubview:preVc.view];
-    [SCKeyWindow addSubview:nextVc.view];
 
-    // cell选中后恢复
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"list2Note" sender:indexPath];
+        
+    // 选中后恢复cell状态
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SNNoteViewController *noteVc = segue.destinationViewController;
-    noteVc.index = [sender row];
-    noteVc.note = self.notes[noteVc.index];
+    
+    noteVc.index = (int)[sender row];
+    noteVc.notes = self.notes;
 }
+
 
 - (IBAction)back {
     [self.navigationController popViewControllerAnimated:YES];

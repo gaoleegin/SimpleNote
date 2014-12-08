@@ -31,10 +31,10 @@
 }
 */
 - (void)layoutSubviews {
-        CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
-        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-        if (preRunTimeHeight < screenHeight) {
-            self.cons.constant = [UIScreen mainScreen].bounds.size.height - self.consTop.constant - self.navBar.bounds.size.height - self.bounds.size.height - self.arrowView.bounds.size.height;
-        }
+    CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if (preRunTimeHeight < screenHeight) {
+        self.cons.constant = [UIScreen mainScreen].bounds.size.height - self.consTop.constant - self.navBar.bounds.size.height - self.bounds.size.height - self.arrowView.bounds.size.height;
+    }
 }
 @end
