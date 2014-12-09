@@ -66,7 +66,14 @@
  *  下一页滚动视图
  */
 @property (weak, nonatomic) IBOutlet UIScrollView *thirdScrollView;
-
+/**
+ *  当前是否翻向下一页
+ */
+@property (nonatomic, assign, getter=isTurnNext) BOOL turnNext;
+/**
+ *  当前是否翻回上一页
+ */
+@property (nonatomic, assign, getter=isTurnPre) BOOL turnPre;
 
 @end
 
@@ -77,6 +84,7 @@
     [super viewDidLoad];
     
     [self addData];
+    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -156,7 +164,9 @@
 
 #pragma mark - 代理方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
+    self.turnNext = NO;
+    self.turnPre = NO;
+
     CGFloat offSetH = self.scrollView.contentOffset.x; // x轴偏移量
     int pageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
     
@@ -167,11 +177,26 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
     
-    if (offsetH < 0) {
-        self.secondNoteLeadingCons.constant = offsetH * 0.5;
-    } else if (offsetH > 0) {
+//    if (offsetH < 0 && self.isTurnNext == NO) {
+//        self.turnPre = YES;
+//        self.secondNoteLeadingCons.constant = offsetH * 0.5;
+//    } else if (offsetH < 0 && self.isTurnNext == YES) {
+//        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+//    } else if (offsetH > 0 && self.isTurnPre == NO) {
+//        self.turnNext = YES;
+//        self.thirdNoteLeadingCons.constant = -(SCScreenWidth * 0.5) + offsetH * 0.5;
+//    } else if (offsetH > 0 && self.isTurnPre == YES) {
+//        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+//    }
+    NSLog(@"isTurnPre = %d---isTurnNext = %d",self.isTurnPre, self.isTurnNext);
+    
+    if (offsetH > 0) {
         self.thirdNoteLeadingCons.constant = -(SCScreenWidth * 0.5) + offsetH * 0.5;
+    } else if (offsetH < 0) {
+        self.secondNoteLeadingCons.constant = offsetH * 0.5;
     }
+    
+    NSLog(@"%f", offsetH);
 }
 
 #pragma mark <更新数据>

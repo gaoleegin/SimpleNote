@@ -690,6 +690,7 @@
                                                 </connections>
                                             </view>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="tL1-EY-2td" firstAttribute="leading" secondItem="1Mx-wX-kiC" secondAttribute="leading" id="7BO-h6-q9Z"/>
                                             <constraint firstItem="tL1-EY-2td" firstAttribute="top" secondItem="1Mx-wX-kiC" secondAttribute="top" id="7nR-yB-AOa"/>

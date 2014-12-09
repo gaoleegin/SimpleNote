@@ -36,17 +36,17 @@
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.cons.constant = 41.0;
+    self.cons.constant = 41.0; // 默认值:如果内容超出屏幕使用此约束
     CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     if (preRunTimeHeight < screenHeight) {
         self.cons.constant = [UIScreen mainScreen].bounds.size.height - self.consTop.constant - self.navBar.bounds.size.height - self.bounds.size.height - self.arrowView.bounds.size.height;
     }
-    NSLog(@"%f", self.cons.constant);
 }
 
-- (void)setText:(NSString *)text {
-    [super setText:text];
-    [self sizeToFit];
-}
+//通过storyboard创建的自动会调用sizeToFit
+//- (void)setText:(NSString *)text {
+//    [super setText:text];
+//    [self sizeToFit];
+//}
 @end
