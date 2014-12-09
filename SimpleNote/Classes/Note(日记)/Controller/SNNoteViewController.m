@@ -75,6 +75,10 @@
  */
 @property (nonatomic, assign, getter=isTurnPre) BOOL turnPre;
 
+@property (weak, nonatomic) IBOutlet UIImageView *firstNoteShadow;
+
+@property (weak, nonatomic) IBOutlet UIImageView *secondNoteShadow;
+
 @end
 
 @implementation SNNoteViewController
@@ -148,6 +152,7 @@
 
 - (IBAction)preNote {
     self.index == (self.notes.count - 1) ? [self clickToTurnPage:1] : [self clickToTurnPage:0];
+    NSLog(@"%d", self.index);
 }
 
 - (IBAction)nextNote {
@@ -160,12 +165,14 @@
         self.scrollView.contentOffset = CGPointMake(SCScreenWidth * coefficient, 0);
     }];
     [self scrollViewDidEndDecelerating:self.scrollView];
+
 }
 
 #pragma mark - 代理方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.turnNext = NO;
-    self.turnPre = NO;
+    
+//    self.turnNext = NO;
+//    self.turnPre = NO;
 
     CGFloat offSetH = self.scrollView.contentOffset.x; // x轴偏移量
     int pageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
@@ -175,6 +182,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
     
 //    if (offsetH < 0 && self.isTurnNext == NO) {
@@ -188,7 +196,7 @@
 //    } else if (offsetH > 0 && self.isTurnPre == YES) {
 //        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
 //    }
-    NSLog(@"isTurnPre = %d---isTurnNext = %d",self.isTurnPre, self.isTurnNext);
+//    NSLog(@"isTurnPre = %d---isTurnNext = %d",self.isTurnPre, self.isTurnNext);
     
     if (offsetH > 0) {
         self.thirdNoteLeadingCons.constant = -(SCScreenWidth * 0.5) + offsetH * 0.5;
@@ -196,9 +204,15 @@
         self.secondNoteLeadingCons.constant = offsetH * 0.5;
     }
     
-    NSLog(@"%f", offsetH);
+//    NSLog(@"%f", offsetH);
 }
 
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.secondNoteShadow.hidden = YES;
+//    }];
+//    NSLog(@"ok");
+//}
 #pragma mark <更新数据>
 - (void)loopDisplay:(int)pageState {
     // 从第一篇进来后, 翻至第二页时, 模型下标加一 ,不更新数据
