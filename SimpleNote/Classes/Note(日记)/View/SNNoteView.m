@@ -11,25 +11,24 @@
 #import "SNNoteModel.h"
 
 @interface SNNoteView()
-
+/**
+ *  日期标签
+ */
 @property (weak, nonatomic) IBOutlet UILabel *date;
-
+/**
+ *  正文标签
+ */
 @property (weak, nonatomic) IBOutlet SNBodyLabel *textLabel;
 
 @end
 
 @implementation SNNoteView
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-
+/**
+ *  更新UI数据
+ *
+ *  @param note 日记模型
+ */
 - (void)setNote:(SNNoteModel *)note {
     _note = note;
     self.date.text = note.date;

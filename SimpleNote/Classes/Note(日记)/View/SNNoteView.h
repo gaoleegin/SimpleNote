@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 @class SNNoteModel;
 
-
 @interface SNNoteView : UIView
-
+/**
+ *  日记模型
+ */
 @property (nonatomic, strong) SNNoteModel *note;
-
 
 @end

@@ -10,7 +10,9 @@
 @class SNNoteModel, SNNoteView, SNListViewController;
 
 @interface SNNoteViewController : UIViewController
-
+/**
+ *  模型下标
+ */
 @property (nonatomic, assign) int index;
 
 @end
