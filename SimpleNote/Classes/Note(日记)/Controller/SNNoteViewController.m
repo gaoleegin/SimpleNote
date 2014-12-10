@@ -101,13 +101,10 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    // 判断内容页的偏移量
+    // 刷新滚动页的偏移量(如果不是第一页和最后一页, 始终偏移至中间页面)
     if (self.index == 0) return;
-    else if (self.index == self.notes.count - 1) {
-        self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
-    } else {
-        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
-    }
+    else if (self.index == self.notes.count - 1) return;
+    else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
     
     // 翻至第一页或最后一页时, 隐藏箭头按钮
     if (self.index == 0 || self.index == 1) {
@@ -123,13 +120,19 @@
 
 #pragma mark - 加载数据
 - (void)addData {
+    // 加载模拟数据
     NSArray *noteArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
     for (NSDictionary *dict in noteArr) {
         SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
         [self.notes addObject:noteM];
     }
     
-    // 动态加载数据(从其他页载入/从第一页载入/从最后一页载入)
+    /**
+     *  动态加载数据
+     *  显示第一页时,从第0个数据开始往后加载
+     *  显示最后一页时,从最后一个数据往前加载
+     *  显示其他页时,以当前数据往前和往后各分别加载
+     */
     if (self.index > 0 && self.index < self.notes.count - 1) {
         [self updateData:1];
     } else if (self.index == 0) {
@@ -145,10 +148,10 @@
  *
  *  @param curPage 0:当前显示第一页 / 1:当前显示其他页 / 2:当前显示最后一页
  */
-- (void)updateData:(int)curPage {
-    self.firstNoteView.note = self.notes[self.index - curPage];
-    self.secondNoteView.note = self.notes[self.index - curPage + 1];
-    self.thirdNoteView.note = self.notes[self.index - curPage + 2];
+- (void)updateData:(int)curPageState {
+    self.firstNoteView.note = self.notes[self.index - curPageState];
+    self.secondNoteView.note = self.notes[self.index - curPageState + 1];
+    self.thirdNoteView.note = self.notes[self.index - curPageState + 2];
 }
 
 #pragma mark - 懒加载属性
@@ -173,40 +176,34 @@
 }
 
 #pragma mark <监听事件公共方法>
-- (void)clickToTurnPage:(int)coefficient {
+- (void)clickToTurnPage:(int)curPageState {
     
-    self.scrollView.contentOffset = CGPointMake(SCScreenWidth * coefficient, 0);
+    self.scrollView.contentOffset = CGPointMake(SCScreenWidth * curPageState, 0);
     
-    [self loopDisplay:coefficient];
+    [self loopDisplay:curPageState];
 }
 
 #pragma mark - 代理方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
     CGFloat offSetH = self.scrollView.contentOffset.x; // x轴偏移量
-    int pageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
+    int curPageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
     
     // 循环显示数据源
-    [self loopDisplay:pageState];
+    [self loopDisplay:curPageState];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
-
-    if (offsetH < 0) {
-        self.secondNoteLeadingCons.constant = offsetH * 0.5;
-    } else if (offsetH > 0) {
+    // 翻页动画效果
+    if (offsetH > 0) { // 翻至下一页
         self.thirdNoteLeadingCons.constant = - (SCScreenWidth * 0.5) + offsetH * 0.5;
-    }
-    
-    if (offsetH > 0) { // 下一页
-        self.thirdNoteLeadingCons.constant = -(SCScreenWidth * 0.5) + offsetH * 0.5;
-    } else if (offsetH < 0) { // 上一页
+    } else if (offsetH < 0) { // 翻至上一页
         self.secondNoteLeadingCons.constant = offsetH * 0.5;
     }
     
-    // 阴影逻辑实现
+    // 阴影动画效果
     CGFloat alpha_st = (- offsetH) / (SCScreenWidth * SNSHADOW_ANIMATION_RANGE);
     if (alpha_st > SNSHADOW_ALPHA) alpha_st = SNSHADOW_ALPHA;
     self.firstNoteShadow.alpha = alpha_st;
@@ -234,9 +231,14 @@
     else if (pageState == 1 || (pageState == 0 && self.index == 0) || (pageState == 2 && self.index == self.notes.count - 1)) return;
     
     // 从前往后翻至最后一页时, 模型下标加一, 不更新数据
-    else if (pageState == 2 && self.index == self.notes.count - 2) {self.index++;return;}
+    else if (pageState == 2 && self.index == self.notes.count - 2) {
+        self.secondScrollView.contentOffset = CGPointMake(0, 0); // 当前页复位
+        self.index++;
+        return;
+    }
     // 从后往前翻至第一页时, 模型下标减一, 不更新数据
     else if (pageState == 0 && self.index == 1) {
+        self.secondScrollView.contentOffset = CGPointMake(0, 0); // 当前页复位
         self.index--;
         self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         return;

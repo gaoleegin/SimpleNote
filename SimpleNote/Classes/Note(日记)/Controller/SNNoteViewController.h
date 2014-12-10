@@ -11,7 +11,7 @@
 
 @interface SNNoteViewController : UIViewController
 /**
- *  模型数组下标
+ *  传递过来的模型数组下标
  */
 @property (nonatomic, assign) int index;
 
