@@ -80,10 +80,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rik-sE-ak5">
-                                        <rect key="frame" x="20" y="0.0" width="40" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YDT-Pg-hRf"/>
-                                            <constraint firstAttribute="width" constant="40" id="irq-g0-ayg"/>
+                                            <constraint firstAttribute="width" constant="100" id="irq-g0-ayg"/>
                                         </constraints>
                                         <state key="normal" image="button_logout">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,15 +99,30 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2J-Iq-FIT">
+                                        <rect key="frame" x="500" y="0.0" width="100" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="obh-o0-2a2"/>
+                                        </constraints>
+                                        <state key="normal" image="button_about_push">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showEditView" destination="dHH-qq-kQT" eventType="touchUpInside" id="vRw-fS-fu9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="height" secondItem="nld-6h-0c5" secondAttribute="height" id="16C-Rw-oOR"/>
+                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="HFS-DU-885"/>
                                     <constraint firstAttribute="bottom" secondItem="nld-6h-0c5" secondAttribute="bottom" id="JvV-rk-YLd"/>
+                                    <constraint firstAttribute="trailing" secondItem="O2J-Iq-FIT" secondAttribute="trailing" id="MP1-gI-am4"/>
                                     <constraint firstAttribute="height" constant="64" id="P8f-pg-PkK"/>
                                     <constraint firstAttribute="trailing" secondItem="nld-6h-0c5" secondAttribute="trailing" id="Xez-js-qWm"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="YJY-Il-Gi2"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="caq-6f-Uce"/>
                                     <constraint firstItem="rik-sE-ak5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="lPm-Wq-LuF"/>
-                                    <constraint firstItem="rik-sE-ak5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" constant="20" id="mXA-09-Xlk"/>
+                                    <constraint firstItem="rik-sE-ak5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="mXA-09-Xlk"/>
                                     <constraint firstAttribute="centerX" secondItem="MJU-Fk-B79" secondAttribute="centerX" id="pjP-a2-Ar4"/>
                                     <constraint firstAttribute="centerY" secondItem="MJU-Fk-B79" secondAttribute="centerY" id="x1B-EC-VB2"/>
                                 </constraints>
@@ -787,6 +802,7 @@
     </scenes>
     <resources>
         <image name="bar" width="384" height="64"/>
+        <image name="button_about_push" width="32" height="32"/>
         <image name="button_list" width="32" height="32"/>
         <image name="button_list_push" width="32" height="32"/>
         <image name="button_logout" width="32" height="32"/>

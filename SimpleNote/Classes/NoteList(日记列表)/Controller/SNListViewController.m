@@ -12,12 +12,16 @@
 #import "SNDateModel.h"
 #import "UIView+tools.h"
 #import "Common.h"
+#import "SNEditViewController.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)back;
 
 @property (nonatomic, strong) NSMutableArray *dates;
+
+- (IBAction)showEditView;
+
 @end
 
 @implementation SNListViewController
@@ -75,5 +79,11 @@
 
 - (IBAction)back {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)showEditView {
+    UIStoryboard *editSb = [UIStoryboard storyboardWithName:@"SNEditViewController" bundle:nil];
+    SNEditViewController *editVc = [editSb instantiateInitialViewController];
+    [self presentViewController:editVc animated:YES completion:nil];
 }
 @end

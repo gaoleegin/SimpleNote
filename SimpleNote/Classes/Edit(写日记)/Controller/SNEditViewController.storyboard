@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="psB-cL-FI2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="tII-IH-adt">
+            <objects>
+                <navigationController id="psB-cL-FI2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X25-IT-vhP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IJD-g0-vcs" kind="relationship" relationship="rootViewController" id="yan-Fu-rdm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maD-Kd-RhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="438"/>
+        </scene>
+        <!--写日记-->
+        <scene sceneID="ixa-hu-i9G">
+            <objects>
+                <viewController id="IJD-g0-vcs" customClass="SNEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ffs-2j-kFj"/>
+                        <viewControllerLayoutGuide type="bottom" id="yUS-G0-DMR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r9V-cK-GXe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbG-4a-nmE" customClass="PlaceholderTextView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1jH-Xa-qUY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VbG-4a-nmE" firstAttribute="top" secondItem="ffs-2j-kFj" secondAttribute="bottom" id="HJo-FA-iPs"/>
+                            <constraint firstAttribute="trailing" secondItem="VbG-4a-nmE" secondAttribute="trailing" id="ZQb-jn-zRI"/>
+                            <constraint firstItem="VbG-4a-nmE" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="u5S-tj-l8l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="写日记" id="Sx3-cy-Iew">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="FiH-es-5hb">
+                            <connections>
+                                <action selector="dismissEditVc" destination="IJD-g0-vcs" id="pB2-UN-RWd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发表" id="aqa-x4-yaQ">
+                            <connections>
+                                <action selector="dismissEditVcWithContent" destination="IJD-g0-vcs" id="atd-Wo-zvn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qur-qg-G2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="438"/>
+        </scene>
+    </scenes>
+</document>

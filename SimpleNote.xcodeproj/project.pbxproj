@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9632D5631A38A35D00A6F746 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */; };
+		9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5651A38A41200A6F746 /* SNEditViewController.m */; };
+		9632D5681A38A44B00A6F746 /* SNEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */; };
 		963C5BAD1A35E52F0052A2DD /* date.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAC1A35E52F0052A2DD /* date.plist */; };
 		963C5BAF1A35E5430052A2DD /* note.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAE1A35E5430052A2DD /* note.plist */; };
 		963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5BB41A35ECD70052A2DD /* SNNoteModel.m */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9632D5611A38A35D00A6F746 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		9632D5641A38A41200A6F746 /* SNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNEditViewController.h; sourceTree = "<group>"; };
+		9632D5651A38A41200A6F746 /* SNEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNEditViewController.m; sourceTree = "<group>"; };
+		9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SNEditViewController.storyboard; sourceTree = "<group>"; };
 		963C5BAC1A35E52F0052A2DD /* date.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = date.plist; sourceTree = "<group>"; };
 		963C5BAE1A35E5430052A2DD /* note.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = note.plist; sourceTree = "<group>"; };
 		963C5BB31A35ECD70052A2DD /* SNNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteModel.h; sourceTree = "<group>"; };
@@ -89,6 +97,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9632D52B1A389E3C00A6F746 /* Edit(写日记) */ = {
+			isa = PBXGroup;
+			children = (
+				9632D52C1A389E3C00A6F746 /* Controller */,
+				9632D52D1A389E3C00A6F746 /* Model */,
+				9632D52E1A389E3C00A6F746 /* View */,
+			);
+			path = "Edit(写日记)";
+			sourceTree = "<group>";
+		};
+		9632D52C1A389E3C00A6F746 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9632D5641A38A41200A6F746 /* SNEditViewController.h */,
+				9632D5651A38A41200A6F746 /* SNEditViewController.m */,
+				9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9632D52D1A389E3C00A6F746 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9632D52E1A389E3C00A6F746 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9632D5611A38A35D00A6F746 /* PlaceholderTextView.h */,
+				9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		96599EF21A3191C000ABF0B1 /* UIView扩展 */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +206,7 @@
 				96CF4DE61A309A5000D5A16B /* Login(登录) */,
 				96CF4DF21A309A5000D5A16B /* NoteList(日记列表) */,
 				96CF4DEE1A309A5000D5A16B /* Note(日记) */,
+				9632D52B1A389E3C00A6F746 /* Edit(写日记) */,
 				96CF4DF61A309A5000D5A16B /* Other */,
 			);
 			path = Classes;
@@ -426,6 +471,7 @@
 			files = (
 				96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */,
 				963C5BAF1A35E5430052A2DD /* note.plist in Resources */,
+				9632D5681A38A44B00A6F746 /* SNEditViewController.storyboard in Resources */,
 				96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */,
 				963C5BAD1A35E52F0052A2DD /* date.plist in Resources */,
 				96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */,
@@ -450,6 +496,7 @@
 				96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */,
 				96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */,
 				963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */,
+				9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */,
 				96CF4DFE1A309A5000D5A16B /* main.m in Sources */,
 				96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */,
 				96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */,
@@ -457,6 +504,7 @@
 				96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */,
 				96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */,
 				96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */,
+				9632D5631A38A35D00A6F746 /* PlaceholderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
