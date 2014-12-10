@@ -285,10 +285,10 @@
                                                                             <outlet property="navBar" destination="mG7-6v-gJF" id="Irt-qk-zyJ"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部按钮">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="448" width="540" height="55"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXf-3X-rr5">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXf-3X-rr5" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="e8V-Ua-4j5"/>
@@ -307,7 +307,7 @@
                                                                                     <constraint firstAttribute="width" constant="10" id="V01-7S-lRX"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-Ne-0YM">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-Ne-0YM" userLabel="Button_Right">
                                                                                 <rect key="frame" x="490" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="k7T-dI-b9b"/>
@@ -431,10 +431,10 @@
                                                                             <outlet property="navBar" destination="Oca-uO-A7b" id="11s-8k-eCd"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部按钮">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="448" width="540" height="55"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-kt-SOs">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-kt-SOs" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="Amy-lJ-f6m"/>
@@ -453,7 +453,7 @@
                                                                                     <constraint firstAttribute="width" constant="10" id="bSF-zU-Rkd"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INC-YY-MCf">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INC-YY-MCf" userLabel="Button_Right">
                                                                                 <rect key="frame" x="490" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="6vq-6X-iCa"/>
@@ -586,10 +586,10 @@
                                                                             <outlet property="navBar" destination="at1-Li-Ezf" id="ypY-GE-BSD"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部按钮">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="448" width="540" height="55"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="quc-7p-xob"/>
@@ -610,7 +610,7 @@
                                                                                     <constraint firstAttribute="width" constant="10" id="Xv7-Kh-DU0"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-Gt-dZK">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-Gt-dZK" userLabel="Button_Right">
                                                                                 <rect key="frame" x="490" y="0.0" width="50" height="55"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="ifo-Sf-FGO"/>
@@ -768,6 +768,8 @@
                         <outlet property="firstNoteShadow" destination="8Jk-oo-i0L" id="L4w-X3-5DQ"/>
                         <outlet property="firstNoteView" destination="tL1-EY-2td" id="Wu9-9I-pFa"/>
                         <outlet property="firstScrollView" destination="2U7-Uj-RuW" id="hev-eY-39P"/>
+                        <outlet property="leftArrowBtn" destination="eY8-U5-U4P" id="rHu-E2-KwN"/>
+                        <outlet property="rightArrowBtn" destination="pXZ-Ne-0YM" id="a1U-J2-JRg"/>
                         <outlet property="scrollView" destination="xYm-hM-kZj" id="DEs-a0-C6p"/>
                         <outlet property="secondNoteLeadingCons" destination="lVT-2A-ma7" id="7OK-Kl-ksI"/>
                         <outlet property="secondNoteShadow" destination="Dz8-hJ-OmB" id="oEI-cf-Exj"/>

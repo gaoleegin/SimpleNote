@@ -78,6 +78,14 @@
  *  当前页的页尾阴影
  */
 @property (weak, nonatomic) IBOutlet UIImageView *secondNoteShadow;
+/**
+ *  首页的左边箭头按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *leftArrowBtn;
+/**
+ *  首页的右边箭头按钮
+ */
+@property (weak, nonatomic) IBOutlet UIButton *rightArrowBtn;
 
 @end
 
@@ -93,15 +101,22 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    if (self.index == 0) {
-        self.firstScrollView.contentOffset = CGPointMake(0, 0);
-    }
+    // 判断内容页的偏移量
+    if (self.index == 0) return;
     else if (self.index == self.notes.count - 1) {
-        self.thirdScrollView.contentOffset = CGPointMake(0, 0);
         self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
     } else {
-        self.secondScrollView.contentOffset = CGPointMake(0, 0);
         self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+    }
+    
+    // 翻至第一页或最后一页时, 隐藏箭头按钮
+    if (self.index == 0 || self.index == 1) {
+        self.leftArrowBtn.hidden = YES;
+    } else if (self.index == self.notes.count - 1 || self.index == self.notes.count - 2) {
+        self.rightArrowBtn.hidden = YES;
+    } else {
+        self.leftArrowBtn.hidden = NO;
+        self.rightArrowBtn.hidden = NO;
     }
 }
 
@@ -204,9 +219,17 @@
 #pragma mark <更新数据>
 - (void)loopDisplay:(int)pageState {
     // 从第一篇进来后, 翻至第二页时, 模型下标加一 ,不更新数据
-    if (pageState == 1 && self.index == 0) {self.index++;return;}
+    if (pageState == 1 && self.index == 0) {
+        self.firstScrollView.contentOffset = CGPointMake(0, 0); // 上一页复位
+        self.index++;
+        return;
+    }
     // 从最后一篇进来后, 翻至倒数第二页时, 模型下标减一, 不更新数据
-    else if (pageState == 1 && self.index == self.notes.count - 1) {self.index--;return;}
+    else if (pageState == 1 && self.index == self.notes.count - 1) {
+        self.thirdScrollView.contentOffset = CGPointMake(0, 0); // 下一页复位
+        self.index--;
+        return;
+    }
     // 翻页状态不变时, 不更新数据
     else if (pageState == 1 || (pageState == 0 && self.index == 0) || (pageState == 2 && self.index == self.notes.count - 1)) return;
     
@@ -220,6 +243,7 @@
     }
     // 往后翻或往前翻, 模型下标加一或减一, 更新数据
     else {
+        self.secondScrollView.contentOffset = CGPointMake(0, 0); // 当前页复位
         pageState == 0 ? self.index-- : self.index++;
         if (pageState == 0) self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         
