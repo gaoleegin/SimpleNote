@@ -11,7 +11,7 @@
 #import "SNListViewController.h"
 #import "SNNoteModel.h"
 
-@interface SNEditViewController ()
+@interface SNEditViewController ()<UITextViewDelegate>
 /**
  *  取消
  */
@@ -20,6 +20,10 @@
  *  发表
  */
 - (IBAction)dismissEditVcWithContent;
+/**
+ *  发表按钮
+ */
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *commitBtn;
 
 @property (weak, nonatomic) IBOutlet SCPlaceholderTextView *textView;
 /**
@@ -34,6 +38,11 @@
 @end
 
 @implementation SNEditViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.commitBtn.enabled = NO;
+}
 
 #pragma mark - 懒加载
 - (NSDictionary *)monthDict {
@@ -78,5 +87,13 @@
         self.listVc.saveNote(noteDict);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)textViewDidChange:(SCPlaceholderTextView *)textView {
+    if (self.textView.text.length > 0) {
+        self.commitBtn.enabled = YES;
+    } else {
+        self.commitBtn.enabled = NO;
+    }
 }
 @end
