@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9632D5631A38A35D00A6F746 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */; };
+		9632D5631A38A35D00A6F746 /* SCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5621A38A35D00A6F746 /* SCPlaceholderTextView.m */; };
 		9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5651A38A41200A6F746 /* SNEditViewController.m */; };
 		9632D5681A38A44B00A6F746 /* SNEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */; };
 		963C5BAD1A35E52F0052A2DD /* date.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAC1A35E52F0052A2DD /* date.plist */; };
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9632D5611A38A35D00A6F746 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
-		9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		9632D5611A38A35D00A6F746 /* SCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlaceholderTextView.h; sourceTree = "<group>"; };
+		9632D5621A38A35D00A6F746 /* SCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlaceholderTextView.m; sourceTree = "<group>"; };
 		9632D5641A38A41200A6F746 /* SNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNEditViewController.h; sourceTree = "<group>"; };
 		9632D5651A38A41200A6F746 /* SNEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNEditViewController.m; sourceTree = "<group>"; };
 		9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SNEditViewController.storyboard; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 		9632D52E1A389E3C00A6F746 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9632D5611A38A35D00A6F746 /* PlaceholderTextView.h */,
-				9632D5621A38A35D00A6F746 /* PlaceholderTextView.m */,
+				9632D5611A38A35D00A6F746 /* SCPlaceholderTextView.h */,
+				9632D5621A38A35D00A6F746 /* SCPlaceholderTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,7 +504,7 @@
 				96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */,
 				96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */,
 				96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */,
-				9632D5631A38A35D00A6F746 /* PlaceholderTextView.m in Sources */,
+				9632D5631A38A35D00A6F746 /* SCPlaceholderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

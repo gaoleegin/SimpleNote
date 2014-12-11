@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="psB-cL-FI2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -32,21 +33,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbG-4a-nmE" customClass="PlaceholderTextView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2J-Bo-VTD" userLabel="间隔线1">
+                                <rect key="frame" x="0.0" y="264" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="sF5-pU-Njo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-OR-qF1" userLabel="图片输入框">
+                                <rect key="frame" x="0.0" y="281" width="600" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMo-7d-RLH" userLabel="间隔线2">
+                                        <rect key="frame" x="0.0" y="-1" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="GX3-SW-N9L"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ors-AN-Xyk" userLabel="间隔线2">
+                                        <rect key="frame" x="0.0" y="300" width="600" height="1"/>
+                                        <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="kPV-Af-zLf"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-zm-CQS">
+                                        <rect key="frame" x="15" y="15" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Eav-R1-E2f"/>
+                                            <constraint firstAttribute="height" constant="60" id="e1j-9G-OD9"/>
+                                        </constraints>
+                                        <state key="normal" image="button_add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="1jH-Xa-qUY"/>
+                                    <constraint firstItem="MMo-7d-RLH" firstAttribute="top" secondItem="wNC-OR-qF1" secondAttribute="top" constant="-1" id="3sy-Aa-HhB"/>
+                                    <constraint firstItem="YRw-zm-CQS" firstAttribute="top" secondItem="MMo-7d-RLH" secondAttribute="bottom" constant="15" id="4b8-UA-1HI"/>
+                                    <constraint firstItem="MMo-7d-RLH" firstAttribute="leading" secondItem="wNC-OR-qF1" secondAttribute="leading" id="NqK-J6-ZXk"/>
+                                    <constraint firstAttribute="trailing" secondItem="MMo-7d-RLH" secondAttribute="trailing" id="W6d-8v-zyI"/>
+                                    <constraint firstAttribute="trailing" secondItem="ors-AN-Xyk" secondAttribute="trailing" id="hgR-L0-9aX"/>
+                                    <constraint firstAttribute="bottom" secondItem="ors-AN-Xyk" secondAttribute="bottom" constant="-1" id="qnn-o2-vvw"/>
+                                    <constraint firstItem="YRw-zm-CQS" firstAttribute="leading" secondItem="wNC-OR-qF1" secondAttribute="leading" constant="15" id="tEr-IJ-p97"/>
+                                    <constraint firstItem="ors-AN-Xyk" firstAttribute="leading" secondItem="wNC-OR-qF1" secondAttribute="leading" id="tj1-UK-lvm"/>
                                 </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbG-4a-nmE" userLabel="文本输入框" customClass="SCPlaceholderTextView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VbG-4a-nmE" firstAttribute="top" secondItem="ffs-2j-kFj" secondAttribute="bottom" id="HJo-FA-iPs"/>
-                            <constraint firstAttribute="trailing" secondItem="VbG-4a-nmE" secondAttribute="trailing" id="ZQb-jn-zRI"/>
-                            <constraint firstItem="VbG-4a-nmE" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="u5S-tj-l8l"/>
+                            <constraint firstAttribute="trailing" secondItem="k2J-Bo-VTD" secondAttribute="trailing" id="5N9-JB-XvS"/>
+                            <constraint firstItem="VbG-4a-nmE" firstAttribute="top" secondItem="ffs-2j-kFj" secondAttribute="bottom" id="E6x-dm-sln"/>
+                            <constraint firstAttribute="trailing" secondItem="wNC-OR-qF1" secondAttribute="trailing" id="GwG-56-2Ct"/>
+                            <constraint firstItem="k2J-Bo-VTD" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="K1l-NF-rCX"/>
+                            <constraint firstAttribute="trailing" secondItem="VbG-4a-nmE" secondAttribute="trailing" id="KyD-zi-Zrn"/>
+                            <constraint firstItem="wNC-OR-qF1" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="XV8-hR-hwz"/>
+                            <constraint firstAttribute="height" secondItem="VbG-4a-nmE" secondAttribute="height" multiplier="3" id="aE3-jb-5Uo"/>
+                            <constraint firstItem="VbG-4a-nmE" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="nll-p9-nfR"/>
+                            <constraint firstAttribute="height" secondItem="wNC-OR-qF1" secondAttribute="height" multiplier="2:1" id="pO3-kH-xFQ"/>
+                            <constraint firstItem="wNC-OR-qF1" firstAttribute="top" secondItem="VbG-4a-nmE" secondAttribute="bottom" constant="17" id="xPz-39-DeX"/>
+                            <constraint firstItem="k2J-Bo-VTD" firstAttribute="top" secondItem="VbG-4a-nmE" secondAttribute="bottom" id="yiv-qo-St2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="写日记" id="Sx3-cy-Iew">
@@ -67,4 +120,7 @@
             <point key="canvasLocation" x="-38" y="438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_add" width="60" height="60"/>
+    </resources>
 </document>

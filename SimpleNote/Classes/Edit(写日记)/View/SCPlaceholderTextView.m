@@ -6,15 +6,15 @@
 //  Copyright (c) 2014年 Burning_git. All rights reserved.
 //
 
-#import "PlaceholderTextView.h"
+#import "SCPlaceholderTextView.h"
 
-@interface PlaceholderTextView()<UITextViewDelegate>
+@interface SCPlaceholderTextView()<UITextViewDelegate>
 
 @property (nonatomic, weak) UILabel *placeholderLabel;
 
 @end
 
-@implementation PlaceholderTextView
+@implementation SCPlaceholderTextView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -35,7 +35,7 @@
    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChange:) name:UITextViewTextDidChangeNotification object:self];
 
-    float left = 5,top = 2,hegiht = 30;
+    float left = 10,top = 2,hegiht = 30;
     
     self.placeholderColor = [UIColor lightGrayColor];
     UILabel *placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(left, top
