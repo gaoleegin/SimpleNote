@@ -98,9 +98,17 @@
     [super viewDidLayoutSubviews];
     
     // 刷新滚动页的偏移量(如果不是第一页和最后一页, 始终偏移至中间页面)
-    if (self.index == 0) return;
-    else if (self.index == self.notes.count - 1) return;
+    if (self.index == 0) {
+        return;
+    }
+    else if (self.index == 1 && self.notes.count == 2) {
+        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+    }
+    else if (self.index == self.notes.count - 1) {
+        return;
+    }
     else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+    
     
     // 翻至第一页或最后一页时, 隐藏箭头按钮
     if (self.index == 0 || self.index == 1) {
@@ -138,9 +146,19 @@
  *  @param curPage 0:当前显示第一页 / 1:当前显示其他页 / 2:当前显示最后一页
  */
 - (void)updateData:(int)curPageState {
-    self.firstNoteView.note = self.notes[self.index - curPageState];
-    self.secondNoteView.note = self.notes[self.index - curPageState + 1];
-    self.thirdNoteView.note = self.notes[self.index - curPageState + 2];
+    if (self.notes.count > 2) {
+        self.firstNoteView.note = self.notes[self.index - curPageState];
+        self.secondNoteView.note = self.notes[self.index - curPageState + 1];
+        self.thirdNoteView.note = self.notes[self.index - curPageState + 2];
+    } else if (self.notes.count == 2 && self.index == 0) {
+        self.firstNoteView.note = self.notes[self.index - curPageState];
+        self.secondNoteView.note = self.notes[self.index - curPageState + 1];
+    } else if (self.notes.count == 2 && self.index == 1) {
+        self.firstNoteView.note = self.notes[self.index - curPageState + 1];
+        self.secondNoteView.note = self.notes[self.index - curPageState + 2];
+    } else if (self.notes.count == 1) {
+        self.firstNoteView.note = self.notes[self.index - curPageState];
+    }
 }
 
 #pragma mark - 懒加载属性
@@ -180,10 +198,14 @@
     
     // 循环显示数据源
     [self loopDisplay:curPageState];
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+    if (self.notes.count == 1) self.scrollView.contentSize = CGSizeMake(SCScreenWidth, SCScreenHeight);
+    if (self.notes.count == 2 && self.index == 0) {
+        self.scrollView.contentSize = CGSizeMake(SCScreenWidth * 2, SCScreenHeight);
+    }
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
     // 翻页动画效果
     if (offsetH > 0) { // 翻至下一页

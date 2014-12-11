@@ -22,8 +22,13 @@
 - (IBAction)dismissEditVcWithContent;
 
 @property (weak, nonatomic) IBOutlet SCPlaceholderTextView *textView;
-
+/**
+ *  月转换字典
+ */
 @property (nonatomic, strong) NSDictionary *monthDict;
+/**
+ *  日转换字典
+ */
 @property (nonatomic, strong) NSDictionary *dayDict;
 
 @end
@@ -67,9 +72,10 @@
     NSString *dayStr = [self.dayDict objectForKey:[NSString stringWithFormat:@"%.f", day]];
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
     
-    SNNoteModel *newNote = [SNNoteModel noteWithDict:@{@"date":date, @"body":self.textView.text}];
+    
+    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text};
     if (self.listVc.saveNote) {
-        self.listVc.saveNote(newNote);
+        self.listVc.saveNote(noteDict);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
