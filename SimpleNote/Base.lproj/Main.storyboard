@@ -64,7 +64,7 @@
         <!--List View Controller-->
         <scene sceneID="KsE-wG-n1w">
             <objects>
-                <viewController id="dHH-qq-kQT" customClass="SNListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="List" id="dHH-qq-kQT" customClass="SNListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QR5-pw-qOf"/>
                         <viewControllerLayoutGuide type="bottom" id="v5d-3n-kIP"/>
@@ -254,6 +254,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="aZE-Wt-Vo8" id="Knk-jU-Fnh"/>
                         <segue destination="EF5-iy-zZ7" kind="show" identifier="list2Note" id="wCW-vO-xrf"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SNListViewController;
 
 @interface SNEditViewController : UIViewController
+
+@property (nonatomic, strong) SNListViewController *listVc;
 
 @end

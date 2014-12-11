@@ -10,4 +10,6 @@
 
 @interface SNListViewController : UIViewController
 
+@property (nonatomic, copy) void(^saveNote)(NSString *body);
+
 @end

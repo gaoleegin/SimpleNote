@@ -22,6 +22,8 @@
 
 - (IBAction)showEditView;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation SNListViewController
@@ -34,6 +36,13 @@
         SNDateModel *dateM = [SNDateModel dateWithDict:dict];
         [self.notes addObject:dateM];
     }
+    __weak typeof(self) weakSelf = self;
+    self.saveNote = ^(NSString *body){
+        NSDictionary *dateDict = @{@"date":body};
+        SNDateModel *date = [SNDateModel dateWithDict:dateDict];
+        [weakSelf.dates addObject:date];
+        [weakSelf.tableView reloadData];
+    };
 }
 
 #pragma mark - 懒加载
@@ -83,7 +92,9 @@
 
 - (IBAction)showEditView {
     UIStoryboard *editSb = [UIStoryboard storyboardWithName:@"SNEditViewController" bundle:nil];
-    SNEditViewController *editVc = [editSb instantiateInitialViewController];
-    [self presentViewController:editVc animated:YES completion:nil];
+    SNEditViewController *editNc = [editSb instantiateInitialViewController];
+    [self presentViewController:editNc animated:YES completion:nil];
+    [editNc.childViewControllers[0] setListVc:self];
 }
+
 @end

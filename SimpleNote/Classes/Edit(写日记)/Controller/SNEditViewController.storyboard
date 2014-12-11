@@ -24,7 +24,7 @@
         <!--写日记-->
         <scene sceneID="ixa-hu-i9G">
             <objects>
-                <viewController id="IJD-g0-vcs" customClass="SNEditViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditVc" id="IJD-g0-vcs" customClass="SNEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ffs-2j-kFj"/>
                         <viewControllerLayoutGuide type="bottom" id="yUS-G0-DMR"/>
@@ -114,6 +114,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="VbG-4a-nmE" id="cBH-vc-8Tm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qur-qg-G2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

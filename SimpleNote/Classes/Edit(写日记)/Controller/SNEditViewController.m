@@ -7,6 +7,8 @@
 //
 
 #import "SNEditViewController.h"
+#import "SCPlaceholderTextView.h"
+#import "SNListViewController.h"
 
 @interface SNEditViewController ()
 /**
@@ -17,6 +19,8 @@
  *  发表
  */
 - (IBAction)dismissEditVcWithContent;
+
+@property (weak, nonatomic) IBOutlet SCPlaceholderTextView *textView;
 
 @end
 
@@ -47,6 +51,9 @@
 }
 
 - (IBAction)dismissEditVcWithContent {
+    if (self.listVc.saveNote) {
+        self.listVc.saveNote(self.textView.text);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
