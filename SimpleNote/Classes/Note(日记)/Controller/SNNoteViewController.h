@@ -11,8 +11,13 @@
 
 @interface SNNoteViewController : UIViewController
 /**
- *  传递过来的模型数组下标
+ *  传递过来的当前模型数组下标
  */
 @property (nonatomic, assign) int index;
+
+/**
+ *  传递过来的模型数组
+ */
+@property (nonatomic, strong) NSMutableArray *notes;
 
 @end

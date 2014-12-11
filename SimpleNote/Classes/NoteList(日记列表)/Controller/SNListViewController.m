@@ -9,7 +9,7 @@
 #import "SNListViewController.h"
 #import "SNNoteViewController.h"
 #import "SNListViewCell.h"
-#import "SNDateModel.h"
+#import "SNNoteModel.h"
 #import "UIView+tools.h"
 #import "Common.h"
 #import "SNEditViewController.h"
@@ -18,7 +18,7 @@
 
 - (IBAction)back;
 
-@property (nonatomic, strong) NSMutableArray *dates;
+@property (nonatomic, strong) NSMutableArray *notes;
 
 - (IBAction)showEditView;
 
@@ -31,26 +31,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 加载数据
-    NSArray *dateArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"date" ofType:@"plist"]];
-    for (NSDictionary *dict in dateArr) {
-        SNDateModel *dateM = [SNDateModel dateWithDict:dict];
-        [self.notes addObject:dateM];
+    NSArray *noteArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
+    for (NSDictionary *dict in noteArr) {
+        SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
+        [self.notes addObject:noteM];
     }
     __weak typeof(self) weakSelf = self;
-    self.saveNote = ^(NSString *body){
-        NSDictionary *dateDict = @{@"date":body};
-        SNDateModel *date = [SNDateModel dateWithDict:dateDict];
-        [weakSelf.dates addObject:date];
+    self.saveNote = ^(SNNoteModel *note){
+        [weakSelf.notes insertObject:note atIndex:0];
         [weakSelf.tableView reloadData];
     };
 }
 
 #pragma mark - 懒加载
 - (NSMutableArray *)notes {
-    if (!_dates) {
-        _dates = [NSMutableArray array];
+    if (!_notes) {
+        _notes = [NSMutableArray array];
     }
-    return _dates;
+    return _notes;
 }
 
 
@@ -83,6 +81,7 @@
     SNNoteViewController *noteVc = segue.destinationViewController;
     NSIndexPath *indexPath = sender;
     noteVc.index = (int)indexPath.row;
+    noteVc.notes = self.notes;
 }
 
 

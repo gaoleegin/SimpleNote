@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SNNoteModel;
 
 @interface SNListViewController : UIViewController
 
-@property (nonatomic, copy) void(^saveNote)(NSString *body);
+@property (nonatomic, copy) void(^saveNote)(SNNoteModel *body);
 
 @end

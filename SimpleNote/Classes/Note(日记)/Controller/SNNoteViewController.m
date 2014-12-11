@@ -31,10 +31,6 @@
  */
 - (IBAction)nextNote;
 /**
- *  保存模拟数据
- */
-@property (nonatomic, strong) NSMutableArray *notes;
-/**
  *  滚动视图, 用来监听偏移量
  */
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -120,13 +116,6 @@
 
 #pragma mark - 加载数据
 - (void)addData {
-    // 加载模拟数据
-    NSArray *noteArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
-    for (NSDictionary *dict in noteArr) {
-        SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
-        [self.notes addObject:noteM];
-    }
-    
     /**
      *  动态加载数据
      *  显示第一页时,从第0个数据开始往后加载
