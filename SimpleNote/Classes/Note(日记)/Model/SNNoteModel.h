@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SNNoteModel : NSObject
+@interface SNNoteModel : NSObject<NSCoding>
 /**
  *  日期
  */
@@ -26,5 +26,6 @@
  *  @return 日记模型
  */
 + (instancetype)noteWithDict:(NSDictionary *)dict;
+
 
 @end

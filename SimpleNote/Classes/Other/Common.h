@@ -2,17 +2,17 @@
 // 当前窗口
 #define SCKeyWindow ([UIApplication sharedApplication].keyWindow)
 
-// 屏幕尺寸
+// 屏幕bounds
 #define SCScreenBounds [UIScreen mainScreen].bounds
+
+// 屏幕size
+#define SCScreenSize [UIScreen mainScreen].bounds.size
 
 // 屏幕高度
 #define SCScreenHeight [UIScreen mainScreen].bounds.size.height
 
 // 屏幕宽度
 #define SCScreenWidth [UIScreen mainScreen].bounds.size.width
-
-// 是否为4英寸
-#define inch4 ([UIScreen mainScreen].bounds.size.height == 568)
 
 // 是否为IOS8以上的系统
 #define IOS8 ([UIDevice currentDevice].systemVersion.floatValue >= 8.0)
@@ -29,6 +29,9 @@
 // 转角度为弧度
 #define angle2Radian(angle) ((angle) / 180.0 * M_PI)
 
-// 快速创建image
-//#define SCImage(name) ([UIImage imageNamed:name])
+// 沙盒document路径
+#define SCDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+// 沙盒Preferences路径
+#define SCUserDefaults [NSUserDefaults standardUserDefaults]
 

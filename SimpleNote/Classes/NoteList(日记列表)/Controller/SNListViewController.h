@@ -11,6 +11,6 @@
 
 @interface SNListViewController : UIViewController
 
-@property (nonatomic, copy) void(^saveNote)(NSDictionary *noteDict);
+@property (nonatomic, copy) void(^saveNote)(SNNoteModel *newNote);
 
 @end

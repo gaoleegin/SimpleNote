@@ -12,11 +12,12 @@
 		9632D5681A38A44B00A6F746 /* SNEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */; };
 		963C5BAF1A35E5430052A2DD /* note.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAE1A35E5430052A2DD /* note.plist */; };
 		963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5BB41A35ECD70052A2DD /* SNNoteModel.m */; };
-		96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE11A3161B100ABF0B1 /* SNListViewController.m */; };
 		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
-		96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EED1A318C2600ABF0B1 /* SNListViewCell.m */; };
 		96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF41A3191C000ABF0B1 /* UIView+tools.m */; };
 		96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF81A3194EA00ABF0B1 /* SNNoteView.m */; };
+		96BE6B091A3AB70E001D1DF6 /* SNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */; };
+		96BE6B0A1A3AB70E001D1DF6 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */; };
+		96BE6B0D1A3AB748001D1DF6 /* SNNoteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */; };
 		96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DC91A3099AF00D5A16B /* Main.storyboard */; };
 		96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCC1A3099AF00D5A16B /* Images.xcassets */; };
 		96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */; };
@@ -46,17 +47,19 @@
 		963C5BAE1A35E5430052A2DD /* note.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = note.plist; sourceTree = "<group>"; };
 		963C5BB31A35ECD70052A2DD /* SNNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteModel.h; sourceTree = "<group>"; };
 		963C5BB41A35ECD70052A2DD /* SNNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteModel.m; sourceTree = "<group>"; };
-		96599EE01A3161B100ABF0B1 /* SNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewController.h; sourceTree = "<group>"; };
-		96599EE11A3161B100ABF0B1 /* SNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewController.m; sourceTree = "<group>"; };
 		96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBodyLabel.h; sourceTree = "<group>"; };
 		96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBodyLabel.m; sourceTree = "<group>"; };
-		96599EEC1A318C2600ABF0B1 /* SNListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewCell.h; sourceTree = "<group>"; };
-		96599EED1A318C2600ABF0B1 /* SNListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewCell.m; sourceTree = "<group>"; };
 		96599EF31A3191C000ABF0B1 /* UIView+tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+tools.h"; sourceTree = "<group>"; };
 		96599EF41A3191C000ABF0B1 /* UIView+tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+tools.m"; sourceTree = "<group>"; };
 		96599EF61A3191FF00ABF0B1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		96599EF71A3194EA00ABF0B1 /* SNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteView.h; sourceTree = "<group>"; };
 		96599EF81A3194EA00ABF0B1 /* SNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteView.m; sourceTree = "<group>"; };
+		96BE6B021A3AB70E001D1DF6 /* SNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewController.h; sourceTree = "<group>"; };
+		96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewController.m; sourceTree = "<group>"; };
+		96BE6B071A3AB70E001D1DF6 /* SNListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewCell.h; sourceTree = "<group>"; };
+		96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewCell.m; sourceTree = "<group>"; };
+		96BE6B0B1A3AB748001D1DF6 /* SNNoteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteTool.h; sourceTree = "<group>"; };
+		96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteTool.m; sourceTree = "<group>"; };
 		96CF4DBC1A3099AF00D5A16B /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DC01A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CF4DCA1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +140,82 @@
 			path = "UIView扩展";
 			sourceTree = "<group>";
 		};
+		96BE6AFC1A3AB6ED001D1DF6 /* Main(导航) */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6AFD1A3AB6ED001D1DF6 /* Controller */,
+				96BE6AFE1A3AB6ED001D1DF6 /* Model */,
+				96BE6AFF1A3AB6ED001D1DF6 /* View */,
+			);
+			path = "Main(导航)";
+			sourceTree = "<group>";
+		};
+		96BE6AFD1A3AB6ED001D1DF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96BE6AFE1A3AB6ED001D1DF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96BE6AFF1A3AB6ED001D1DF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96BE6B001A3AB70E001D1DF6 /* NoteList(日记列表) */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B011A3AB70E001D1DF6 /* Controller */,
+				96BE6B041A3AB70E001D1DF6 /* Model */,
+				96BE6B051A3AB70E001D1DF6 /* Tool */,
+				96BE6B061A3AB70E001D1DF6 /* View */,
+			);
+			path = "NoteList(日记列表)";
+			sourceTree = "<group>";
+		};
+		96BE6B011A3AB70E001D1DF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B021A3AB70E001D1DF6 /* SNListViewController.h */,
+				96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96BE6B041A3AB70E001D1DF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96BE6B051A3AB70E001D1DF6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B0B1A3AB748001D1DF6 /* SNNoteTool.h */,
+				96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		96BE6B061A3AB70E001D1DF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B071A3AB70E001D1DF6 /* SNListViewCell.h */,
+				96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		96CF4DB31A3099AF00D5A16B = {
 			isa = PBXGroup;
 			children = (
@@ -196,10 +275,10 @@
 		96CF4DE51A309A5000D5A16B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				96CF4DEA1A309A5000D5A16B /* Main(导航) */,
+				96BE6AFC1A3AB6ED001D1DF6 /* Main(导航) */,
 				96CF4DE61A309A5000D5A16B /* Login(登录) */,
-				96CF4DF21A309A5000D5A16B /* NoteList(日记列表) */,
 				96CF4DEE1A309A5000D5A16B /* Note(日记) */,
+				96BE6B001A3AB70E001D1DF6 /* NoteList(日记列表) */,
 				9632D52B1A389E3C00A6F746 /* Edit(写日记) */,
 				96CF4DF61A309A5000D5A16B /* Other */,
 			);
@@ -233,37 +312,6 @@
 			sourceTree = "<group>";
 		};
 		96CF4DE91A309A5000D5A16B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		96CF4DEA1A309A5000D5A16B /* Main(导航) */ = {
-			isa = PBXGroup;
-			children = (
-				96CF4DEB1A309A5000D5A16B /* Controller */,
-				96CF4DEC1A309A5000D5A16B /* Model */,
-				96CF4DED1A309A5000D5A16B /* View */,
-			);
-			path = "Main(导航)";
-			sourceTree = "<group>";
-		};
-		96CF4DEB1A309A5000D5A16B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		96CF4DEC1A309A5000D5A16B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		96CF4DED1A309A5000D5A16B /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -305,41 +353,6 @@
 				96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */,
 				96599EF71A3194EA00ABF0B1 /* SNNoteView.h */,
 				96599EF81A3194EA00ABF0B1 /* SNNoteView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		96CF4DF21A309A5000D5A16B /* NoteList(日记列表) */ = {
-			isa = PBXGroup;
-			children = (
-				96CF4DF31A309A5000D5A16B /* Controller */,
-				96CF4DF41A309A5000D5A16B /* Model */,
-				96CF4DF51A309A5000D5A16B /* View */,
-			);
-			path = "NoteList(日记列表)";
-			sourceTree = "<group>";
-		};
-		96CF4DF31A309A5000D5A16B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				96599EE01A3161B100ABF0B1 /* SNListViewController.h */,
-				96599EE11A3161B100ABF0B1 /* SNListViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		96CF4DF41A309A5000D5A16B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		96CF4DF51A309A5000D5A16B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				96599EEC1A318C2600ABF0B1 /* SNListViewCell.h */,
-				96599EED1A318C2600ABF0B1 /* SNListViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -486,14 +499,15 @@
 				96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */,
 				96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */,
 				963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */,
+				96BE6B0A1A3AB70E001D1DF6 /* SNListViewCell.m in Sources */,
 				9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */,
 				96CF4DFE1A309A5000D5A16B /* main.m in Sources */,
 				96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */,
 				96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */,
+				96BE6B0D1A3AB748001D1DF6 /* SNNoteTool.m in Sources */,
 				96CF4E011A309C3200D5A16B /* SNLoginViewController.m in Sources */,
 				96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */,
-				96599EE21A3161B100ABF0B1 /* SNListViewController.m in Sources */,
-				96599EEE1A318C2600ABF0B1 /* SNListViewCell.m in Sources */,
+				96BE6B091A3AB70E001D1DF6 /* SNListViewController.m in Sources */,
 				9632D5631A38A35D00A6F746 /* SCPlaceholderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

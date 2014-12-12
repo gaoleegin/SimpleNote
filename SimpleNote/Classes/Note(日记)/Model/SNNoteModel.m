@@ -16,4 +16,17 @@
     return noteM;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.date = [decoder decodeObjectForKey:@"date"];
+        self.body = [decoder decodeObjectForKey:@"body"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.date forKey:@"date"];
+    [encoder encodeObject:self.body forKey:@"body"];
+}
+
 @end

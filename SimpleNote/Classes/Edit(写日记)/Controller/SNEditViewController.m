@@ -83,10 +83,14 @@
     
     
     NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text};
+    SNNoteModel *newNote = [SNNoteModel noteWithDict:noteDict];
     if (self.listVc.saveNote) {
-        self.listVc.saveNote(noteDict);
+        self.listVc.saveNote(newNote);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 收回键盘
+    [self.textView resignFirstResponder];
 }
 
 - (void)textViewDidChange:(SCPlaceholderTextView *)textView {

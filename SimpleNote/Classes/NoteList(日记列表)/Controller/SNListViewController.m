@@ -13,6 +13,7 @@
 #import "UIView+tools.h"
 #import "Common.h"
 #import "SNEditViewController.h"
+#import "SNNoteTool.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -32,37 +33,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 判断用户是否第一次加载
-    NSString *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *path = [document stringByAppendingPathComponent:@"note.plist"];
-    NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:path];
-    if (!dictArr) {
+    // 从沙盒读取数据
+    _notes = [SNNoteTool notes];
+    
+    if (!_notes) {
         // 从mainBundle加载默认数据
-        NSArray *dictArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
-        for (NSDictionary *dict in dictArr) {
-            SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
-            [self.notes addObject:noteM];
-        }
-    } else {
-        // 加载用户自己的数据
+        NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
         self.dictArr = dictArr;
         for (NSDictionary *dict in dictArr) {
             SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
             [self.notes addObject:noteM];
-            NSLog(@"%@", self.notes );
         }
     }
+    
     __weak typeof(self) weakSelf = self;
-    self.saveNote = ^(NSDictionary *noteDict){
-        // 存储新日记数据至沙盒
-        [weakSelf.dictArr insertObject:noteDict atIndex:0];
-        [weakSelf.dictArr writeToFile:path atomically:YES];
-        // 转新日记字典为模型, 刷新显示
-        SNNoteModel *noteM = [SNNoteModel noteWithDict:noteDict];
-        [weakSelf.notes insertObject:noteM atIndex:0];
-        [UIView animateWithDuration:1 animations:^{
-            weakSelf.tableView.contentOffset = CGPointMake(0, 0); // 复位
-        }];
+    self.saveNote = ^(SNNoteModel *newNote){
+        [weakSelf.notes insertObject:newNote atIndex:0];
+        [SNNoteTool save:weakSelf.notes];
+
+//        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        
         [weakSelf.tableView reloadData];
     };
 }
