@@ -9,7 +9,7 @@
 #import "SNNoteViewController.h"
 #import "SNNoteModel.h"
 #import "SNNoteView.h"
-#import "UIView+tools.h"
+#import "UIView+Extension.h"
 #import "Common.h"
 #import "SNNoteModel.h"
 

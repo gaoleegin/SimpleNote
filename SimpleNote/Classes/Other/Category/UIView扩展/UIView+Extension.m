@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 heima. All rights reserved.
 //
 
-#import "UIView+tools.h"
+#import "UIView+Extension.h"
 
-@implementation UIView (tools)
+@implementation UIView (Extension)
 
 - (void)setX:(CGFloat)x
 {
@@ -30,6 +30,30 @@
 - (CGFloat)y
 {
     return self.frame.origin.y;
+}
+
+- (void)setCenterX:(CGFloat)centerX
+{
+    CGPoint center = self.center;
+    center.x = centerX;
+    self.center = center;
+}
+
+- (CGFloat)centerX
+{
+    return self.center.x;
+}
+
+- (void)setCenterY:(CGFloat)centerY
+{
+    CGPoint center = self.center;
+    center.y = centerY;
+    self.center = center;
+}
+
+- (CGFloat)centerY
+{
+    return self.center.y;
 }
 
 - (void)setWidth:(CGFloat)width
@@ -57,6 +81,29 @@
     return self.frame.size.height;
 }
 
+- (void)setSize:(CGSize)size
+{
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGSize)size
+{
+    return self.frame.size;
+}
+
+- (void)setOrigin:(CGPoint)origin
+{
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
+}
+
+- (CGPoint)origin
+{
+    return self.frame.origin;
+}
 
 + (instancetype)viewWithXib:(NSString *)fileName
 {

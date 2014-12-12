@@ -35,6 +35,9 @@
  */
 @property (nonatomic, strong) NSDictionary *dayDict;
 
+
+- (IBAction)addImage;
+
 @end
 
 @implementation SNEditViewController
@@ -59,8 +62,16 @@
     return _dayDict;
 }
 
+- (IBAction)addImage {
+    UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+}
+
 - (IBAction)dismissEditVc {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 收回键盘
+    [self.textView resignFirstResponder];
 }
 
 - (IBAction)dismissEditVcWithContent {

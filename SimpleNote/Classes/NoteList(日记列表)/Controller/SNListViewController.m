@@ -10,7 +10,6 @@
 #import "SNNoteViewController.h"
 #import "SNListViewCell.h"
 #import "SNNoteModel.h"
-#import "UIView+tools.h"
 #import "Common.h"
 #import "SNEditViewController.h"
 #import "SNNoteTool.h"
@@ -50,12 +49,17 @@
     self.saveNote = ^(SNNoteModel *newNote){
         [weakSelf.notes insertObject:newNote atIndex:0];
         [SNNoteTool save:weakSelf.notes];
-
-//        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
-        
         [weakSelf.tableView reloadData];
+        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        });
     };
 }
+//dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+//});
+
 
 #pragma mark - 懒加载
 - (NSMutableArray *)notes {

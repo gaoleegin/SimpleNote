@@ -13,11 +13,12 @@
 		963C5BAF1A35E5430052A2DD /* note.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAE1A35E5430052A2DD /* note.plist */; };
 		963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5BB41A35ECD70052A2DD /* SNNoteModel.m */; };
 		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
-		96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF41A3191C000ABF0B1 /* UIView+tools.m */; };
 		96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF81A3194EA00ABF0B1 /* SNNoteView.m */; };
 		96BE6B091A3AB70E001D1DF6 /* SNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */; };
 		96BE6B0A1A3AB70E001D1DF6 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */; };
 		96BE6B0D1A3AB748001D1DF6 /* SNNoteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */; };
+		96BE6B121A3AC446001D1DF6 /* SCPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B111A3AC446001D1DF6 /* SCPopMenu.m */; };
+		96BE6B161A3AC5D0001D1DF6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B151A3AC5D0001D1DF6 /* UIView+Extension.m */; };
 		96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DC91A3099AF00D5A16B /* Main.storyboard */; };
 		96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCC1A3099AF00D5A16B /* Images.xcassets */; };
 		96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */; };
@@ -49,8 +50,6 @@
 		963C5BB41A35ECD70052A2DD /* SNNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteModel.m; sourceTree = "<group>"; };
 		96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBodyLabel.h; sourceTree = "<group>"; };
 		96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBodyLabel.m; sourceTree = "<group>"; };
-		96599EF31A3191C000ABF0B1 /* UIView+tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+tools.h"; sourceTree = "<group>"; };
-		96599EF41A3191C000ABF0B1 /* UIView+tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+tools.m"; sourceTree = "<group>"; };
 		96599EF61A3191FF00ABF0B1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		96599EF71A3194EA00ABF0B1 /* SNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteView.h; sourceTree = "<group>"; };
 		96599EF81A3194EA00ABF0B1 /* SNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteView.m; sourceTree = "<group>"; };
@@ -60,6 +59,10 @@
 		96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewCell.m; sourceTree = "<group>"; };
 		96BE6B0B1A3AB748001D1DF6 /* SNNoteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteTool.h; sourceTree = "<group>"; };
 		96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteTool.m; sourceTree = "<group>"; };
+		96BE6B101A3AC446001D1DF6 /* SCPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPopMenu.h; sourceTree = "<group>"; };
+		96BE6B111A3AC446001D1DF6 /* SCPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPopMenu.m; sourceTree = "<group>"; };
+		96BE6B141A3AC5D0001D1DF6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		96BE6B151A3AC5D0001D1DF6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		96CF4DBC1A3099AF00D5A16B /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DC01A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CF4DCA1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		9632D52B1A389E3C00A6F746 /* Edit(写日记) */ = {
 			isa = PBXGroup;
 			children = (
+				96BE6B0E1A3AC43D001D1DF6 /* Tool */,
 				9632D52C1A389E3C00A6F746 /* Controller */,
 				9632D52D1A389E3C00A6F746 /* Model */,
 				9632D52E1A389E3C00A6F746 /* View */,
@@ -129,15 +133,6 @@
 				9632D5621A38A35D00A6F746 /* SCPlaceholderTextView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		96599EF21A3191C000ABF0B1 /* UIView扩展 */ = {
-			isa = PBXGroup;
-			children = (
-				96599EF31A3191C000ABF0B1 /* UIView+tools.h */,
-				96599EF41A3191C000ABF0B1 /* UIView+tools.m */,
-			);
-			path = "UIView扩展";
 			sourceTree = "<group>";
 		};
 		96BE6AFC1A3AB6ED001D1DF6 /* Main(导航) */ = {
@@ -216,6 +211,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		96BE6B0E1A3AC43D001D1DF6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B0F1A3AC446001D1DF6 /* PopMenu */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		96BE6B0F1A3AC446001D1DF6 /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B101A3AC446001D1DF6 /* SCPopMenu.h */,
+				96BE6B111A3AC446001D1DF6 /* SCPopMenu.m */,
+			);
+			path = PopMenu;
+			sourceTree = "<group>";
+		};
+		96BE6B131A3AC5D0001D1DF6 /* UIView扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				96BE6B141A3AC5D0001D1DF6 /* UIView+Extension.h */,
+				96BE6B151A3AC5D0001D1DF6 /* UIView+Extension.m */,
+			);
+			path = "UIView扩展";
+			sourceTree = "<group>";
+		};
 		96CF4DB31A3099AF00D5A16B = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +298,8 @@
 			children = (
 				96BE6AFC1A3AB6ED001D1DF6 /* Main(导航) */,
 				96CF4DE61A309A5000D5A16B /* Login(登录) */,
-				96CF4DEE1A309A5000D5A16B /* Note(日记) */,
 				96BE6B001A3AB70E001D1DF6 /* NoteList(日记列表) */,
+				96CF4DEE1A309A5000D5A16B /* Note(日记) */,
 				9632D52B1A389E3C00A6F746 /* Edit(写日记) */,
 				96CF4DF61A309A5000D5A16B /* Other */,
 			);
@@ -374,7 +395,7 @@
 		96CF4DF91A309A5000D5A16B /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				96599EF21A3191C000ABF0B1 /* UIView扩展 */,
+				96BE6B131A3AC5D0001D1DF6 /* UIView扩展 */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -496,8 +517,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BE6B121A3AC446001D1DF6 /* SCPopMenu.m in Sources */,
 				96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */,
-				96599EF51A3191C000ABF0B1 /* UIView+tools.m in Sources */,
 				963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */,
 				96BE6B0A1A3AB70E001D1DF6 /* SNListViewCell.m in Sources */,
 				9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */,
@@ -506,6 +527,7 @@
 				96CF4E0A1A30A29300D5A16B /* SNNoteViewController.m in Sources */,
 				96BE6B0D1A3AB748001D1DF6 /* SNNoteTool.m in Sources */,
 				96CF4E011A309C3200D5A16B /* SNLoginViewController.m in Sources */,
+				96BE6B161A3AC5D0001D1DF6 /* UIView+Extension.m in Sources */,
 				96CF4DFD1A309A5000D5A16B /* AppDelegate.m in Sources */,
 				96BE6B091A3AB70E001D1DF6 /* SNListViewController.m in Sources */,
 				9632D5631A38A35D00A6F746 /* SCPlaceholderTextView.m in Sources */,
