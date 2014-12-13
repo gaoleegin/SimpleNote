@@ -10,8 +10,9 @@
 #import "SCPlaceholderTextView.h"
 #import "SNListViewController.h"
 #import "SNNoteModel.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface SNEditViewController ()<UITextViewDelegate>
+@interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
  *  取消
  */
@@ -35,9 +36,11 @@
  */
 @property (nonatomic, strong) NSDictionary *dayDict;
 
+@property (weak, nonatomic) IBOutlet UIButton *addImageBtn;
 
 - (IBAction)addImage;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView;
 @end
 
 @implementation SNEditViewController
@@ -62,9 +65,46 @@
     return _dayDict;
 }
 
+#pragma mark - 跳转照片选择控制器
 - (IBAction)addImage {
-    UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
+    /*
+    UIImagePickerControllerSourceTypePhotoLibrary,
+    UIImagePickerControllerSourceTypeCamera,
+    UIImagePickerControllerSourceTypeSavedPhotosAlbum
+    */
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
+        imagePickerVc.delegate = self;
+        imagePickerVc.allowsEditing = YES;
+        imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        
+        [self presentViewController:imagePickerVc animated:YES completion:nil];
+    }
+}
+
+#pragma mark - 照片选择控制器代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString *mediaType = info[UIImagePickerControllerMediaType];
+    
+    if ([mediaType isEqual:(NSString *)kUTTypeImage]) {
+        // 1.1.1判断图片选择器是否允许编辑
+        UIImage *resultImage = nil;
+        if (picker.allowsEditing) {
+            // 允许编辑
+            resultImage = info[UIImagePickerControllerEditedImage];
+        }else
+        {
+            resultImage = info[UIImagePickerControllerOriginalImage];
+        }
+        // 1.1.2设置图片到图片容器上
+#warning 图片功能
+        self.addImageView.image = resultImage;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)dismissEditVc {
@@ -74,6 +114,10 @@
     [self.textView resignFirstResponder];
 }
 
+
+/**
+ *  发表日记
+ */
 - (IBAction)dismissEditVcWithContent {
     // 获取日历
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -102,6 +146,11 @@
     
     // 收回键盘
     [self.textView resignFirstResponder];
+    
+    
+    
+    
+    [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
 - (void)textViewDidChange:(SCPlaceholderTextView *)textView {

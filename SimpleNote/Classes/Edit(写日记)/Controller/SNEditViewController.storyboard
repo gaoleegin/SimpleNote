@@ -70,9 +70,18 @@
                                             <action selector="addImage" destination="IJD-g0-vcs" eventType="touchUpInside" id="AIf-As-J5L"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B13-VY-YJi">
+                                        <rect key="frame" x="88" y="15" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Geb-1B-R47"/>
+                                            <constraint firstAttribute="height" constant="60" id="Pmu-MG-VPm"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="B13-VY-YJi" firstAttribute="top" secondItem="wNC-OR-qF1" secondAttribute="top" constant="15" id="2bN-ON-UZp"/>
+                                    <constraint firstItem="B13-VY-YJi" firstAttribute="leading" secondItem="YRw-zm-CQS" secondAttribute="trailing" constant="13" id="3b5-cE-QI4"/>
                                     <constraint firstItem="MMo-7d-RLH" firstAttribute="top" secondItem="wNC-OR-qF1" secondAttribute="top" constant="-1" id="3sy-Aa-HhB"/>
                                     <constraint firstItem="YRw-zm-CQS" firstAttribute="top" secondItem="MMo-7d-RLH" secondAttribute="bottom" constant="15" id="4b8-UA-1HI"/>
                                     <constraint firstItem="MMo-7d-RLH" firstAttribute="leading" secondItem="wNC-OR-qF1" secondAttribute="leading" id="NqK-J6-ZXk"/>
@@ -121,6 +130,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addImageBtn" destination="YRw-zm-CQS" id="3cN-hs-5rB"/>
+                        <outlet property="addImageView" destination="B13-VY-YJi" id="jgF-6r-i47"/>
                         <outlet property="commitBtn" destination="aqa-x4-yaQ" id="h4r-g3-BlH"/>
                         <outlet property="textView" destination="VbG-4a-nmE" id="cBH-vc-8Tm"/>
                     </connections>
