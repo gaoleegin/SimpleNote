@@ -306,15 +306,17 @@
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn">
                                                                                 <rect key="frame" x="130" y="10" width="280" height="280"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="280" id="Lc0-14-yKA"/>
+                                                                                    <constraint firstAttribute="width" constant="280" id="iH3-r4-s5t"/>
+                                                                                </constraints>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="bpP-4z-3jn" secondAttribute="bottom" constant="10" id="0Zw-3A-TLA"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="bpP-4z-3jn" secondAttribute="trailing" constant="130" id="IH1-nQ-hCh"/>
+                                                                            <constraint firstAttribute="centerX" secondItem="bpP-4z-3jn" secondAttribute="centerX" id="6dc-gM-567"/>
                                                                             <constraint firstItem="bpP-4z-3jn" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="top" constant="10" id="ceE-Ig-6zz"/>
                                                                             <constraint firstAttribute="height" constant="300" id="jov-kT-NIv"/>
-                                                                            <constraint firstItem="bpP-4z-3jn" firstAttribute="leading" secondItem="ULY-M4-Km9" secondAttribute="leading" constant="130" id="sxS-WE-ew0"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部视图">
@@ -468,7 +470,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0yK-cy-MTF" userLabel="imageView">
-                                                                        <rect key="frame" x="54" y="74" width="51" height="50"/>
+                                                                        <rect key="frame" x="-17" y="21" width="36" height="30"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPL-CF-Awx"/>
                                                                         </subviews>
@@ -527,15 +529,17 @@
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv">
                                                                                 <rect key="frame" x="130" y="10" width="280" height="280"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="280" id="JCN-s7-Spd"/>
+                                                                                    <constraint firstAttribute="height" constant="280" id="uRA-qe-wfE"/>
+                                                                                </constraints>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="kaG-HV-Oiv" firstAttribute="leading" secondItem="EIN-k6-Xsc" secondAttribute="leading" constant="130" id="0Ck-jP-VIh"/>
                                                                             <constraint firstItem="kaG-HV-Oiv" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="top" constant="10" id="2fU-lC-ujX"/>
+                                                                            <constraint firstAttribute="centerX" secondItem="kaG-HV-Oiv" secondAttribute="centerX" id="KCW-mk-FeN"/>
                                                                             <constraint firstAttribute="height" constant="300" id="RjW-2z-SsF"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="kaG-HV-Oiv" secondAttribute="trailing" constant="130" id="dQX-DD-mFv"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="kaG-HV-Oiv" secondAttribute="bottom" constant="10" id="wVB-26-CnI"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>

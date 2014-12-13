@@ -87,7 +87,7 @@
     SNListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     cell.note = self.notes[indexPath.row];
-    
+        
     return cell;
     
 }

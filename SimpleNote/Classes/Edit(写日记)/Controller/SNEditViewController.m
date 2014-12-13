@@ -13,7 +13,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SNImageTool.h"
 
-#define SNImagePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -78,7 +77,6 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
         imagePickerVc.delegate = self;
-//        imagePickerVc.allowsEditing = YES;
         imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
         [self presentViewController:imagePickerVc animated:YES completion:nil];
@@ -129,22 +127,33 @@
          NSCalendarUnitYear               = kCFCalendarUnitYear,
          NSCalendarUnitMonth              = kCFCalendarUnitMonth,
          NSCalendarUnitDay                = kCFCalendarUnitDay,
+         kCFCalendarUnitHour = (1UL << 5),
+         kCFCalendarUnitMinute = (1UL << 6),
+         kCFCalendarUnitSecond = (1UL << 7),
      */
-    NSDateComponents *dateComponents = [calendar components:kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [calendar components:kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond fromDate:[NSDate date]];
 //    CGFloat year = dateComponents.year;
     CGFloat month = dateComponents.month;
     CGFloat day = dateComponents.day;
+    CGFloat hour = dateComponents.hour;
+    CGFloat minute = dateComponents.minute;
+    CGFloat second = dateComponents.second;
     
     NSString *monthStr = [self.monthDict objectForKey:[NSString stringWithFormat:@"%.f", month]];
     NSString *dayStr = [self.dayDict objectForKey:[NSString stringWithFormat:@"%.f", day]];
+    NSString *hourStr = [NSString stringWithFormat:@"%02.f", hour];
+    NSString *minuteStr = [NSString stringWithFormat:@"%02.f", minute];
+    NSString *secondStr = [NSString stringWithFormat:@"%02.f", second];
+    NSLog(@"%@%@%@",hourStr,minuteStr,secondStr);
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
+    NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"%@%@%@", hourStr, minuteStr, secondStr]];
+    
     
     // 图片路径
-    NSString *imageName = [date stringByAppendingPathExtension:@"png"];
-    NSString *imagePath = [SNImagePath stringByAppendingPathComponent:imageName];
-    [SNImageTool save:self.addImageView.image imagePath:imagePath];
+    NSString *imageName = [imageID stringByAppendingPathExtension:@"png"];
+    [SNImageTool save:self.addImageView.image imageName:imageName];
 
-    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imagePath":imagePath};
+    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imageName":imageName};
     SNNoteModel *newNote = [SNNoteModel noteWithDict:noteDict];
     if (self.listVc.saveNote) {
         self.listVc.saveNote(newNote);

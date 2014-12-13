@@ -9,6 +9,7 @@
 #import "SNNoteView.h"
 #import "SNBodyLabel.h"
 #import "SNNoteModel.h"
+#import "SNImageTool.h"
 
 @interface SNNoteView()
 /**
@@ -35,10 +36,9 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
-    if (note.imagePath) {
-        self.imageView.image = [UIImage imageWithContentsOfFile:note.imagePath];
+    if (note.imageName) {
+        self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
     }
-    NSLog(@"%@",note.imagePath);
 }
 
 

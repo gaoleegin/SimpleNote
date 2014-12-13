@@ -13,12 +13,12 @@
 /**
  *  存储日记图片
  */
-+ (void)save:(UIImage *)image imagePath:(NSString *)imagePath;
++ (void)save:(UIImage *)image imageName:(NSString *)imageName;
 
 
-///**
-// *  读取日记图片路径
-// */
-//+ (NSString *)imagePath:(NSString *)imagePath;
+/**
+ *  读取日记图片路径
+ */
++ (NSString *)imagePath:(NSString *)imageName;
 
 @end
