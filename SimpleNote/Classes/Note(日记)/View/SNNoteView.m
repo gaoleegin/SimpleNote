@@ -38,6 +38,8 @@
     self.textLabel.text = note.body;
     if (note.imageName) {
         self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+    } else {
+        self.imageView.image = nil;
     }
 }
 

@@ -77,6 +77,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
         imagePickerVc.delegate = self;
+        imagePickerVc.allowsEditing = YES;
         imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
         [self presentViewController:imagePickerVc animated:YES completion:nil];
@@ -98,7 +99,6 @@
             resultImage = info[UIImagePickerControllerOriginalImage];
         }
         // 1.1.2设置图片到图片容器上
-#warning 图片功能
         self.addImageView.image = resultImage;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -144,7 +144,6 @@
     NSString *hourStr = [NSString stringWithFormat:@"%02.f", hour];
     NSString *minuteStr = [NSString stringWithFormat:@"%02.f", minute];
     NSString *secondStr = [NSString stringWithFormat:@"%02.f", second];
-    NSLog(@"%@%@%@",hourStr,minuteStr,secondStr);
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
     NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"%@%@%@", hourStr, minuteStr, secondStr]];
     

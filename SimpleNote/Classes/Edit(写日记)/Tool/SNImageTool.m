@@ -19,7 +19,6 @@
 }
 
 + (NSString *)imagePath:(NSString *)imageName {
-    NSLog(@"%@",[SNImagePath stringByAppendingString:imageName]);
     return [SNImagePath stringByAppendingPathComponent:imageName];
 }
 
