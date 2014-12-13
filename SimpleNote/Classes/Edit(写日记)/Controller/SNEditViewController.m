@@ -78,7 +78,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
         imagePickerVc.delegate = self;
-        imagePickerVc.allowsEditing = YES;
+//        imagePickerVc.allowsEditing = YES;
         imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
         [self presentViewController:imagePickerVc animated:YES completion:nil];
