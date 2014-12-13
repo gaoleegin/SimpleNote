@@ -11,6 +11,9 @@
 #import "SNListViewController.h"
 #import "SNNoteModel.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "SNImageTool.h"
+
+#define SNImagePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -136,8 +139,12 @@
     NSString *dayStr = [self.dayDict objectForKey:[NSString stringWithFormat:@"%.f", day]];
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
     
-    
-    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text};
+    // 图片路径
+    NSString *imageName = [date stringByAppendingPathExtension:@"png"];
+    NSString *imagePath = [SNImagePath stringByAppendingPathComponent:imageName];
+    [SNImageTool save:self.addImageView.image imagePath:imagePath];
+
+    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imagePath":imagePath};
     SNNoteModel *newNote = [SNNoteModel noteWithDict:noteDict];
     if (self.listVc.saveNote) {
         self.listVc.saveNote(newNote);
@@ -147,8 +154,7 @@
     // 收回键盘
     [self.textView resignFirstResponder];
     
-    
-    
+
     
     [UIApplication sharedApplication].statusBarHidden = YES;
 }

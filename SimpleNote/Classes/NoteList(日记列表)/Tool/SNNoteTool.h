@@ -22,7 +22,4 @@
  */
 + (NSMutableArray *)notes;
 
-/**
- *  从
- */
 @end

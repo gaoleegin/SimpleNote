@@ -17,7 +17,10 @@
  *  正文
  */
 @property (nonatomic, copy) NSString *body;
-
+/**
+ *  配图路径
+ */
+@property (nonatomic, copy) NSString *imagePath;
 /**
  *  <初始化方法>从字典加载属性
  *

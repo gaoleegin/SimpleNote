@@ -20,6 +20,8 @@
  */
 @property (weak, nonatomic) IBOutlet SNBodyLabel *textLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation SNNoteView
@@ -33,6 +35,10 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
+    if (note.imagePath) {
+        self.imageView.image = [UIImage imageWithContentsOfFile:note.imagePath];
+    }
+    NSLog(@"%@",note.imagePath);
 }
 
 

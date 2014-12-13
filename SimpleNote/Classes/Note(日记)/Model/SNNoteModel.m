@@ -20,6 +20,7 @@
     if (self = [super init]) {
         self.date = [decoder decodeObjectForKey:@"date"];
         self.body = [decoder decodeObjectForKey:@"body"];
+        self.imagePath = [decoder decodeObjectForKey:@"imagePath"];
     }
     return self;
 }
@@ -27,6 +28,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.date forKey:@"date"];
     [encoder encodeObject:self.body forKey:@"body"];
+    [encoder encodeObject:self.imagePath forKey:@"imagePath"];
 }
 
 @end

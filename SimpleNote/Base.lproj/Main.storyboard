@@ -447,6 +447,13 @@
                                                                             <outlet property="navBar" destination="Oca-uO-A7b" id="11s-8k-eCd"/>
                                                                         </connections>
                                                                     </label>
+                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0yK-cy-MTF" userLabel="imageView">
+                                                                        <rect key="frame" x="-57" y="75" width="25" height="44"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPL-CF-Awx"/>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="448" width="540" height="55"/>
                                                                         <subviews>
@@ -588,22 +595,26 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtM-p6-l2T" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="503"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="367" text="文本" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-WU-Lt0" customClass="SNBodyLabel">
-                                                                        <rect key="frame" x="30" y="40" width="540" height="367"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                        <connections>
-                                                                            <outlet property="arrowView" destination="3ge-hV-ktr" id="Qc8-dF-zpF"/>
-                                                                            <outlet property="cons" destination="yei-YQ-gmi" id="ylJ-KJ-mfl"/>
-                                                                            <outlet property="consTop" destination="7Fz-n7-Enr" id="t5p-8k-LfZ"/>
-                                                                            <outlet property="navBar" destination="at1-Li-Ezf" id="ypY-GE-BSD"/>
-                                                                        </connections>
-                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="imageView">
+                                                                        <rect key="frame" x="30" y="150" width="540" height="300"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb">
+                                                                                <rect key="frame" x="130" y="12" width="280" height="280"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="33N-UQ-vxb" firstAttribute="leading" secondItem="9xz-03-QIh" secondAttribute="leading" constant="130" id="EXe-kH-nIM"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="33N-UQ-vxb" secondAttribute="bottom" constant="8" id="QN9-gI-POM"/>
+                                                                            <constraint firstAttribute="height" constant="300" id="QQT-Pe-Xbf"/>
+                                                                            <constraint firstItem="33N-UQ-vxb" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="top" constant="12" id="YUP-xS-wsc"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="33N-UQ-vxb" secondAttribute="trailing" constant="130" id="xIf-yw-LPz"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="448" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="480" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -654,16 +665,31 @@
                                                                             <constraint firstAttribute="centerX" secondItem="erZ-PN-GDD" secondAttribute="centerX" id="m4c-ER-HlA"/>
                                                                         </constraints>
                                                                     </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="正文..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-WU-Lt0" customClass="SNBodyLabel">
+                                                                        <rect key="frame" x="30" y="40" width="540" height="80"/>
+                                                                        <color key="backgroundColor" red="0.76470588240000004" green="0.76470588240000004" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <connections>
+                                                                            <outlet property="arrowView" destination="3ge-hV-ktr" id="Qc8-dF-zpF"/>
+                                                                            <outlet property="consTop" destination="7Fz-n7-Enr" id="t5p-8k-LfZ"/>
+                                                                            <outlet property="navBar" destination="at1-Li-Ezf" id="ypY-GE-BSD"/>
+                                                                        </connections>
+                                                                    </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="3ge-hV-ktr" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="bottom" constant="30" id="6ku-AO-1YT"/>
                                                                     <constraint firstItem="IEg-WU-Lt0" firstAttribute="top" secondItem="BtM-p6-l2T" secondAttribute="top" constant="40" id="7Fz-n7-Enr"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="9xz-03-QIh" secondAttribute="trailing" constant="30" id="H7o-54-lCt"/>
+                                                                    <constraint firstItem="9xz-03-QIh" firstAttribute="top" secondItem="IEg-WU-Lt0" secondAttribute="bottom" constant="30" id="LIQ-Lu-h62"/>
                                                                     <constraint firstItem="3ge-hV-ktr" firstAttribute="leading" secondItem="BtM-p6-l2T" secondAttribute="leading" constant="30" id="QYy-0b-hZo"/>
                                                                     <constraint firstAttribute="bottom" secondItem="3ge-hV-ktr" secondAttribute="bottom" id="gGP-Bl-jhK"/>
                                                                     <constraint firstAttribute="trailing" secondItem="3ge-hV-ktr" secondAttribute="trailing" constant="30" id="hm5-uO-bBt"/>
                                                                     <constraint firstItem="IEg-WU-Lt0" firstAttribute="leading" secondItem="BtM-p6-l2T" secondAttribute="leading" constant="30" id="n4O-k4-4I2"/>
                                                                     <constraint firstAttribute="trailing" secondItem="IEg-WU-Lt0" secondAttribute="trailing" constant="30" id="t0W-C7-tBF"/>
-                                                                    <constraint firstItem="3ge-hV-ktr" firstAttribute="top" secondItem="IEg-WU-Lt0" secondAttribute="bottom" constant="41" id="yei-YQ-gmi"/>
+                                                                    <constraint firstItem="9xz-03-QIh" firstAttribute="leading" secondItem="BtM-p6-l2T" secondAttribute="leading" constant="30" id="wfR-CN-Xf8"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -737,6 +763,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="date" destination="Cka-an-cme" id="6ga-YS-LMZ"/>
+                                                    <outlet property="imageView" destination="33N-UQ-vxb" id="Suz-Ky-bPi"/>
                                                     <outlet property="textLabel" destination="IEg-WU-Lt0" id="mb3-Fd-X3i"/>
                                                 </connections>
                                             </view>
