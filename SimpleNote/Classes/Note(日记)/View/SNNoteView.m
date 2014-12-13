@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet SNBodyLabel *textLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons;
 
 @end
 
@@ -38,10 +39,11 @@
     self.textLabel.text = note.body;
     if (note.imageName) {
         self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
-    } else {
-        self.imageView.image = nil;
-    }
+        self.imageViewHeightCons.constant = 300;
+        } else {
+            self.imageView.image = nil;
+            self.imageViewHeightCons.constant = 0;
+            }
 }
-
 
 @end

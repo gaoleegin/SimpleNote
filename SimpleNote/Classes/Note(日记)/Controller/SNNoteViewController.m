@@ -119,6 +119,7 @@
         self.leftArrowBtn.hidden = NO;
         self.rightArrowBtn.hidden = NO;
     }
+    
 }
 
 
