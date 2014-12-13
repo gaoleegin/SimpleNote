@@ -300,6 +300,7 @@
                                                                             <outlet property="cons" destination="Mn1-8K-AKO" id="dsW-ro-Jpm"/>
                                                                             <outlet property="consMiddle" destination="ZiB-3j-UHn" id="hlC-QT-9HM"/>
                                                                             <outlet property="consTop" destination="7Fz-n7-Enr" id="3Jb-yC-vDH"/>
+                                                                            <outlet property="imageView" destination="ULY-M4-Km9" id="N3X-bD-wWZ"/>
                                                                             <outlet property="navBar" destination="mG7-6v-gJF" id="Irt-qk-zyJ"/>
                                                                         </connections>
                                                                     </label>
@@ -470,16 +471,10 @@
                                                                             <outlet property="cons" destination="8gm-LD-r8y" id="wke-67-8xg"/>
                                                                             <outlet property="consMiddle" destination="mEK-YY-2lP" id="UHb-W8-hFv"/>
                                                                             <outlet property="consTop" destination="7Fz-n7-Enr" id="bfE-sw-l8X"/>
+                                                                            <outlet property="imageView" destination="EIN-k6-Xsc" id="0vD-EH-A0L"/>
                                                                             <outlet property="navBar" destination="Oca-uO-A7b" id="11s-8k-eCd"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0yK-cy-MTF" userLabel="imageView">
-                                                                        <rect key="frame" x="13" y="61" width="3" height="95"/>
-                                                                        <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPL-CF-Awx"/>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="458" width="540" height="55"/>
                                                                         <subviews>
