@@ -41,8 +41,24 @@
 @property (weak, nonatomic) IBOutlet UIButton *addImageBtn;
 
 - (IBAction)addImage;
-
+/**
+ *  图片容器视图
+ */
+@property (weak, nonatomic) IBOutlet UIView *imageContainerView;
+/**
+ *  图片视图
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView2;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView3;
+
+
+
+
+
+@property (nonatomic, assign) int addImageCount;
 @end
 
 @implementation SNEditViewController
@@ -50,6 +66,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.commitBtn.enabled = NO;
+    self.addImageCount = 0;
 }
 
 #pragma mark - 懒加载
@@ -98,11 +115,25 @@
         {
             resultImage = info[UIImagePickerControllerOriginalImage];
         }
+#warning 在这里设置图片容器逻辑
         // 1.1.2设置图片到图片容器上
-        self.addImageView.image = resultImage;
+        switch (self.addImageCount) {
+            case 0:
+                self.addImageView.image = resultImage;
+                break;
+            case 1:
+                self.addImageView2.image = resultImage;
+                break;
+            case 2:
+                self.addImageView3.image = resultImage;
+                break;
+            default:
+                break;
+        }
     }
     [self dismissViewControllerAnimated:YES completion:^{
         self.commitBtn.enabled = YES;
+        self.addImageCount++;
     }];
 }
 
