@@ -487,7 +487,9 @@
                                                     <outlet property="date" destination="eNV-vV-3mL" id="yQM-oE-J1a"/>
                                                     <outlet property="imageView" destination="bpP-4z-3jn" id="95s-bW-Zmw"/>
                                                     <outlet property="imageView2" destination="TVL-B1-ynH" id="DIz-Ud-Bb4"/>
+                                                    <outlet property="imageView2ToimageViewMargin" destination="j5g-Pb-meX" id="7QF-70-uNG"/>
                                                     <outlet property="imageView3" destination="fCh-qm-vEO" id="p3s-bm-4Jm"/>
+                                                    <outlet property="imageView3ToimageView2Margin" destination="PW4-lS-Ss1" id="ziC-cS-9Ci"/>
                                                     <outlet property="imageViewHeightCons" destination="Lc0-14-yKA" id="iwF-gb-W21"/>
                                                     <outlet property="imageViewHeightCons2" destination="Tcz-0o-PFo" id="Gkr-DO-afD"/>
                                                     <outlet property="imageViewHeightCons3" destination="yan-J5-ZWj" id="Dvj-uw-CIO"/>
@@ -709,7 +711,9 @@
                                                     <outlet property="date" destination="k1V-28-sOx" id="JPv-kX-SXo"/>
                                                     <outlet property="imageView" destination="kaG-HV-Oiv" id="D6e-Zp-i5G"/>
                                                     <outlet property="imageView2" destination="tFw-j0-dws" id="RC4-jn-dcZ"/>
+                                                    <outlet property="imageView2ToimageViewMargin" destination="Pgj-5u-T5C" id="SQv-ih-XtZ"/>
                                                     <outlet property="imageView3" destination="AoO-hf-lt8" id="utI-P0-grA"/>
+                                                    <outlet property="imageView3ToimageView2Margin" destination="MfG-kT-dDG" id="Que-Au-3aJ"/>
                                                     <outlet property="imageViewHeightCons" destination="uRA-qe-wfE" id="hJD-bg-1WD"/>
                                                     <outlet property="imageViewHeightCons2" destination="i9w-30-HiU" id="Pi9-Kb-0ov"/>
                                                     <outlet property="imageViewHeightCons3" destination="HJ4-RS-cLw" id="pd3-je-YXQ"/>
@@ -935,7 +939,9 @@
                                                     <outlet property="date" destination="Cka-an-cme" id="6ga-YS-LMZ"/>
                                                     <outlet property="imageView" destination="33N-UQ-vxb" id="Suz-Ky-bPi"/>
                                                     <outlet property="imageView2" destination="Y4F-SB-U0K" id="Z9S-O3-xrh"/>
+                                                    <outlet property="imageView2ToimageViewMargin" destination="wRc-a6-git" id="Ebe-4S-ziL"/>
                                                     <outlet property="imageView3" destination="v2u-9p-Eve" id="kL0-9f-7l7"/>
+                                                    <outlet property="imageView3ToimageView2Margin" destination="SkF-DT-pn2" id="PYr-db-jos"/>
                                                     <outlet property="imageViewHeightCons" destination="694-GH-ABC" id="s8m-Pw-CKH"/>
                                                     <outlet property="imageViewHeightCons2" destination="Ltj-w6-BOe" id="Abr-UJ-m6F"/>
                                                     <outlet property="imageViewHeightCons3" destination="KWK-Lz-rEh" id="6p9-SA-OAn"/>

@@ -38,6 +38,10 @@
  */
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons;
 /**
+ *  第一张图片距离第二张间隔约束
+ */
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageView2ToimageViewMargin;
+/**
  *  图片容器内第二张图片
  */
 @property (weak, nonatomic) IBOutlet UIImageView *imageView2;
@@ -45,6 +49,8 @@
  *  第二张图片高度约束
  */
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons2;
+
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageView3ToimageView2Margin;
 /**
  *  图片容器内第三张图片
  */
@@ -67,49 +73,86 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
+    NSLog(@"%@", note.imageNames);
     if (note.imageNames.count != 0) { // 如果该页有配图
         if (self.curImages == nil) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
             // 这里循环添加image, 先取出第一张配图,存进数组
             UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[0]]];
             [self.curImages addObject:image];
-            // 先把固定imageView显示出来, 显示配图名数组里的第一张
             self.imageView.image = image;
             
-            UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
-            [self.curImages addObject:image2];
-            self.imageView2.image = image2;
+            if (note.imageNames.count > 1) {
+                UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
+                [self.curImages addObject:image2];
+                self.imageView2.image = image2;
+            }
             
-            UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
-            [self.curImages addObject:image3];
-            self.imageView3.image = image3;
             
-            // 显示配图名数组里的其他图片
+            if (note.imageNames.count > 2) {
+                UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
+                [self.curImages addObject:image3];
+                self.imageView3.image = image3;
+            }
             
-            NSLog(@"%@",note.imageNames);
             
-        } else {
+            
+            
+        } else { //如果该页是旧页, 直接赋值image
             // 这里循环添加数组中的image
-            self.imageView.image = self.curImages[0];
-            self.imageView2.image = self.curImages[1];
-            self.imageView3.image = self.curImages[2];
+            if (self.curImages.count > 0) {
+                self.imageView.image = self.curImages[0];
+            }
+            if (self.curImages.count > 1) {
+                self.imageView2.image = self.curImages[1];
+            }
+            if (self.curImages.count > 2) {
+                self.imageView3.image = self.curImages[2];
+            }
         }
         
-        if (Iphone) {
-            self.imageViewHeightCons.constant = 280;
-            self.imageViewHeightCons2.constant = 280;
-            self.imageViewHeightCons3.constant = 280;
-        } else {
-            self.imageViewHeightCons.constant = 560;
-            self.imageViewHeightCons2.constant = 560;
-            self.imageViewHeightCons3.constant = 560;
+        if (Iphone) { // 如果是iphone, 每张图的高设为280, 因为翻页时高度会更新成0
+            if (self.imageView.image) {
+                self.imageViewHeightCons.constant = 280;
+            } else {
+                self.imageViewHeightCons.constant = 0;
+            }
+            if (self.imageView2.image) {
+                self.imageViewHeightCons2.constant = 280;
+            } else {
+                self.imageViewHeightCons2.constant = 0;
+            }
+            if (self.imageView3.image) {
+                self.imageViewHeightCons3.constant = 280;
+            } else {
+                self.imageViewHeightCons3.constant = 0;
+            }
+        } else { // 如果是ipad, 高度为560
+            if (self.imageView.image) {
+                self.imageViewHeightCons.constant = 560;
+            } else {
+                self.imageViewHeightCons.constant = 0;
+            }
+            if (self.imageView2.image) {
+                self.imageViewHeightCons2.constant = 560;
+            } else {
+                self.imageViewHeightCons2.constant = 0;
+            }
+            if (self.imageView3.image) {
+                self.imageViewHeightCons3.constant = 560;
+            } else {
+                self.imageViewHeightCons3.constant = 0;
+            }
         }
-    } else {
+    } else { // 如果没有图片, 把高度清零
         self.imageView.image = nil;
         self.imageView2.image = nil;
         self.imageView3.image = nil;
         self.imageViewHeightCons.constant = 0;
         self.imageViewHeightCons2.constant = 0;
         self.imageViewHeightCons3.constant = 0;
+//        self.imageView2ToimageViewMargin.constant = 0;
+//        self.imageView3ToimageView2Margin.constant = 0;
+
     }
 }
 

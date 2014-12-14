@@ -93,6 +93,7 @@
     [super viewDidLoad];
     
     [self addData];
+    
 }
 
 - (void)viewDidLayoutSubviews {
