@@ -14,5 +14,17 @@
  *  日记模型
  */
 @property (nonatomic, strong) SNNoteModel *note;
+/**
+ *  当前日记的配图
+ */
+@property (nonatomic, strong) UIImage *curImage;
+///**
+// *  上一篇日记的配图
+// */
+//@property (nonatomic, strong) UIImage *preImage;
+///**
+// *  下一篇日记的配图
+// */
+//@property (nonatomic, strong) UIImage *nextImage;
 
 @end

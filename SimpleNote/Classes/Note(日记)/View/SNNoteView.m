@@ -40,8 +40,12 @@
     self.date.text = note.date;
     self.textLabel.text = note.body;
     if (note.imageName) {
-        
-        self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+        if (self.curImage == nil) {
+            self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+            self.curImage = self.imageView.image;
+        } else {
+            self.imageView.image = self.curImage;
+        }
         
         if (Iphone) self.imageViewHeightCons.constant = 280;
         else self.imageViewHeightCons.constant = 560;

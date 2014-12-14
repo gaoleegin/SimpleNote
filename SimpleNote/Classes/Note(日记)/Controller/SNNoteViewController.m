@@ -263,9 +263,20 @@
         pageState == 0 ? self.index-- : self.index++;
         if (pageState == 0) self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         
+        if (pageState == 0) {
+            self.thirdNoteView.curImage = self.secondNoteView.curImage;
+            self.secondNoteView.curImage = self.firstNoteView.curImage;
+            self.firstNoteView.curImage = nil;
+        } else if (pageState == 2) {
+            self.firstNoteView.curImage = self.secondNoteView.curImage;
+            self.secondNoteView.curImage = self.thirdNoteView.curImage;
+            self.thirdNoteView.curImage = nil;
+        }
+
         self.firstNoteView.note = self.notes[self.index - 1];
         self.secondNoteView.note = self.notes[self.index];
         self.thirdNoteView.note = self.notes[self.index + 1];
+        
     }
 }
 
