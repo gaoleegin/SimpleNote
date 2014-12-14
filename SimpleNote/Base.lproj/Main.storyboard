@@ -288,7 +288,7 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-UU-3pr" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="793"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="1093"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrN-WC-XJj" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="30" y="40" width="540" height="80"/>
@@ -305,7 +305,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-M4-Km9" userLabel="image Container">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="580"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="880"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn" userLabel="Image View - 1">
                                                                                 <rect key="frame" x="130" y="0.0" width="280" height="280"/>
@@ -335,17 +335,33 @@
                                                                                     </mask>
                                                                                 </variation>
                                                                             </imageView>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCh-qm-vEO" userLabel="Image View - 3">
+                                                                                <rect key="frame" x="130" y="600" width="280" height="280"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" secondItem="fCh-qm-vEO" secondAttribute="height" multiplier="1:1" id="KKO-H9-DV3"/>
+                                                                                    <constraint firstAttribute="height" constant="280" id="yan-J5-ZWj">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
+                                                                                </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="yan-J5-ZWj"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </imageView>
                                                                         </subviews>
                                                                         <constraints>
                                                                             <constraint firstAttribute="centerX" secondItem="bpP-4z-3jn" secondAttribute="centerX" id="6dc-gM-567"/>
                                                                             <constraint firstItem="TVL-B1-ynH" firstAttribute="centerX" secondItem="bpP-4z-3jn" secondAttribute="centerX" id="MQZ-AU-Fy8"/>
+                                                                            <constraint firstItem="fCh-qm-vEO" firstAttribute="top" secondItem="TVL-B1-ynH" secondAttribute="bottom" constant="20" id="PW4-lS-Ss1"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="fCh-qm-vEO" secondAttribute="bottom" id="Qbd-uV-OKF"/>
                                                                             <constraint firstItem="bpP-4z-3jn" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="top" id="ceE-Ig-6zz"/>
                                                                             <constraint firstItem="TVL-B1-ynH" firstAttribute="top" secondItem="bpP-4z-3jn" secondAttribute="bottom" constant="20" id="j5g-Pb-meX"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="TVL-B1-ynH" secondAttribute="bottom" id="oEq-2n-aHj"/>
+                                                                            <constraint firstItem="fCh-qm-vEO" firstAttribute="centerX" secondItem="TVL-B1-ynH" secondAttribute="centerX" id="uzW-Ix-KRE"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="738" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="1038" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXf-3X-rr5" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -470,7 +486,11 @@
                                                 <connections>
                                                     <outlet property="date" destination="eNV-vV-3mL" id="yQM-oE-J1a"/>
                                                     <outlet property="imageView" destination="bpP-4z-3jn" id="95s-bW-Zmw"/>
+                                                    <outlet property="imageView2" destination="TVL-B1-ynH" id="DIz-Ud-Bb4"/>
+                                                    <outlet property="imageView3" destination="fCh-qm-vEO" id="p3s-bm-4Jm"/>
                                                     <outlet property="imageViewHeightCons" destination="Lc0-14-yKA" id="iwF-gb-W21"/>
+                                                    <outlet property="imageViewHeightCons2" destination="Tcz-0o-PFo" id="Gkr-DO-afD"/>
+                                                    <outlet property="imageViewHeightCons3" destination="yan-J5-ZWj" id="Dvj-uw-CIO"/>
                                                     <outlet property="textLabel" destination="JrN-WC-XJj" id="7a3-6A-5bu"/>
                                                 </connections>
                                             </view>
@@ -481,7 +501,7 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-lR-wf0" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="793"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="1093"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-5S-yjz" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="30" y="40" width="540" height="80"/>
@@ -498,7 +518,7 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-k6-Xsc" userLabel="image Container">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="580"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="880"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv" userLabel="Image View - 1">
                                                                                 <rect key="frame" x="130" y="0.0" width="280" height="280"/>
@@ -528,17 +548,33 @@
                                                                                     </mask>
                                                                                 </variation>
                                                                             </imageView>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AoO-hf-lt8" userLabel="Image View - 3">
+                                                                                <rect key="frame" x="130" y="600" width="280" height="280"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="280" id="HJ4-RS-cLw">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
+                                                                                    <constraint firstAttribute="width" secondItem="AoO-hf-lt8" secondAttribute="height" multiplier="1:1" id="ZXb-mK-UV1"/>
+                                                                                </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="HJ4-RS-cLw"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </imageView>
                                                                         </subviews>
                                                                         <constraints>
+                                                                            <constraint firstItem="tFw-j0-dws" firstAttribute="centerX" secondItem="AoO-hf-lt8" secondAttribute="centerX" id="1tR-jy-2HI"/>
                                                                             <constraint firstItem="kaG-HV-Oiv" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="top" id="2fU-lC-ujX"/>
                                                                             <constraint firstAttribute="centerX" secondItem="kaG-HV-Oiv" secondAttribute="centerX" id="KCW-mk-FeN"/>
+                                                                            <constraint firstItem="AoO-hf-lt8" firstAttribute="top" secondItem="tFw-j0-dws" secondAttribute="bottom" constant="20" id="MfG-kT-dDG"/>
                                                                             <constraint firstItem="tFw-j0-dws" firstAttribute="top" secondItem="kaG-HV-Oiv" secondAttribute="bottom" constant="20" id="Pgj-5u-T5C"/>
                                                                             <constraint firstItem="kaG-HV-Oiv" firstAttribute="centerX" secondItem="tFw-j0-dws" secondAttribute="centerX" id="S4g-5l-HD1"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="tFw-j0-dws" secondAttribute="bottom" id="hF7-ax-RLK"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="AoO-hf-lt8" secondAttribute="bottom" id="xgZ-Re-Spg"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="738" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="1038" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-kt-SOs" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -672,7 +708,11 @@
                                                 <connections>
                                                     <outlet property="date" destination="k1V-28-sOx" id="JPv-kX-SXo"/>
                                                     <outlet property="imageView" destination="kaG-HV-Oiv" id="D6e-Zp-i5G"/>
+                                                    <outlet property="imageView2" destination="tFw-j0-dws" id="RC4-jn-dcZ"/>
+                                                    <outlet property="imageView3" destination="AoO-hf-lt8" id="utI-P0-grA"/>
                                                     <outlet property="imageViewHeightCons" destination="uRA-qe-wfE" id="hJD-bg-1WD"/>
+                                                    <outlet property="imageViewHeightCons2" destination="i9w-30-HiU" id="Pi9-Kb-0ov"/>
+                                                    <outlet property="imageViewHeightCons3" destination="HJ4-RS-cLw" id="pd3-je-YXQ"/>
                                                     <outlet property="textLabel" destination="SU2-5S-yjz" id="uoz-5l-Olt"/>
                                                 </connections>
                                             </view>
@@ -683,10 +723,10 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtM-p6-l2T" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="793"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="1093"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="image Container">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="580"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="880"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb" userLabel="Image View -1">
                                                                                 <rect key="frame" x="130" y="0.0" width="280" height="280"/>
@@ -710,29 +750,39 @@
                                                                                     </constraint>
                                                                                     <constraint firstAttribute="width" secondItem="Y4F-SB-U0K" secondAttribute="height" multiplier="1:1" id="YVh-Lr-OfB"/>
                                                                                 </constraints>
-                                                                                <variation key="default">
-                                                                                    <mask key="constraints">
-                                                                                        <exclude reference="YVh-Lr-OfB"/>
-                                                                                    </mask>
-                                                                                </variation>
                                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                                     <mask key="constraints">
                                                                                         <include reference="Ltj-w6-BOe"/>
                                                                                     </mask>
                                                                                 </variation>
                                                                             </imageView>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v2u-9p-Eve" userLabel="Image View - 3">
+                                                                                <rect key="frame" x="130" y="600" width="280" height="280"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="280" id="KWK-Lz-rEh">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
+                                                                                    <constraint firstAttribute="width" secondItem="v2u-9p-Eve" secondAttribute="height" multiplier="1:1" id="ygg-vN-ZgC"/>
+                                                                                </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="KWK-Lz-rEh"/>
+                                                                                    </mask>
+                                                                                </variation>
+                                                                            </imageView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="Y4F-SB-U0K" secondAttribute="bottom" id="JOZ-8F-0tm"/>
                                                                             <constraint firstAttribute="centerX" secondItem="33N-UQ-vxb" secondAttribute="centerX" id="K6l-U7-cYu"/>
-                                                                            <constraint firstItem="Y4F-SB-U0K" firstAttribute="width" secondItem="Y4F-SB-U0K" secondAttribute="height" multiplier="1:1" id="L3N-AK-yFZ"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="v2u-9p-Eve" secondAttribute="bottom" id="SV6-hq-6Ko"/>
+                                                                            <constraint firstItem="v2u-9p-Eve" firstAttribute="top" secondItem="Y4F-SB-U0K" secondAttribute="bottom" constant="20" id="SkF-DT-pn2"/>
                                                                             <constraint firstItem="33N-UQ-vxb" firstAttribute="centerX" secondItem="Y4F-SB-U0K" secondAttribute="centerX" id="iaa-Bz-CNQ"/>
                                                                             <constraint firstItem="33N-UQ-vxb" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="top" id="qbN-Ek-Yog"/>
+                                                                            <constraint firstItem="v2u-9p-Eve" firstAttribute="centerX" secondItem="Y4F-SB-U0K" secondAttribute="centerX" id="vWg-Mg-Tnq"/>
                                                                             <constraint firstItem="Y4F-SB-U0K" firstAttribute="top" secondItem="33N-UQ-vxb" secondAttribute="bottom" constant="20" id="wRc-a6-git"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="738" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="1038" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -884,7 +934,11 @@
                                                 <connections>
                                                     <outlet property="date" destination="Cka-an-cme" id="6ga-YS-LMZ"/>
                                                     <outlet property="imageView" destination="33N-UQ-vxb" id="Suz-Ky-bPi"/>
+                                                    <outlet property="imageView2" destination="Y4F-SB-U0K" id="Z9S-O3-xrh"/>
+                                                    <outlet property="imageView3" destination="v2u-9p-Eve" id="kL0-9f-7l7"/>
                                                     <outlet property="imageViewHeightCons" destination="694-GH-ABC" id="s8m-Pw-CKH"/>
+                                                    <outlet property="imageViewHeightCons2" destination="Ltj-w6-BOe" id="Abr-UJ-m6F"/>
+                                                    <outlet property="imageViewHeightCons3" destination="KWK-Lz-rEh" id="6p9-SA-OAn"/>
                                                     <outlet property="textLabel" destination="IEg-WU-Lt0" id="mb3-Fd-X3i"/>
                                                 </connections>
                                             </view>

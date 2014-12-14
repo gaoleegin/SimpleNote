@@ -29,10 +29,30 @@
  *  正文标签
  */
 @property (weak, nonatomic) IBOutlet SNBodyLabel *textLabel;
-
+/**
+ *  图片容器内第一张图片
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+/**
+ *  第一张图片高度约束
+ */
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons;
+/**
+ *  图片容器内第二张图片
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+/**
+ *  第二张图片高度约束
+ */
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons2;
+/**
+ *  图片容器内第三张图片
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
+/**
+ *  第三张图片高度约束
+ */
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons3;
 
 @end
 
@@ -55,21 +75,42 @@
             // 先把固定imageView显示出来, 显示配图名数组里的第一张
             self.imageView.image = image;
             
+            UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
+            [self.curImages addObject:image2];
+            self.imageView2.image = image2;
+            
+            UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
+            [self.curImages addObject:image3];
+            self.imageView3.image = image3;
+            
             // 显示配图名数组里的其他图片
             
             NSLog(@"%@",note.imageNames);
             
         } else {
             // 这里循环添加数组中的image
-//            self.imageView.image = self.curImages;
+            self.imageView.image = self.curImages[0];
+            self.imageView2.image = self.curImages[1];
+            self.imageView3.image = self.curImages[2];
         }
         
-        if (Iphone) self.imageViewHeightCons.constant = 280;
-        else self.imageViewHeightCons.constant = 560;
+        if (Iphone) {
+            self.imageViewHeightCons.constant = 280;
+            self.imageViewHeightCons2.constant = 280;
+            self.imageViewHeightCons3.constant = 280;
         } else {
-            self.imageView.image = nil;
-            self.imageViewHeightCons.constant = 0;
+            self.imageViewHeightCons.constant = 560;
+            self.imageViewHeightCons2.constant = 560;
+            self.imageViewHeightCons3.constant = 560;
         }
+    } else {
+        self.imageView.image = nil;
+        self.imageView2.image = nil;
+        self.imageView3.image = nil;
+        self.imageViewHeightCons.constant = 0;
+        self.imageViewHeightCons2.constant = 0;
+        self.imageViewHeightCons3.constant = 0;
+    }
 }
 
 @end
