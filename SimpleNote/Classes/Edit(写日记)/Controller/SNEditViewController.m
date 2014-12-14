@@ -12,7 +12,8 @@
 #import "SNNoteModel.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SNImageTool.h"
-
+#import "Common.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -54,10 +55,23 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView3;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageViewForIpad;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView4;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView5;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView6;
 
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView7;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageViewForIpad2;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView8;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView9;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImageView10;
 @property (nonatomic, assign) int addImageCount;
 @end
 
@@ -66,7 +80,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.commitBtn.enabled = NO;
-    self.addImageCount = 0;
+    self.addImageCount = 1;
 }
 
 #pragma mark - 懒加载
@@ -91,6 +105,12 @@
     UIImagePickerControllerSourceTypeCamera,
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
     */
+    if (self.addImageCount == 13) {
+        if (Iphone) [MBProgressHUD showError:@"最多添加十张照片"];
+        else [MBProgressHUD showError:@"最多添加十二张照片"];
+        return;
+    }
+    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
         imagePickerVc.delegate = self;
@@ -118,14 +138,43 @@
 #warning 在这里设置图片容器逻辑
         // 1.1.2设置图片到图片容器上
         switch (self.addImageCount) {
-            case 0:
+            case 1:
                 self.addImageView.image = resultImage;
                 break;
-            case 1:
+            case 2:
                 self.addImageView2.image = resultImage;
                 break;
-            case 2:
+            case 3:
                 self.addImageView3.image = resultImage;
+                break;
+            case 4:
+                if (Iphone) self.addImageCount++;
+                self.addImageViewForIpad.image = resultImage;
+                break;
+            case 5:
+                self.addImageView4.image = resultImage;
+                break;
+            case 6:
+                self.addImageView5.image = resultImage;
+                break;
+            case 7:
+                self.addImageView6.image = resultImage;
+                break;
+            case 8:
+                self.addImageView7.image = resultImage;
+                break;
+            case 9:
+                if (Iphone) self.addImageCount++;
+                self.addImageViewForIpad2.image = resultImage;
+                break;
+            case 10:
+                self.addImageView8.image = resultImage;
+                break;
+            case 11:
+                self.addImageView9.image = resultImage;
+                break;
+            case 12:
+                self.addImageView10.image = resultImage;
                 break;
             default:
                 break;
