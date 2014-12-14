@@ -310,9 +310,16 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn">
                                                                                 <rect key="frame" x="130" y="10" width="280" height="280"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="280" id="Lc0-14-yKA"/>
+                                                                                    <constraint firstAttribute="height" constant="280" id="Lc0-14-yKA">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
                                                                                     <constraint firstAttribute="width" secondItem="bpP-4z-3jn" secondAttribute="height" multiplier="1:1" id="OVT-IH-s1r"/>
                                                                                 </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="Lc0-14-yKA"/>
+                                                                                    </mask>
+                                                                                </variation>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -481,8 +488,15 @@
                                                                                 <rect key="frame" x="130" y="10" width="280" height="280"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="kaG-HV-Oiv" secondAttribute="height" multiplier="1:1" id="1lP-6B-Kls"/>
-                                                                                    <constraint firstAttribute="height" constant="280" id="uRA-qe-wfE"/>
+                                                                                    <constraint firstAttribute="height" constant="280" id="uRA-qe-wfE">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
                                                                                 </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="uRA-qe-wfE"/>
+                                                                                    </mask>
+                                                                                </variation>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
@@ -645,9 +659,16 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb">
                                                                                 <rect key="frame" x="130" y="10" width="280" height="280"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="280" id="694-GH-ABC"/>
+                                                                                    <constraint firstAttribute="height" constant="280" id="694-GH-ABC">
+                                                                                        <variation key="heightClass=regular-widthClass=regular" constant="560"/>
+                                                                                    </constraint>
                                                                                     <constraint firstAttribute="width" secondItem="33N-UQ-vxb" secondAttribute="height" multiplier="1:1" id="lmf-F6-d0P"/>
                                                                                 </constraints>
+                                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                                    <mask key="constraints">
+                                                                                        <include reference="694-GH-ABC"/>
+                                                                                    </mask>
+                                                                                </variation>
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>

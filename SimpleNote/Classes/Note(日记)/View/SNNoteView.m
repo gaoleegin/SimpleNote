@@ -10,6 +10,7 @@
 #import "SNBodyLabel.h"
 #import "SNNoteModel.h"
 #import "SNImageTool.h"
+#import "Common.h"
 
 @interface SNNoteView()
 /**
@@ -38,12 +39,21 @@
     self.date.text = note.date;
     self.textLabel.text = note.body;
     if (note.imageName) {
-        self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
-        self.imageViewHeightCons.constant = 300;
+        dispatch_async(
+                       dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                           // 执行耗时的异步操作...
+                           UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               // 回到主线程，执行UI刷新操作
+                               self.imageView.image = image;
+                           });
+                       });
+        if (Iphone) self.imageViewHeightCons.constant = 280;
+        else self.imageViewHeightCons.constant = 560;
         } else {
             self.imageView.image = nil;
             self.imageViewHeightCons.constant = 0;
-            }
+        }
 }
 
 @end

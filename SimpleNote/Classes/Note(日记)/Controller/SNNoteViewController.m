@@ -211,8 +211,16 @@
     // 翻页动画效果
     if (offsetH > 0) { // 翻至下一页
         self.thirdNoteLeadingCons.constant = - (SCScreenWidth * 0.5) + offsetH * 0.5;
+        // 刷新图片数据
+        scrollView.contentOffset.x < 0 ? self.index-- : self.index++;
+        
+        self.firstNoteView.note = self.notes[self.index - 1];
+        self.secondNoteView.note = self.notes[self.index];
+        self.thirdNoteView.note = self.notes[self.index + 1];
+        
     } else if (offsetH < 0) { // 翻至上一页
         self.secondNoteLeadingCons.constant = offsetH * 0.5;
+        // 刷新图片数据
     }
     
     // 阴影动画效果

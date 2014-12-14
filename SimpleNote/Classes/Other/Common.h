@@ -17,6 +17,9 @@
 // 是否为IOS8以上的系统
 #define IOS8 ([UIDevice currentDevice].systemVersion.floatValue >= 8.0)
 
+// 是否是iphone设备
+#define Iphone ([UIApplication sharedApplication].keyWindow.bounds.size.width <= 375)
+
 // 创建随机数
 #define SCNumber(n) arc4random_uniform(n)
 
