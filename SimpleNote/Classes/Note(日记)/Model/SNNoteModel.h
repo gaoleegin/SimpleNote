@@ -17,18 +17,14 @@
  *  正文
  */
 @property (nonatomic, copy) NSString *body;
+///**
+// *  配图名
+// */
+//@property (nonatomic, copy) NSString *imageName;
 /**
- *  配图名
+ *  配图名数组
  */
-@property (nonatomic, copy) NSString *imageName;
-/**
- *  <初始化方法>从字典加载属性
- *
- *  @param dict 包含日期和正文属性的字典
- *
- *  @return 日记模型
- */
-+ (instancetype)noteWithDict:(NSDictionary *)dict;
+@property (nonatomic, strong) NSMutableArray *imageNames;
 
 
 @end

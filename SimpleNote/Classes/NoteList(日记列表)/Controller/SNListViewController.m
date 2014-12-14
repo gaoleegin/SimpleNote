@@ -13,6 +13,7 @@
 #import "Common.h"
 #import "SNEditViewController.h"
 #import "SNNoteTool.h"
+#import "MJExtension.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -40,7 +41,7 @@
         NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
         self.dictArr = dictArr;
         for (NSDictionary *dict in dictArr) {
-            SNNoteModel *noteM = [SNNoteModel noteWithDict:dict];
+            SNNoteModel *noteM = [SNNoteModel objectWithKeyValues:dict];
             [self.notes addObject:noteM];
         }
     }

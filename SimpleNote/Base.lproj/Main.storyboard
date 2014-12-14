@@ -288,7 +288,7 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-UU-3pr" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="513"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrN-WC-XJj" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="30" y="40" width="540" height="80"/>
@@ -305,10 +305,10 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-M4-Km9" userLabel="imageView">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="300"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="280"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn">
-                                                                                <rect key="frame" x="130" y="10" width="280" height="280"/>
+                                                                                <rect key="frame" x="130" y="0.0" width="280" height="280"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="280" id="Lc0-14-yKA">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="560"/>
@@ -324,12 +324,12 @@
                                                                         </subviews>
                                                                         <constraints>
                                                                             <constraint firstAttribute="centerX" secondItem="bpP-4z-3jn" secondAttribute="centerX" id="6dc-gM-567"/>
-                                                                            <constraint firstItem="bpP-4z-3jn" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="top" constant="10" id="ceE-Ig-6zz"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="bpP-4z-3jn" secondAttribute="bottom" constant="10" id="gdx-cL-hZU"/>
+                                                                            <constraint firstItem="bpP-4z-3jn" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="top" id="ceE-Ig-6zz"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="bpP-4z-3jn" secondAttribute="bottom" id="gdx-cL-hZU"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="458" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="438" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXf-3X-rr5" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -465,7 +465,7 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-lR-wf0" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="513"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-5S-yjz" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="30" y="40" width="540" height="80"/>
@@ -482,10 +482,10 @@
                                                                         </connections>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-k6-Xsc" userLabel="image View">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="300"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="280"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv">
-                                                                                <rect key="frame" x="130" y="10" width="280" height="280"/>
+                                                                                <rect key="frame" x="130" y="0.0" width="280" height="280"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="kaG-HV-Oiv" secondAttribute="height" multiplier="1:1" id="1lP-6B-Kls"/>
                                                                                     <constraint firstAttribute="height" constant="280" id="uRA-qe-wfE">
@@ -500,13 +500,13 @@
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstItem="kaG-HV-Oiv" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="top" constant="10" id="2fU-lC-ujX"/>
+                                                                            <constraint firstItem="kaG-HV-Oiv" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="top" id="2fU-lC-ujX"/>
                                                                             <constraint firstAttribute="centerX" secondItem="kaG-HV-Oiv" secondAttribute="centerX" id="KCW-mk-FeN"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="kaG-HV-Oiv" secondAttribute="bottom" constant="10" id="pPm-Jh-wpN"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="kaG-HV-Oiv" secondAttribute="bottom" id="pPm-Jh-wpN"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="458" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="438" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-kt-SOs" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -651,13 +651,13 @@
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtM-p6-l2T" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="513"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="493"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="imageView">
-                                                                        <rect key="frame" x="30" y="150" width="540" height="300"/>
+                                                                        <rect key="frame" x="30" y="150" width="540" height="280"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb">
-                                                                                <rect key="frame" x="130" y="10" width="280" height="280"/>
+                                                                                <rect key="frame" x="130" y="0.0" width="280" height="280"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="280" id="694-GH-ABC">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="560"/>
@@ -672,13 +672,13 @@
                                                                             </imageView>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="33N-UQ-vxb" secondAttribute="bottom" constant="10" id="60C-J5-UIr"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="33N-UQ-vxb" secondAttribute="bottom" id="60C-J5-UIr"/>
                                                                             <constraint firstAttribute="centerX" secondItem="33N-UQ-vxb" secondAttribute="centerX" id="K6l-U7-cYu"/>
-                                                                            <constraint firstItem="33N-UQ-vxb" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="top" constant="10" id="qbN-Ek-Yog"/>
+                                                                            <constraint firstItem="33N-UQ-vxb" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="top" id="qbN-Ek-Yog"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="458" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="438" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>

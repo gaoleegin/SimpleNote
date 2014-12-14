@@ -10,17 +10,11 @@
 
 @implementation SNNoteModel
 
-+ (instancetype)noteWithDict:(NSDictionary *)dict {
-    SNNoteModel *noteM = [[SNNoteModel alloc] init];
-    [noteM setValuesForKeysWithDictionary:dict];
-    return noteM;
-}
-
 - (instancetype)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.date = [decoder decodeObjectForKey:@"date"];
         self.body = [decoder decodeObjectForKey:@"body"];
-        self.imageName = [decoder decodeObjectForKey:@"imageName"];
+        self.imageNames = [decoder decodeObjectForKey:@"imageNames"];
     }
     return self;
 }
@@ -28,7 +22,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.date forKey:@"date"];
     [encoder encodeObject:self.body forKey:@"body"];
-    [encoder encodeObject:self.imageName forKey:@"imageName"];
+    [encoder encodeObject:self.imageNames forKey:@"imageNames"];
 }
 
 @end

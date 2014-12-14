@@ -39,9 +39,9 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
-    if (note.imageName) {
+    if (note.imageNames.count != 0) {
         if (self.curImage == nil) {
-            self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+            self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[0]]];
             self.curImage = self.imageView.image;
         } else {
             self.imageView.image = self.curImage;

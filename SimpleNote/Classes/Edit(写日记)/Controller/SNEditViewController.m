@@ -14,6 +14,7 @@
 #import "SNImageTool.h"
 #import "Common.h"
 #import "UIView+Extension.h"
+#import "MJExtension.h"
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -80,6 +81,10 @@
  *  添加图片计数
  */
 @property (nonatomic, assign) int addImageCount;
+/**
+ *  图片名后缀 - 用来区分同一篇日记的名字
+ */
+@property (nonatomic, assign) int i;
 @end
 
 @implementation SNEditViewController
@@ -111,6 +116,7 @@
     }
     return _images;
 }
+
 
 #pragma mark - 跳转照片选择控制器
 - (IBAction)addImage {
@@ -229,7 +235,7 @@
          kCFCalendarUnitSecond = (1UL << 7),
      */
     NSDateComponents *dateComponents = [calendar components:kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute | kCFCalendarUnitSecond fromDate:[NSDate date]];
-//    CGFloat year = dateComponents.year;
+    CGFloat year = dateComponents.year;
     CGFloat month = dateComponents.month;
     CGFloat day = dateComponents.day;
     CGFloat hour = dateComponents.hour;
@@ -238,23 +244,25 @@
     
     NSString *monthStr = [self.monthDict objectForKey:[NSString stringWithFormat:@"%.f", month]];
     NSString *dayStr = [self.dayDict objectForKey:[NSString stringWithFormat:@"%.f", day]];
+    NSString *yearStr = [NSString stringWithFormat:@"%02.f", year];
     NSString *hourStr = [NSString stringWithFormat:@"%02.f", hour];
     NSString *minuteStr = [NSString stringWithFormat:@"%02.f", minute];
     NSString *secondStr = [NSString stringWithFormat:@"%02.f", second];
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
-    NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"%@%@%@", hourStr, minuteStr, secondStr]];
-    
+    NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"_%@_%@%@%@", yearStr, hourStr, minuteStr, secondStr]];
 #warning 设置图片存储业务
     
-
+    NSMutableArray *imageNames = [NSMutableArray array];
+    for (UIImage *image in self.images) {
+        // 图片路径
+        NSString *imageName = [NSString stringWithFormat:@"%@_%02d", imageID, self.i++];
+        NSString *imageNameID = [imageName stringByAppendingPathExtension:@"png"];
+        [SNImageTool save:image imageName:imageNameID];
+        [imageNames addObject:imageNameID];
+    }
     
-    
-    // 图片路径
-    NSString *imageName = [imageID stringByAppendingPathExtension:@"png"];
-    [SNImageTool save:self.addImageView.image imageName:imageName];
-
-    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imageName":imageName};
-    SNNoteModel *newNote = [SNNoteModel noteWithDict:noteDict];
+    NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imageNames":imageNames};
+    SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
     if (self.listVc.saveNote) {
         self.listVc.saveNote(newNote);
     }
