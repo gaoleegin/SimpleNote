@@ -13,7 +13,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SNImageTool.h"
 #import "Common.h"
-#import "MBProgressHUD+MJ.h"
+#import "UIView+Extension.h"
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -72,6 +72,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView9;
 
 @property (weak, nonatomic) IBOutlet UIImageView *addImageView10;
+/**
+ *  所有添加的图片数组
+ */
+@property (nonatomic, strong) NSMutableArray *images;
+/**
+ *  添加图片计数
+ */
 @property (nonatomic, assign) int addImageCount;
 @end
 
@@ -98,6 +105,13 @@
     return _dayDict;
 }
 
+- (NSMutableArray *)images {
+    if (!_images) {
+        _images = [NSMutableArray array];
+    }
+    return _images;
+}
+
 #pragma mark - 跳转照片选择控制器
 - (IBAction)addImage {
     /*
@@ -106,8 +120,8 @@
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
     */
     if (self.addImageCount == 13) {
-        if (Iphone) [MBProgressHUD showError:@"最多添加十张照片"];
-        else [MBProgressHUD showError:@"最多添加十二张照片"];
+        if (Iphone) [self.view setSheetWithContent:@"最多添加十张照片"];
+        else [self.view setSheetWithContent:@"最多添加十二张照片"];
         return;
     }
     
@@ -135,8 +149,9 @@
         {
             resultImage = info[UIImagePickerControllerOriginalImage];
         }
-#warning 在这里设置图片容器逻辑
-        // 1.1.2设置图片到图片容器上
+        // 添加图片至数组
+        [self.images addObject:resultImage];
+        // 设置图片到图片容器上
         switch (self.addImageCount) {
             case 1:
                 self.addImageView.image = resultImage;
@@ -146,9 +161,9 @@
                 break;
             case 3:
                 self.addImageView3.image = resultImage;
+                if (Iphone) self.addImageCount++;
                 break;
             case 4:
-                if (Iphone) self.addImageCount++;
                 self.addImageViewForIpad.image = resultImage;
                 break;
             case 5:
@@ -162,9 +177,9 @@
                 break;
             case 8:
                 self.addImageView7.image = resultImage;
+                if (Iphone) self.addImageCount++;
                 break;
             case 9:
-                if (Iphone) self.addImageCount++;
                 self.addImageViewForIpad2.image = resultImage;
                 break;
             case 10:
@@ -228,6 +243,10 @@
     NSString *secondStr = [NSString stringWithFormat:@"%02.f", second];
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
     NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"%@%@%@", hourStr, minuteStr, secondStr]];
+    
+#warning 设置图片存储业务
+    
+
     
     
     // 图片路径

@@ -124,7 +124,7 @@
     label.backgroundColor = backgroundColor;
     label.textAlignment = NSTextAlignmentCenter;
     label.frame = CGRectMake(0, 0, 150, 25);
-    label.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    label.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2.5);
     label.alpha = 0.0;
     label.layer.cornerRadius = 5;
     label.clipsToBounds = YES;

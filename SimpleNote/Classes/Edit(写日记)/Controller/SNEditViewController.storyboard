@@ -83,7 +83,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vtC-Hl-G1U" userLabel="View3">
-                                        <rect key="frame" x="380" y="15" width="100" height="100"/>
+                                        <rect key="frame" x="380" y="15" width="99" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vtC-Hl-G1U" secondAttribute="height" multiplier="1:1" id="Bj0-Y6-yfP"/>
                                         </constraints>
@@ -107,7 +107,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rT7-WE-2QC" userLabel="View7">
-                                        <rect key="frame" x="380" y="135" width="100" height="100"/>
+                                        <rect key="frame" x="380" y="135" width="99" height="100"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rms-rS-Ena" userLabel="View8">
                                         <rect key="frame" x="20" y="255" width="100" height="100"/>
@@ -173,7 +173,9 @@
                                     <constraint firstItem="MMo-7d-RLH" firstAttribute="leading" secondItem="wNC-OR-qF1" secondAttribute="leading" id="NqK-J6-ZXk"/>
                                     <constraint firstItem="B13-VY-YJi" firstAttribute="leading" secondItem="YRw-zm-CQS" secondAttribute="trailing" constant="20" id="O0U-yv-e8g"/>
                                     <constraint firstItem="YRw-zm-CQS" firstAttribute="centerY" secondItem="B13-VY-YJi" secondAttribute="centerY" id="Oh8-xe-cxY"/>
-                                    <constraint firstAttribute="width" secondItem="YRw-zm-CQS" secondAttribute="height" multiplier="6:1" id="Q8A-PV-qMK"/>
+                                    <constraint firstAttribute="width" secondItem="YRw-zm-CQS" secondAttribute="height" multiplier="6:1" constant="1" id="Q8A-PV-qMK">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstItem="iRe-6y-9CG" firstAttribute="width" secondItem="B13-VY-YJi" secondAttribute="width" id="TyX-HE-cGg"/>
                                     <constraint firstItem="vyR-qw-D4x" firstAttribute="width" secondItem="vtC-Hl-G1U" secondAttribute="width" id="VOH-c4-saj"/>
                                     <constraint firstAttribute="trailing" secondItem="MMo-7d-RLH" secondAttribute="trailing" id="W6d-8v-zyI"/>
@@ -223,6 +225,7 @@
                                         <include reference="VOH-c4-saj"/>
                                         <include reference="pnG-Zr-eHZ"/>
                                         <include reference="wIV-qp-fKE"/>
+                                        <include reference="Q8A-PV-qMK"/>
                                         <include reference="AMA-9I-1SI"/>
                                         <include reference="MVB-mB-hHj"/>
                                     </mask>
