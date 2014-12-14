@@ -257,12 +257,13 @@
         self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         return;
     }
-    // 往后翻或往前翻, 模型下标加一或减一, 更新数据
+    // 往后翻或往前翻, 模型下标加一或减一, 更新数据, (图片只更新上一页或下一页)
     else {
         self.secondScrollView.contentOffset = CGPointMake(0, 0); // 当前页复位
         pageState == 0 ? self.index-- : self.index++;
         if (pageState == 0) self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         
+        // 重复利用图片, 每次翻页只更新一个视图
         if (pageState == 0) {
             self.thirdNoteView.curImage = self.secondNoteView.curImage;
             self.secondNoteView.curImage = self.firstNoteView.curImage;
