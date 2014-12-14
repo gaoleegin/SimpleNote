@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet SNBodyLabel *textLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons;
 
 @end
@@ -39,15 +40,9 @@
     self.date.text = note.date;
     self.textLabel.text = note.body;
     if (note.imageName) {
-        dispatch_async(
-                       dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                           // 执行耗时的异步操作...
-                           UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
-                           dispatch_async(dispatch_get_main_queue(), ^{
-                               // 回到主线程，执行UI刷新操作
-                               self.imageView.image = image;
-                           });
-                       });
+        
+        self.imageView.image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageName]];
+        
         if (Iphone) self.imageViewHeightCons.constant = 280;
         else self.imageViewHeightCons.constant = 560;
         } else {
