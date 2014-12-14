@@ -201,8 +201,8 @@
                 break;
         }
     }
+    self.commitBtn.enabled = YES;
     [self dismissViewControllerAnimated:YES completion:^{
-        self.commitBtn.enabled = YES;
         self.addImageCount++;
     }];
 }
@@ -250,8 +250,8 @@
     NSString *secondStr = [NSString stringWithFormat:@"%02.f", second];
     NSString *date = [monthStr stringByAppendingString:[NSString stringWithFormat:@" %@", dayStr]];
     NSString *imageID = [date stringByAppendingString:[NSString stringWithFormat:@"_%@_%@%@%@", yearStr, hourStr, minuteStr, secondStr]];
-#warning 设置图片存储业务
-    
+
+    // 存储图片
     NSMutableArray *imageNames = [NSMutableArray array];
     for (UIImage *image in self.images) {
         // 图片路径

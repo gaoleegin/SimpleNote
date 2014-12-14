@@ -12,13 +12,7 @@
 #import "UIView+Extension.h"
 #import "Common.h"
 #import "SNNoteModel.h"
-#import "Masonry.h"
 
-// 定义这个宏可以使用一些更简洁的方法
-#define MAS_SHORTHAND
-
-// 定义这个宏可以使用自动装箱功能
-#define MAS_SHORTHAND_GLOBALS
 
 
 #define SNSHADOW_ALPHA 0.6 //页尾阴影透明度
@@ -272,13 +266,13 @@
         
         // 重复利用图片, 每次翻页只更新一个视图
         if (pageState == 0) {
-            self.thirdNoteView.curImage = self.secondNoteView.curImage;
-            self.secondNoteView.curImage = self.firstNoteView.curImage;
-            self.firstNoteView.curImage = nil;
+            self.thirdNoteView.curImages = self.secondNoteView.curImages;
+            self.secondNoteView.curImages = self.firstNoteView.curImages;
+            self.firstNoteView.curImages = nil;
         } else if (pageState == 2) {
-            self.firstNoteView.curImage = self.secondNoteView.curImage;
-            self.secondNoteView.curImage = self.thirdNoteView.curImage;
-            self.thirdNoteView.curImage = nil;
+            self.firstNoteView.curImages = self.secondNoteView.curImages;
+            self.secondNoteView.curImages = self.thirdNoteView.curImages;
+            self.thirdNoteView.curImages = nil;
         }
 
         self.firstNoteView.note = self.notes[self.index - 1];
