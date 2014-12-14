@@ -56,21 +56,6 @@
             self.imageView.image = image;
             
             // 显示配图名数组里的其他图片
-            for (int i = 0; i < note.imageNames.count - 1; i++) {
-                // 拿到图片,存进数组
-                UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[i+1]]];
-                [self.curImages addObject:image];
-                // 创建相应配图的imageView
-                UIView *superView = self.imageView.superview;  // 拿到图片容器视图
-                UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-                [superView addSubview:imageView]; // 添加至父视图
-                imageView.translatesAutoresizingMaskIntoConstraints = NO;
-                [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self)
-                }];
-                
-                // 给imageView设置约束
-            }
             
             NSLog(@"%@",note.imageNames);
             
