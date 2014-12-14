@@ -101,7 +101,9 @@
         // 1.1.2设置图片到图片容器上
         self.addImageView.image = resultImage;
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.commitBtn.enabled = YES;
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
