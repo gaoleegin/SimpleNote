@@ -64,6 +64,14 @@
 
 @implementation SNNoteView
 
+#pragma mark - 懒加载
+- (NSMutableArray *)curImages {
+    if (!_curImages) {
+        _curImages = [NSMutableArray array];
+    }
+    return _curImages;
+}
+
 /**
  *  更新UI数据
  *
@@ -73,9 +81,9 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
-    NSLog(@"%@", note.imageNames);
+//    NSLog(@"%@", note.imageNames);
     if (note.imageNames.count != 0) { // 如果该页有配图
-        if (self.curImages == nil) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
+        if (self.curImages.count == 0) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
             // 这里循环添加image, 先取出第一张配图,存进数组
             UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[0]]];
             [self.curImages addObject:image];
@@ -85,13 +93,17 @@
                 UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
                 [self.curImages addObject:image2];
                 self.imageView2.image = image2;
+            } else {
+                self.imageView2.image = nil;
+                self.imageView3.image = nil;
             }
-            
             
             if (note.imageNames.count > 2) {
                 UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
                 [self.curImages addObject:image3];
                 self.imageView3.image = image3;
+            } else {
+                self.imageView3.image = nil;
             }
             
             
@@ -101,12 +113,21 @@
             // 这里循环添加数组中的image
             if (self.curImages.count > 0) {
                 self.imageView.image = self.curImages[0];
+            } else {
+                self.imageView.image = nil;
+                self.imageView2.image = nil;
+                self.imageView3.image = nil;
             }
             if (self.curImages.count > 1) {
                 self.imageView2.image = self.curImages[1];
+            } else {
+                self.imageView2.image = nil;
+                self.imageView3.image = nil;
             }
             if (self.curImages.count > 2) {
                 self.imageView3.image = self.curImages[2];
+            } else {
+                self.imageView3.image = nil;
             }
         }
         

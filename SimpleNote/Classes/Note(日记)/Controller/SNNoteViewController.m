@@ -267,10 +267,12 @@
         
         // 重复利用图片, 每次翻页只更新一个视图
         if (pageState == 0) {
+            self.thirdNoteView.curImages = nil;
             self.thirdNoteView.curImages = self.secondNoteView.curImages;
             self.secondNoteView.curImages = self.firstNoteView.curImages;
             self.firstNoteView.curImages = nil;
         } else if (pageState == 2) {
+            self.firstNoteView.curImages = nil;
             self.firstNoteView.curImages = self.secondNoteView.curImages;
             self.secondNoteView.curImages = self.thirdNoteView.curImages;
             self.thirdNoteView.curImages = nil;
@@ -279,6 +281,7 @@
         self.firstNoteView.note = self.notes[self.index - 1];
         self.secondNoteView.note = self.notes[self.index];
         self.thirdNoteView.note = self.notes[self.index + 1];
+        NSLog(@"%@", self.firstNoteView.note);
         
     }
 }

@@ -125,9 +125,9 @@
     UIImagePickerControllerSourceTypeCamera,
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
     */
-    if (self.addImageCount == 13) {
+    if (self.addImageCount == 4) {
         if (Iphone) [self.view setSheetWithContent:@"最多添加十张照片"];
-        else [self.view setSheetWithContent:@"最多添加十二张照片"];
+        else [self.view setSheetWithContent:@"最多添加三张照片"];
         return;
     }
     
