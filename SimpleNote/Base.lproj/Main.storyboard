@@ -521,6 +521,18 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-rg-Nzt">
+                                                                <rect key="frame" x="500" y="0.0" width="100" height="64"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="R8C-kf-uN0"/>
+                                                                </constraints>
+                                                                <state key="normal" title="&gt;编辑日记&lt;">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="editNoteBtn" destination="EF5-iy-zZ7" eventType="touchUpInside" id="0Gc-Vh-CdJ"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -528,6 +540,9 @@
                                                             <constraint firstItem="s2a-1l-DrQ" firstAttribute="leading" secondItem="mG7-6v-gJF" secondAttribute="leading" id="96L-po-8LN"/>
                                                             <constraint firstItem="n7w-nS-4yx" firstAttribute="centerY" secondItem="eNV-vV-3mL" secondAttribute="centerY" id="9zI-Y1-8Xg"/>
                                                             <constraint firstItem="n7w-nS-4yx" firstAttribute="height" secondItem="mG7-6v-gJF" secondAttribute="height" id="B0s-XM-jGM"/>
+                                                            <constraint firstAttribute="centerY" secondItem="b6O-rg-Nzt" secondAttribute="centerY" id="Oqa-qp-E6S"/>
+                                                            <constraint firstItem="b6O-rg-Nzt" firstAttribute="height" secondItem="mG7-6v-gJF" secondAttribute="height" id="RvK-y3-wzC"/>
+                                                            <constraint firstAttribute="trailing" secondItem="b6O-rg-Nzt" secondAttribute="trailing" id="WX6-Kg-v9b"/>
                                                             <constraint firstItem="eNV-vV-3mL" firstAttribute="leading" secondItem="n7w-nS-4yx" secondAttribute="trailing" id="YnA-wd-LY8"/>
                                                             <constraint firstItem="s2a-1l-DrQ" firstAttribute="top" secondItem="mG7-6v-gJF" secondAttribute="top" constant="64" id="aVN-Cf-lsM"/>
                                                             <constraint firstAttribute="height" constant="64" id="jbg-ta-yjR"/>
@@ -814,6 +829,18 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grd-2B-VVF">
+                                                                <rect key="frame" x="500" y="0.0" width="100" height="64"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="gyK-Xu-Inq"/>
+                                                                </constraints>
+                                                                <state key="normal" title="&gt;编辑日记&lt;">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="editNoteBtn" destination="EF5-iy-zZ7" eventType="touchUpInside" id="VXx-tZ-PpO"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -821,7 +848,10 @@
                                                             <constraint firstItem="6xr-KI-Z6i" firstAttribute="top" secondItem="Oca-uO-A7b" secondAttribute="top" constant="64" id="D9g-pv-WcC"/>
                                                             <constraint firstAttribute="trailing" secondItem="6xr-KI-Z6i" secondAttribute="trailing" id="FI2-Ps-8Du"/>
                                                             <constraint firstAttribute="height" secondItem="Hro-IP-CWg" secondAttribute="height" id="Jiw-Yd-RRj"/>
+                                                            <constraint firstItem="Grd-2B-VVF" firstAttribute="height" secondItem="Oca-uO-A7b" secondAttribute="height" id="Nf8-i4-wtG"/>
                                                             <constraint firstItem="Hro-IP-CWg" firstAttribute="centerY" secondItem="k1V-28-sOx" secondAttribute="centerY" id="QDJ-HB-Bpw"/>
+                                                            <constraint firstAttribute="centerY" secondItem="Grd-2B-VVF" secondAttribute="centerY" id="Zz5-Gg-Fwn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Grd-2B-VVF" secondAttribute="trailing" id="cdI-TM-75q"/>
                                                             <constraint firstItem="Dz8-hJ-OmB" firstAttribute="leading" secondItem="Oca-uO-A7b" secondAttribute="trailing" id="eRC-KF-UxM"/>
                                                             <constraint firstItem="Dz8-hJ-OmB" firstAttribute="top" secondItem="Oca-uO-A7b" secondAttribute="bottom" id="eez-72-Net"/>
                                                             <constraint firstAttribute="height" constant="64" id="gkW-nU-PgW"/>

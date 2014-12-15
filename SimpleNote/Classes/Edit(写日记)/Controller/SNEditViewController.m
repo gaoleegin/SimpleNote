@@ -107,13 +107,16 @@
         self.editing = YES;
         [self.textView setText:self.curNote.body];
         self.textView.placeholderLabel.hidden = YES;
-        
+        self.images = self.curImages;
         if (self.curImages.count) {
             self.addImageView.image = self.curImages[0];
+            self.addImageCount++;
             if (self.curImages.count > 1) {
                 self.addImageView2.image = self.curImages[1];
+                self.addImageCount++;
                 if (self.curImages.count > 2) {
                     self.addImageView3.image = self.curImages[2];
+                    self.addImageCount++;
                 }
             }
         }
