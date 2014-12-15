@@ -293,6 +293,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_add" width="60" height="60"/>
+        <image name="button_add" width="50" height="50"/>
     </resources>
 </document>

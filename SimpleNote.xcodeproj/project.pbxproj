@@ -41,6 +41,7 @@
 		96CA99571A3DA27E002F3F1C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CA994B1A3DA27E002F3F1C /* NSObject+MJKeyValue.m */; };
 		96CA99581A3DA27E002F3F1C /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CA994D1A3DA27E002F3F1C /* NSObject+MJMember.m */; };
 		96CA995E1A3E6507002F3F1C /* SNImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CA995D1A3E6507002F3F1C /* SNImageView.m */; };
+		96CA99641A3F04B1002F3F1C /* SCDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CA99631A3F04B1002F3F1C /* SCDateTool.m */; };
 		96CF4DCB1A3099AF00D5A16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DC91A3099AF00D5A16B /* Main.storyboard */; };
 		96CF4DCD1A3099AF00D5A16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCC1A3099AF00D5A16B /* Images.xcassets */; };
 		96CF4DD01A3099AF00D5A16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */; };
@@ -135,6 +136,8 @@
 		96CA994D1A3DA27E002F3F1C /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
 		96CA995C1A3E6507002F3F1C /* SNImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImageView.h; sourceTree = "<group>"; };
 		96CA995D1A3E6507002F3F1C /* SNImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImageView.m; sourceTree = "<group>"; };
+		96CA99621A3F04B1002F3F1C /* SCDateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDateTool.h; sourceTree = "<group>"; };
+		96CA99631A3F04B1002F3F1C /* SCDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDateTool.m; sourceTree = "<group>"; };
 		96CF4DBC1A3099AF00D5A16B /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CF4DC01A3099AF00D5A16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96CF4DCA1A3099AF00D5A16B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 				96BE6B0F1A3AC446001D1DF6 /* PopMenu */,
 				968E16F21A3BD00500CA81F6 /* SNImageTool.h */,
 				968E16F31A3BD00500CA81F6 /* SNImageTool.m */,
+				96CA99621A3F04B1002F3F1C /* SCDateTool.h */,
+				96CA99631A3F04B1002F3F1C /* SCDateTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -672,6 +677,7 @@
 				96CF4DFE1A309A5000D5A16B /* main.m in Sources */,
 				96CA995E1A3E6507002F3F1C /* SNImageView.m in Sources */,
 				96CA994E1A3DA27E002F3F1C /* MJArgument.m in Sources */,
+				96CA99641A3F04B1002F3F1C /* SCDateTool.m in Sources */,
 				96CA994F1A3DA27E002F3F1C /* MJConst.m in Sources */,
 				96CA99561A3DA27E002F3F1C /* NSObject+MJCoding.m in Sources */,
 				96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */,

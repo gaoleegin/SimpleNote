@@ -14,6 +14,8 @@
 #import "SNEditViewController.h"
 #import "SNNoteTool.h"
 #import "MJExtension.h"
+#import "SCDateTool.h"
+#import "SNImageTool.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -38,12 +40,29 @@
     
     if (!_notes) {
         // 从mainBundle加载默认数据
-        NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
-        self.dictArr = dictArr;
-        for (NSDictionary *dict in dictArr) {
-            SNNoteModel *noteM = [SNNoteModel objectWithKeyValues:dict];
-            [self.notes addObject:noteM];
-        }
+//        NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
+//        self.dictArr = dictArr;
+//        for (NSDictionary *dict in dictArr) {
+//            SNNoteModel *noteM = [SNNoteModel objectWithKeyValues:dict];
+//            [self.notes addObject:noteM];
+//        }
+        
+        // 程序第一次载入时候显示
+        UIImage *image1 = [UIImage imageNamed:@"dec28_windmill"];
+        UIImage *image2 = [UIImage imageNamed:@"sep30_box"];
+        NSString *image1Name = [NSString stringWithFormat:@"%@_01",[SCDateTool dateToEnglishID]];
+        NSString *image2Name = [NSString stringWithFormat:@"%@_02",[SCDateTool dateToEnglishID]];
+        [SNImageTool save:image1 imageName:image1Name];
+        [SNImageTool save:image2 imageName:image2Name];
+        
+        NSMutableArray *image1Names = [NSMutableArray arrayWithObject:image1Name];
+        NSMutableArray *image2Names = [NSMutableArray arrayWithObject:image2Name];
+        
+        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateToEnglish], @"body" : @"我今天感觉自己萌萌哒!", @"imageNames" : image1Names};
+        NSDictionary *noteDict2 = @{@"date" : [SCDateTool dateToEnglish], @"body" : @"你呢?", @"imageNames" : image2Names};
+        SNNoteModel *note1 = [SNNoteModel objectWithKeyValues:noteDict1];
+        SNNoteModel *note2 = [SNNoteModel objectWithKeyValues:noteDict2];
+        [self.notes addObjectsFromArray:@[note1, note2]];
     }
     
     __weak typeof(self) weakSelf = self;
