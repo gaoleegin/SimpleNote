@@ -216,6 +216,9 @@
     
     // 收回键盘
     [self.textView resignFirstResponder];
+    
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
 }
 
 
