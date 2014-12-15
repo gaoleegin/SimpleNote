@@ -64,7 +64,7 @@
     }
     else self.heightCons.constant = 0;
 
-    self.cons.constant = 8.0; // 默认值:如果内容超出屏幕使用此约束
+    self.cons.constant = 20.0; // 默认值:如果内容超出屏幕使用此约束
     CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.consMiddle.constant + self.imageView.bounds.size.height + self.bodyLabel.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
 //        NSLog(@"<--->%f",self.imageView.bounds.size.height);
