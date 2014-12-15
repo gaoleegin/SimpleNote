@@ -20,4 +20,9 @@
  */
 @property (nonatomic, strong) NSMutableArray *notes;
 
+/**
+ *  编辑日记
+ */
+@property (nonatomic, copy) void(^editNote)(SNNoteModel *newNote);
+
 @end

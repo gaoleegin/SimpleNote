@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Note(&#x65e5;&#x8bb0;)/Controller/SNNoteViewController.m"
-            timestampString = "440302809.776939"
+            timestampString = "440326317.157961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "-loopDisplay:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Note(&#x65e5;&#x8bb0;)/Controller/SNNoteViewController.m"
-            timestampString = "440302878.99434"
+            timestampString = "440326317.157961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "-scrollViewDidEndDecelerating:"
             landmarkType = "5">
          </BreakpointContent>

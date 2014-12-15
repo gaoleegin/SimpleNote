@@ -12,7 +12,8 @@
 #import "UIView+Extension.h"
 #import "Common.h"
 #import "SNNoteModel.h"
-
+#import "SNEditViewController.h"
+#import "SNNoteTool.h"
 
 
 #define SNSHADOW_ALPHA 0.6 //页尾阴影透明度
@@ -83,6 +84,10 @@
  *  首页的右边箭头按钮
  */
 @property (weak, nonatomic) IBOutlet UIButton *rightArrowBtn;
+/**
+ *  编辑日记按钮
+ */
+- (IBAction)editNoteBtn;
 
 @end
 
@@ -94,6 +99,22 @@
     
     [self addData];
     
+    [self setEditNoteBlock];
+}
+
+- (void)setEditNoteBlock {
+    __weak typeof(self) weakSelf = self;
+    self.editNote = ^(SNNoteModel *newNote){
+        [weakSelf.notes replaceObjectAtIndex:weakSelf.index withObject:newNote];
+        [SNNoteTool save:weakSelf.notes];
+        if (weakSelf.index == 0) {
+            weakSelf.firstNoteView.note = newNote;
+        } else if (weakSelf.index == weakSelf.notes.count - 1) {
+            weakSelf.thirdNoteView.note = newNote;
+        } else {
+            weakSelf.secondNoteView.note = newNote;
+        }
+    };
 }
 
 - (void)viewDidLayoutSubviews {
@@ -284,4 +305,19 @@
     }
 }
 
+- (IBAction)editNoteBtn {
+    UIStoryboard *editSb = [UIStoryboard storyboardWithName:@"SNEditViewController" bundle:nil];
+    SNEditViewController *editNc = [editSb instantiateInitialViewController];
+    SNEditViewController *editVc = editNc.childViewControllers[0];
+    editVc.curNote = self.notes[self.index];
+    if (self.index == 0) {
+        editVc.curImages = self.firstNoteView.curImages;
+    } else if (self.index == self.notes.count - 1) {
+        editVc.curImages = self.thirdNoteView.curImages;
+    } else {
+        editVc.curImages = self.secondNoteView.curImages;
+    }
+    [self presentViewController:editNc animated:YES completion:nil];
+    [editNc.childViewControllers[0] setNoteVc:self];
+}
 @end

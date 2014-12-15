@@ -10,7 +10,6 @@
 
 @interface SCPlaceholderTextView()<UITextViewDelegate>
 
-@property (nonatomic, weak) UILabel *placeholderLabel;
 
 @end
 

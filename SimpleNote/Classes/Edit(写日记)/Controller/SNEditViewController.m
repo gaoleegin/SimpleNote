@@ -15,6 +15,7 @@
 #import "Common.h"
 #import "UIView+Extension.h"
 #import "MJExtension.h"
+#import "SNNoteViewController.h"
 
 @interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /**
@@ -85,6 +86,8 @@
  *  图片名后缀 - 用来区分同一篇日记的名字
  */
 @property (nonatomic, assign) int i;
+
+@property (nonatomic, assign, getter=isEditing) BOOL editing;
 @end
 
 @implementation SNEditViewController
@@ -93,6 +96,41 @@
     [super viewDidLoad];
     self.commitBtn.enabled = NO;
     self.addImageCount = 1;
+    
+    // 编辑页面初始化
+    [self setUpEditView];
+}
+
+
+- (void)setUpEditView {
+    if (self.curNote != nil) {
+        self.editing = YES;
+        [self.textView setText:self.curNote.body];
+        self.textView.placeholderLabel.hidden = YES;
+        
+        if (self.curImages.count) {
+            self.addImageView.image = self.curImages[0];
+            if (self.curImages.count > 1) {
+                self.addImageView2.image = self.curImages[1];
+                if (self.curImages.count > 2) {
+                    self.addImageView3.image = self.curImages[2];
+                }
+            }
+        }
+        
+//        switch (self.images.count) {
+//            case 3:
+//                self.addImageView.image = self.images[0];
+//            case 2:
+//                self.addImageView2.image = self.images[1];
+//            case 1:
+//                self.addImageView3.image = self.images[2];
+//            case 0:
+//                break;
+//            default:
+//                break;
+//        }
+    }
 }
 
 #pragma mark - 懒加载
@@ -102,6 +140,7 @@
     }
     return _monthDict;
 }
+
 
 - (NSDictionary *)dayDict {
     if (!_dayDict) {
@@ -266,15 +305,22 @@
     
     NSDictionary *noteDict = @{@"date":date, @"body":self.textView.text, @"imageNames":imageNames};
     SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
-    if (self.listVc.saveNote) {
-        self.listVc.saveNote(newNote);
+    
+    
+    if (self.isEditing) {
+        if (self.noteVc.editNote) {
+            self.noteVc.editNote(newNote);
+        }
+    } else {
+        if (self.listVc.saveNote) {
+            self.listVc.saveNote(newNote);
+        }
     }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // 收回键盘
     [self.textView resignFirstResponder];
-    
-
     
     [UIApplication sharedApplication].statusBarHidden = YES;
 }

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-@class SNListViewController;
+@class SNListViewController, SNNoteModel, SNNoteViewController;
 
 @interface SNEditViewController : UIViewController
 
 @property (nonatomic, strong) SNListViewController *listVc;
+
+@property (nonatomic, strong) SNNoteViewController *noteVc;
+
+@property (nonatomic, strong) SNNoteModel *curNote;
+
+@property (nonatomic, strong) NSMutableArray *curImages;
 
 @end

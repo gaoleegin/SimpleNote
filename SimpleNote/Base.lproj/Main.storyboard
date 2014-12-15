@@ -105,7 +105,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="obh-o0-2a2"/>
                                         </constraints>
-                                        <state key="normal" image="button_about_push">
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="&gt;写日记&lt;">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1096,14 +1097,29 @@
                                                                     <action selector="back" destination="EF5-iy-zZ7" eventType="touchUpInside" id="61q-d7-8Iq"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-s9-XTL">
+                                                                <rect key="frame" x="500" y="0.0" width="100" height="64"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="H39-VY-mgU"/>
+                                                                </constraints>
+                                                                <state key="normal" title="&gt;编辑日记&lt;">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="editNoteBtn" destination="EF5-iy-zZ7" eventType="touchUpInside" id="Ad3-wg-iRp"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="64" id="2fu-CZ-7jd"/>
+                                                            <constraint firstAttribute="centerY" secondItem="sHy-s9-XTL" secondAttribute="centerY" id="4Gz-jW-eQK"/>
                                                             <constraint firstItem="Cka-an-cme" firstAttribute="leading" secondItem="umf-Pf-OwQ" secondAttribute="trailing" id="4oP-hL-oUA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sHy-s9-XTL" secondAttribute="trailing" id="8Bw-bp-ciF"/>
                                                             <constraint firstItem="145-gX-741" firstAttribute="top" secondItem="at1-Li-Ezf" secondAttribute="top" constant="64" id="F55-ga-A0V"/>
                                                             <constraint firstItem="umf-Pf-OwQ" firstAttribute="top" secondItem="at1-Li-Ezf" secondAttribute="top" id="ITK-IL-iPQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="145-gX-741" secondAttribute="trailing" id="NQ3-ZC-6J7"/>
+                                                            <constraint firstAttribute="height" secondItem="sHy-s9-XTL" secondAttribute="height" id="Qyg-0R-QEj"/>
                                                             <constraint firstItem="8Jk-oo-i0L" firstAttribute="leading" secondItem="at1-Li-Ezf" secondAttribute="trailing" id="Vqu-wk-sCt"/>
                                                             <constraint firstItem="145-gX-741" firstAttribute="leading" secondItem="at1-Li-Ezf" secondAttribute="leading" id="Z7B-b9-91c"/>
                                                             <constraint firstItem="umf-Pf-OwQ" firstAttribute="leading" secondItem="at1-Li-Ezf" secondAttribute="leading" id="cSf-Dj-OCu"/>
@@ -1202,7 +1218,6 @@
     </scenes>
     <resources>
         <image name="bar" width="384" height="64"/>
-        <image name="button_about_push" width="32" height="32"/>
         <image name="button_list" width="32" height="32"/>
         <image name="button_list_push" width="32" height="32"/>
         <image name="button_logout" width="32" height="32"/>
