@@ -280,9 +280,7 @@
 
         self.firstNoteView.note = self.notes[self.index - 1];
         self.secondNoteView.note = self.notes[self.index];
-        self.thirdNoteView.note = self.notes[self.index + 1];
-        NSLog(@"%@", self.firstNoteView.note);
-        
+        self.thirdNoteView.note = self.notes[self.index + 1];        
     }
 }
 
