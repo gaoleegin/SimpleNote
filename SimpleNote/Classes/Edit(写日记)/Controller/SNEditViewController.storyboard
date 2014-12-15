@@ -208,10 +208,10 @@
                                         <exclude reference="054-LY-cfu"/>
                                         <exclude reference="Dd9-JB-ZkT"/>
                                         <exclude reference="VOH-c4-saj"/>
-                                        <exclude reference="pnG-Zr-eHZ"/>
-                                        <exclude reference="wIV-qp-fKE"/>
                                         <exclude reference="AMA-9I-1SI"/>
                                         <exclude reference="MVB-mB-hHj"/>
+                                        <exclude reference="pnG-Zr-eHZ"/>
+                                        <exclude reference="wIV-qp-fKE"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -220,14 +220,14 @@
                                         <include reference="k7E-gp-bRa"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="Q8A-PV-qMK"/>
                                         <include reference="054-LY-cfu"/>
                                         <include reference="Dd9-JB-ZkT"/>
                                         <include reference="VOH-c4-saj"/>
-                                        <include reference="pnG-Zr-eHZ"/>
-                                        <include reference="wIV-qp-fKE"/>
-                                        <include reference="Q8A-PV-qMK"/>
                                         <include reference="AMA-9I-1SI"/>
                                         <include reference="MVB-mB-hHj"/>
+                                        <include reference="pnG-Zr-eHZ"/>
+                                        <include reference="wIV-qp-fKE"/>
                                     </mask>
                                 </variation>
                             </view>

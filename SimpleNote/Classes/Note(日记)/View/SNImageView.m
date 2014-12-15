@@ -60,7 +60,7 @@
 //    NSLog(@"%@", self.image);
     if (self.image) {
         if (Iphone) self.heightCons.constant = 280;
-        else self.heightCons.constant = 560;
+        else self.heightCons.constant = 480;
     }
     else self.heightCons.constant = 0;
 

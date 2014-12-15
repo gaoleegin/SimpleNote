@@ -149,17 +149,17 @@
             }
         } else { // 如果是ipad, 高度为560
             if (self.imageView.image) {
-                self.imageViewHeightCons.constant = 560;
+                self.imageViewHeightCons.constant = 480;
             } else {
                 self.imageViewHeightCons.constant = 0;
             }
             if (self.imageView2.image) {
-                self.imageViewHeightCons2.constant = 560;
+                self.imageViewHeightCons2.constant = 480;
             } else {
                 self.imageViewHeightCons2.constant = 0;
             }
             if (self.imageView3.image) {
-                self.imageViewHeightCons3.constant = 560;
+                self.imageViewHeightCons3.constant = 480;
             } else {
                 self.imageViewHeightCons3.constant = 0;
             }
