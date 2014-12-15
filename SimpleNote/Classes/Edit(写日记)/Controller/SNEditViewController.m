@@ -168,8 +168,10 @@
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
     */
     if (self.addImageCount == 4) {
-        if (Iphone) [self.view setSheetWithContent:@"最多添加十张照片"];
-        else [self.view setSheetWithContent:@"最多添加三张照片"];
+        [self.view setSheetWithContent:@"购买后添加更多照片么么哒"];
+        return;
+    } else if (self.addImageCount == 5){
+        [self.view setSheetWithContent:@"购买后添加更多照片么么哒"];
         return;
     }
     
