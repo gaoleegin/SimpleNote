@@ -60,6 +60,7 @@
  */
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons3;
 
+
 @end
 
 @implementation SNNoteView
@@ -93,17 +94,22 @@
                 UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
                 [self.curImages addObject:image2];
                 self.imageView2.image = image2;
+                self.imageView2ToimageViewMargin.constant = 40.0;
             } else {
                 self.imageView2.image = nil;
                 self.imageView3.image = nil;
+                self.imageView2ToimageViewMargin.constant = 0.0;
+                self.imageView3ToimageView2Margin.constant = 0.0;
             }
             
             if (note.imageNames.count > 2) {
                 UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
                 [self.curImages addObject:image3];
                 self.imageView3.image = image3;
+                self.imageView3ToimageView2Margin.constant = 40.0;
             } else {
                 self.imageView3.image = nil;
+                self.imageView3ToimageView2Margin.constant = 0.0;
             }
             
             
@@ -117,17 +123,24 @@
                 self.imageView.image = nil;
                 self.imageView2.image = nil;
                 self.imageView3.image = nil;
+                self.imageView2ToimageViewMargin.constant = 0.0;
+                self.imageView3ToimageView2Margin.constant = 0.0;
             }
             if (self.curImages.count > 1) {
                 self.imageView2.image = self.curImages[1];
+                self.imageView2ToimageViewMargin.constant = 40.0;
             } else {
                 self.imageView2.image = nil;
                 self.imageView3.image = nil;
+                self.imageView2ToimageViewMargin.constant = 0.0;
+                self.imageView3ToimageView2Margin.constant = 0.0;
             }
             if (self.curImages.count > 2) {
                 self.imageView3.image = self.curImages[2];
+                self.imageView3ToimageView2Margin.constant = 40.0;
             } else {
                 self.imageView3.image = nil;
+                self.imageView3ToimageView2Margin.constant = 0.0;
             }
         }
         
