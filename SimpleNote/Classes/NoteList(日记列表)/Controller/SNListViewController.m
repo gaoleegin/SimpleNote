@@ -57,6 +57,9 @@
         SNNoteModel *note1 = [SNNoteModel objectWithKeyValues:noteDict1];
         SNNoteModel *note2 = [SNNoteModel objectWithKeyValues:noteDict2];
         [self.notes addObjectsFromArray:@[note1, note2]];
+        
+        [SNNoteTool save:image1Names];
+        [SNNoteTool save:image2Names];
     }
     
     __weak typeof(self) weakSelf = self;

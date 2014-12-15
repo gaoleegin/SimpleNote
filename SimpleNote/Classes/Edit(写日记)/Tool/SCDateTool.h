@@ -27,11 +27,6 @@
 + (NSString *)dateWithMonth;
 
 /**
- *  读取月份 例:01
- */
-+ (NSString *)dateWithMonth_0;
-
-/**
  *  读取英文月份 例:January
  */
 + (NSString *)dateWithMonth_en;
@@ -62,7 +57,7 @@
 + (NSString *)dateWithDay_zh;
 
 /**
- *  读取时 例:3
+ *  读取时 例:3  - 24小时制
  */
 + (NSString *)dateWithHour;
 
