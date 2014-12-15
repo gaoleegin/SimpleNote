@@ -11,7 +11,7 @@
 #import "SNListViewController.h"
 #import "SNNoteModel.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "SNImageTool.h"
+#import "SCImageTool.h"
 #import "Common.h"
 #import "UIView+Extension.h"
 #import "MJExtension.h"
@@ -243,13 +243,13 @@
     NSMutableArray *imageNames = [NSMutableArray array];
     for (UIImage *image in self.images) {
         // 图片路径
-        NSString *imageName = [NSString stringWithFormat:@"%@_%02d", [SCDateTool dateToEnglishID], self.i++];
+        NSString *imageName = [NSString stringWithFormat:@"%@_%02d", [SCDateTool dateWithDateID], self.i++];
         NSString *imageNameID = [imageName stringByAppendingPathExtension:@"png"];
-        [SNImageTool save:image imageName:imageNameID];
+        [SCImageTool save:image imageName:imageNameID];
         [imageNames addObject:imageNameID];
     }
     
-    NSDictionary *noteDict = @{@"date":[SCDateTool dateToEnglish], @"body":self.textView.text, @"imageNames":imageNames};
+    NSDictionary *noteDict = @{@"date":[SCDateTool dateWithDate_en], @"body":self.textView.text, @"imageNames":imageNames};
     SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
     
     

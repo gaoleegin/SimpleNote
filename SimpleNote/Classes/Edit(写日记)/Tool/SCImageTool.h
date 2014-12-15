@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SNImageTool : NSObject
+@interface SCImageTool : NSObject
 
 /**
  *  存储日记图片

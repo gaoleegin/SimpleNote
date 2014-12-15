@@ -14,7 +14,7 @@
 		963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5BB41A35ECD70052A2DD /* SNNoteModel.m */; };
 		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
 		96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF81A3194EA00ABF0B1 /* SNNoteView.m */; };
-		968E16F41A3BD00500CA81F6 /* SNImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E16F31A3BD00500CA81F6 /* SNImageTool.m */; };
+		968E16F41A3BD00500CA81F6 /* SCImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E16F31A3BD00500CA81F6 /* SCImageTool.m */; };
 		96BE6B091A3AB70E001D1DF6 /* SNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */; };
 		96BE6B0A1A3AB70E001D1DF6 /* SNListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B081A3AB70E001D1DF6 /* SNListViewCell.m */; };
 		96BE6B0D1A3AB748001D1DF6 /* SNNoteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BE6B0C1A3AB748001D1DF6 /* SNNoteTool.m */; };
@@ -76,8 +76,8 @@
 		96599EF61A3191FF00ABF0B1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		96599EF71A3194EA00ABF0B1 /* SNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteView.h; sourceTree = "<group>"; };
 		96599EF81A3194EA00ABF0B1 /* SNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteView.m; sourceTree = "<group>"; };
-		968E16F21A3BD00500CA81F6 /* SNImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImageTool.h; sourceTree = "<group>"; };
-		968E16F31A3BD00500CA81F6 /* SNImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImageTool.m; sourceTree = "<group>"; };
+		968E16F21A3BD00500CA81F6 /* SCImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageTool.h; sourceTree = "<group>"; };
+		968E16F31A3BD00500CA81F6 /* SCImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageTool.m; sourceTree = "<group>"; };
 		96BE6B021A3AB70E001D1DF6 /* SNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewController.h; sourceTree = "<group>"; };
 		96BE6B031A3AB70E001D1DF6 /* SNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNListViewController.m; sourceTree = "<group>"; };
 		96BE6B071A3AB70E001D1DF6 /* SNListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNListViewCell.h; sourceTree = "<group>"; };
@@ -290,8 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				96BE6B0F1A3AC446001D1DF6 /* PopMenu */,
-				968E16F21A3BD00500CA81F6 /* SNImageTool.h */,
-				968E16F31A3BD00500CA81F6 /* SNImageTool.m */,
+				968E16F21A3BD00500CA81F6 /* SCImageTool.h */,
+				968E16F31A3BD00500CA81F6 /* SCImageTool.m */,
 				96CA99621A3F04B1002F3F1C /* SCDateTool.h */,
 				96CA99631A3F04B1002F3F1C /* SCDateTool.m */,
 			);
@@ -662,7 +662,7 @@
 			files = (
 				96CA99521A3DA27E002F3F1C /* MJMember.m in Sources */,
 				96CA99541A3DA27E002F3F1C /* MJType.m in Sources */,
-				968E16F41A3BD00500CA81F6 /* SNImageTool.m in Sources */,
+				968E16F41A3BD00500CA81F6 /* SCImageTool.m in Sources */,
 				96BE6B121A3AC446001D1DF6 /* SCPopMenu.m in Sources */,
 				96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */,
 				96CA99501A3DA27E002F3F1C /* MJFoundation.m in Sources */,

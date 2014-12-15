@@ -9,9 +9,9 @@
 
 #define SNImagePath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-#import "SNImageTool.h"
+#import "SCImageTool.h"
 
-@implementation SNImageTool
+@implementation SCImageTool
 
 + (void)save:(UIImage *)image imageName:(NSString *)imageName {
     NSString *imagePath = [SNImagePath stringByAppendingPathComponent:imageName];

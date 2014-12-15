@@ -9,7 +9,7 @@
 #import "SNNoteView.h"
 #import "SNBodyLabel.h"
 #import "SNNoteModel.h"
-#import "SNImageTool.h"
+#import "SCImageTool.h"
 #import "Common.h"
 #import "Masonry.h"
 
@@ -86,12 +86,12 @@
     if (note.imageNames.count != 0) { // 如果该页有配图
         if (self.curImages.count == 0) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
             // 这里循环添加image, 先取出第一张配图,存进数组
-            UIImage *image = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[0]]];
+            UIImage *image = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[0]]];
             [self.curImages addObject:image];
             self.imageView.image = image;
             
             if (note.imageNames.count > 1) {
-                UIImage *image2 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[1]]];
+                UIImage *image2 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[1]]];
                 [self.curImages addObject:image2];
                 self.imageView2.image = image2;
                 self.imageView2ToimageViewMargin.constant = 40.0;
@@ -103,7 +103,7 @@
             }
             
             if (note.imageNames.count > 2) {
-                UIImage *image3 = [UIImage imageWithContentsOfFile:[SNImageTool imagePath:note.imageNames[2]]];
+                UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];
                 [self.curImages addObject:image3];
                 self.imageView3.image = image3;
                 self.imageView3ToimageView2Margin.constant = 40.0;

@@ -15,7 +15,7 @@
 #import "SNNoteTool.h"
 #import "MJExtension.h"
 #import "SCDateTool.h"
-#import "SNImageTool.h"
+#import "SCImageTool.h"
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -39,27 +39,21 @@
     _notes = [SNNoteTool notes];
     
     if (!_notes) {
-        // 从mainBundle加载默认数据
-//        NSMutableArray *dictArr = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"note" ofType:@"plist"]];
-//        self.dictArr = dictArr;
-//        for (NSDictionary *dict in dictArr) {
-//            SNNoteModel *noteM = [SNNoteModel objectWithKeyValues:dict];
-//            [self.notes addObject:noteM];
-//        }
         
         // 程序第一次载入时候显示
         UIImage *image1 = [UIImage imageNamed:@"dec28_windmill"];
         UIImage *image2 = [UIImage imageNamed:@"sep30_box"];
-        NSString *image1Name = [NSString stringWithFormat:@"%@_01",[SCDateTool dateToEnglishID]];
-        NSString *image2Name = [NSString stringWithFormat:@"%@_02",[SCDateTool dateToEnglishID]];
-        [SNImageTool save:image1 imageName:image1Name];
-        [SNImageTool save:image2 imageName:image2Name];
+        NSString *image1Name = [NSString stringWithFormat:@"%@_01",[SCDateTool dateWithDateID]];
+        NSString *image2Name = [NSString stringWithFormat:@"%@_02",[SCDateTool dateWithDateID]];
+
+        [SCImageTool save:image1 imageName:[image1Name stringByAppendingPathExtension:@"png"]];
+        [SCImageTool save:image2 imageName:[image2Name stringByAppendingPathExtension:@"png"]];
         
         NSMutableArray *image1Names = [NSMutableArray arrayWithObject:image1Name];
         NSMutableArray *image2Names = [NSMutableArray arrayWithObject:image2Name];
         
-        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateToEnglish], @"body" : @"我今天感觉自己萌萌哒!", @"imageNames" : image1Names};
-        NSDictionary *noteDict2 = @{@"date" : [SCDateTool dateToEnglish], @"body" : @"你呢?", @"imageNames" : image2Names};
+        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"我今天感觉自己萌萌哒!", @"imageNames" : image1Names};
+        NSDictionary *noteDict2 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"你呢?", @"imageNames" : image2Names};
         SNNoteModel *note1 = [SNNoteModel objectWithKeyValues:noteDict1];
         SNNoteModel *note2 = [SNNoteModel objectWithKeyValues:noteDict2];
         [self.notes addObjectsFromArray:@[note1, note2]];
@@ -76,9 +70,6 @@
         });
     };
 }
-//dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
-//});
 
 
 #pragma mark - 懒加载
