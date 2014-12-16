@@ -95,6 +95,25 @@
     
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    if (self.notes.count == 1) {
+        return;
+    }
+    if (self.notes.count == 2 && self.index == 1) {
+        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+    }
+    if (self.notes.count > 2) {
+        if (self.index == self.notes.count - 1) {
+            self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
+        } else if (self.index == 0) {
+            return;
+        } else {
+            self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+        }
+    }
+}
 
 - (void)setNoteBlock {
     __weak typeof(self) weakSelf = self;
