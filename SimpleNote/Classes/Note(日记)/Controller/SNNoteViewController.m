@@ -117,23 +117,29 @@
     };
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    // 刷新滚动页的偏移量(如果不是第一页和最后一页, 始终偏移至中间页面)
-    if (self.index == 0) {
-        return;
-    }
-    else if (self.index == 1 && self.notes.count == 2) {
-        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
-    }
-    else if (self.index == self.notes.count - 1) {
-        self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
-        return;
-    }
-    else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
-    
-}
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    
+//    // 刷新滚动页的偏移量(如果不是第一页和最后一页, 始终偏移至中间页面)
+////    if (self.index == 0) {
+////        return;
+////    }
+////    else if (self.index == 1 && self.notes.count == 2) {
+////        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+////    }
+////    else if (self.index == self.notes.count - 1) {
+////        self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
+////        return;
+////    }
+////    else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+//    
+//    if (self.index == self.notes.count - 1 || self.index == 0) {
+//        return;
+//    } else {
+//        NSLog(@"ok");
+//        self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+//    }
+//}
 
 
 #pragma mark - 加载数据
@@ -305,7 +311,15 @@
 
         self.firstNoteView.note = self.notes[self.index - 1];
         self.secondNoteView.note = self.notes[self.index];
-        self.thirdNoteView.note = self.notes[self.index + 1];        
+        self.thirdNoteView.note = self.notes[self.index + 1];
+        
+        if (self.index == self.notes.count - 1 || self.index == 0) {
+            return;
+        } else {
+            NSLog(@"ok");
+            self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
+        }
+
     }
 }
 
