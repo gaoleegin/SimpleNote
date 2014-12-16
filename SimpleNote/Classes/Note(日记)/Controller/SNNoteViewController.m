@@ -99,10 +99,10 @@
     
     [self addData];
     
-    [self setEditNoteBlock];
+    [self setNoteBlock];
 }
 
-- (void)setEditNoteBlock {
+- (void)setNoteBlock {
     __weak typeof(self) weakSelf = self;
     self.editNote = ^(SNNoteModel *newNote){
         [weakSelf.notes replaceObjectAtIndex:weakSelf.index withObject:newNote];
@@ -114,6 +114,12 @@
         } else {
             weakSelf.secondNoteView.note = newNote;
         }
+    };
+    
+    self.deleteNote = ^(int curIndex){
+        [weakSelf.notes removeObjectAtIndex:curIndex];
+        [SNNoteTool save:weakSelf.notes];
+        [weakSelf.navigationController popViewControllerAnimated:NO];
     };
 }
 
@@ -131,7 +137,6 @@
         return;
     }
     else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
-    
     
     // 翻至第一页或最后一页时, 隐藏箭头按钮
     if (self.index == 0 || self.index == 1) {
@@ -310,6 +315,7 @@
     SNEditViewController *editNc = [editSb instantiateInitialViewController];
     SNEditViewController *editVc = editNc.childViewControllers[0];
     editVc.curNote = self.notes[self.index];
+    editVc.curIndex = self.index;
     if (self.index == 0) {
         editVc.curImages = self.firstNoteView.curImages;
     } else if (self.index == self.notes.count - 1) {

@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong) NSMutableArray *curImages;
 
+@property (nonatomic, assign) int curIndex;
+
 @end

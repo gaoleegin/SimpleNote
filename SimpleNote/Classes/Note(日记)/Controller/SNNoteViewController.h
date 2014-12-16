@@ -25,4 +25,9 @@
  */
 @property (nonatomic, copy) void(^editNote)(SNNoteModel *newNote);
 
+/**
+ *  删除日记
+ */
+@property (nonatomic, copy) void(^deleteNote)(int curIndex);
+
 @end

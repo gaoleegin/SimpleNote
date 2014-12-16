@@ -80,7 +80,17 @@
  */
 @property (nonatomic, assign) int i;
 
+/**
+ *  是编辑还是写新日记
+ */
 @property (nonatomic, assign, getter=isEditing) BOOL editing;
+
+/**
+ *  删除日记
+ */
+- (IBAction)deleteNote;
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteNoteButton;
 
 @end
 
@@ -99,6 +109,7 @@
 - (void)setUpEditView {
     if (self.curNote != nil) {
         self.navigationItem.title = @"编辑";
+        self.deleteNoteButton.hidden = NO;
         self.editing = YES;
         [self.textView setText:self.curNote.body];
         self.textView.placeholderLabel.hidden = YES;
@@ -117,6 +128,7 @@
         }
     } else {
         self.navigationItem.title = @"写日记";
+        self.deleteNoteButton.hidden = YES;
     }
 }
 
@@ -262,7 +274,7 @@
             self.listVc.saveNote(newNote);
         }
     }
-    
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // 收回键盘
@@ -277,5 +289,13 @@
     } else {
         self.commitBtn.enabled = NO;
     }
+}
+
+- (IBAction)deleteNote {
+    if (self.noteVc.deleteNote) {
+        self.noteVc.deleteNote(self.curIndex);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 @end

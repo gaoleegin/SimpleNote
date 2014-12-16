@@ -12,14 +12,20 @@
 @interface SNNoteTool : NSObject
 
 /**
- *  存储日记数据信息
+ *  存储日记
  */
 + (void)save:(NSMutableArray *)notes;
 
 
 /**
- *  读取日记数据信息
+ *  读取日记
  */
 + (NSMutableArray *)notes;
 
+/**
+ *  删除日记
+ *
+ *  @param index 日记下标
+ */
++ (void)deleteNoteWithIndex:(int)index;
 @end

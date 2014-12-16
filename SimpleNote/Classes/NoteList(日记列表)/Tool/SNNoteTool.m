@@ -22,4 +22,9 @@
     return notes;
 }
 
++ (void)deleteNoteWithIndex:(int)index {
+    NSLog(@"从沙盒数据中删除--功能待实现");
+}
+
+
 @end

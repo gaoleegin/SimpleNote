@@ -58,8 +58,8 @@
         SNNoteModel *note2 = [SNNoteModel objectWithKeyValues:noteDict2];
         [self.notes addObjectsFromArray:@[note1, note2]];
         
-        [SNNoteTool save:image1Names];
-        [SNNoteTool save:image2Names];
+        [SNNoteTool save:self.notes];
+        
     }
     
     __weak typeof(self) weakSelf = self;
@@ -67,11 +67,14 @@
         [weakSelf.notes insertObject:newNote atIndex:0];
         [SNNoteTool save:weakSelf.notes];
         [weakSelf.tableView reloadData];
-        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        if (weakSelf.notes.count > 1) {
+            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
         });
     };
+    
 }
 
 
