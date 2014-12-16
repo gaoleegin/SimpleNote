@@ -77,14 +77,6 @@
  */
 @property (weak, nonatomic) IBOutlet UIImageView *secondNoteShadow;
 /**
- *  首页的左边箭头按钮
- */
-@property (weak, nonatomic) IBOutlet UIButton *leftArrowBtn;
-/**
- *  首页的右边箭头按钮
- */
-@property (weak, nonatomic) IBOutlet UIButton *rightArrowBtn;
-/**
  *  编辑日记按钮
  */
 - (IBAction)editNoteBtn;
@@ -100,7 +92,9 @@
     [self addData];
     
     [self setNoteBlock];
+    
 }
+
 
 - (void)setNoteBlock {
     __weak typeof(self) weakSelf = self;
@@ -134,19 +128,10 @@
         self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
     }
     else if (self.index == self.notes.count - 1) {
+        self.scrollView.contentOffset = CGPointMake(SCScreenWidth * 2, 0);
         return;
     }
     else self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
-    
-    // 翻至第一页或最后一页时, 隐藏箭头按钮
-    if (self.index == 0 || self.index == 1) {
-        self.leftArrowBtn.hidden = YES;
-    } else if (self.index == self.notes.count - 1 || self.index == self.notes.count - 2) {
-        self.rightArrowBtn.hidden = YES;
-    } else {
-        self.leftArrowBtn.hidden = NO;
-        self.rightArrowBtn.hidden = NO;
-    }
     
 }
 
@@ -224,15 +209,18 @@
     
     CGFloat offSetH = self.scrollView.contentOffset.x; // x轴偏移量
     int curPageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
-    
+
+    NSLog(@"%zd", curPageState);
     // 循环显示数据源
     [self loopDisplay:curPageState];
-
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.notes.count == 1) self.scrollView.contentSize = CGSizeMake(SCScreenWidth, SCScreenHeight);
-    if (self.notes.count == 2 && self.index == 0) {
+    if (self.notes.count == 1) {
+        self.scrollView.contentSize = CGSizeMake(SCScreenWidth, SCScreenHeight);
+        return;
+    }
+    if (self.notes.count == 2) {
         self.scrollView.contentSize = CGSizeMake(SCScreenWidth * 2, SCScreenHeight);
     }
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
@@ -253,8 +241,10 @@
     CGFloat alpha_nd = (SCScreenWidth - offsetH) / (SCScreenWidth * SNSHADOW_ANIMATION_RANGE);
     if (alpha_nd > SNSHADOW_ALPHA) alpha_nd = SNSHADOW_ALPHA;
     self.secondNoteShadow.alpha = alpha_nd;
+    
 }
 
+ 
 #pragma mark <更新数据>
 - (void)loopDisplay:(int)pageState {
     // 从第一篇进来后, 翻至第二页时, 模型下标加一 ,不更新数据
@@ -285,11 +275,36 @@
         self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         return;
     }
+//    // 从第一篇进来后, 越过第二页, 直接翻至第三页, 更新数据
+//    else if (pageState == 2 && self.index == 0) {
+//        self.firstScrollView.contentOffset = CGPointMake(0, 0); // 第一页复位
+//        self.index = self.index + 2;
+//        
+//        return;
+//    }
+//    // 从最后一篇进来后, 越过倒数第二页, 直接翻至倒数第三页, 更新数据
+//    else if (pageState == 0 && self.index == self.notes.count - 1) {
+//        self.thirdScrollView.contentOffset = CGPointMake(0, 0); // 最后一页复位
+//        self.index = self.index - 2;
+//        
+//        return;;
+//    }
     // 往后翻或往前翻, 模型下标加一或减一, 更新数据, (图片只更新上一页或下一页)
     else {
-        self.secondScrollView.contentOffset = CGPointMake(0, 0); // 当前页复位
-        pageState == 0 ? self.index-- : self.index++;
-        if (pageState == 0) self.secondNoteLeadingCons.constant = 0; // 复位初始约束
+        if (pageState == 2 && self.index == 0) {
+            NSLog(@"ok");
+            self.firstScrollView.contentOffset = CGPointMake(0, 0); // 第一页复位
+            self.index = self.index + 2;
+        } else if (pageState == 0 && self.index == self.notes.count - 1) {
+            self.thirdScrollView.contentOffset = CGPointMake(0, 0); // 最后一页复位
+            self.index = self.index - 2;
+            self.secondNoteLeadingCons.constant = 0; // 复位初始约束
+            self.thirdNoteLeadingCons.constant = 0; // 复位初始约束
+        } else {
+            self.secondScrollView.contentOffset = CGPointMake(0, 0); // 中间页复位
+            pageState == 0 ? self.index-- : self.index++;
+            if (pageState == 0) self.secondNoteLeadingCons.constant = 0; // 复位初始约束
+        }
         
         // 重复利用图片, 每次翻页只更新一个视图
         if (pageState == 0) {

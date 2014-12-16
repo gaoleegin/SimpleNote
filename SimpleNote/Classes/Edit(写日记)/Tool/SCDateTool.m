@@ -43,7 +43,7 @@ static NSDateFormatter *_dateFormatter;
 }
 
 + (NSString *)dateWithMonth_en {
-    [_dateFormatter setDateFormat:@"MMMM"];
+    [_dateFormatter setDateFormat:@"MMM"];
     NSString *monthStr_en = [_dateFormatter stringFromDate:[NSDate date]];
     return monthStr_en;
 }
@@ -127,30 +127,26 @@ static NSDateFormatter *_dateFormatter;
     return dateStr;
 }
 
-+ (NSString *)dateWithDate_en {
-    NSString *dateStr_en = [NSString stringWithFormat:@"%@ %@", [SCDateTool dateWithMonth_en], [SCDateTool dateWithDay_en]];
-    return dateStr_en;
-}
 
 + (NSString *)dateWithDate_zh {
     NSString *dateStr_zh = [NSString stringWithFormat:@"%@%@", [SCDateTool dateWithMonth_zh], [SCDateTool dateWithDay_zh]];
     return dateStr_zh;
 }
 
-+ (NSString *)dateWithDetailDate {
++ (NSString *)dateWithDate_en {
     NSString *detailDateStr = [NSString stringWithFormat:@"%@-%@", [SCDateTool dateWithYear], [SCDateTool dateWithDate]];
     return detailDateStr;
 }
 
-+ (NSString *)dateWithDetailDateAndTime {
-    NSString *detailDateAndTimeStr = [NSString stringWithFormat:@"%@ %@", [SCDateTool dateWithDetailDate], [SCDateTool dateWithTime]];
-    return detailDateAndTimeStr;
-}
-
-+ (NSString *)dateWithDetailDateAndDetailTime {
-    NSString *detailDateAndDetailTimeStr = [NSString stringWithFormat:@"%@ %@", [SCDateTool dateWithDetailDate], [SCDateTool dateWithDetailTime]];
-    return detailDateAndDetailTimeStr;
-}
+//+ (NSString *)dateWithDetailDateAndTime {
+//    NSString *detailDateAndTimeStr = [NSString stringWithFormat:@"%@ %@", [SCDateTool dateWithDetailDate], [SCDateTool dateWithTime]];
+//    return detailDateAndTimeStr;
+//}
+//
+//+ (NSString *)dateWithDetailDateAndDetailTime {
+//    NSString *detailDateAndDetailTimeStr = [NSString stringWithFormat:@"%@ %@", [SCDateTool dateWithDetailDate], [SCDateTool dateWithDetailTime]];
+//    return detailDateAndDetailTimeStr;
+//}
 
 + (NSString *)dateWithDateID {
     NSString *yearStr = [SCDateTool dateWithYear];

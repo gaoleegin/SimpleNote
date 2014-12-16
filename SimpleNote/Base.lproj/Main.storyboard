@@ -1045,18 +1045,6 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
                                                                         <rect key="frame" x="30" y="250" width="540" height="55"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="50" id="quc-7p-xob"/>
-                                                                                </constraints>
-                                                                                <state key="normal" image="diary_arrow_left">
-                                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                                </state>
-                                                                                <connections>
-                                                                                    <action selector="preNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="EJn-Xt-s0f"/>
-                                                                                </connections>
-                                                                            </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary_dot" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-PN-GDD">
                                                                                 <rect key="frame" x="265" y="23" width="10" height="10"/>
                                                                                 <constraints>
@@ -1076,6 +1064,18 @@
                                                                                 </state>
                                                                                 <connections>
                                                                                     <action selector="nextNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="rWc-xQ-Pqs"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="50" id="quc-7p-xob"/>
+                                                                                </constraints>
+                                                                                <state key="normal" image="diary_arrow_left">
+                                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </state>
+                                                                                <connections>
+                                                                                    <action selector="preNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="EJn-Xt-s0f"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
@@ -1253,8 +1253,6 @@
                         <outlet property="firstNoteShadow" destination="8Jk-oo-i0L" id="L4w-X3-5DQ"/>
                         <outlet property="firstNoteView" destination="tL1-EY-2td" id="Wu9-9I-pFa"/>
                         <outlet property="firstScrollView" destination="2U7-Uj-RuW" id="hev-eY-39P"/>
-                        <outlet property="leftArrowBtn" destination="eY8-U5-U4P" id="rHu-E2-KwN"/>
-                        <outlet property="rightArrowBtn" destination="pXZ-Ne-0YM" id="a1U-J2-JRg"/>
                         <outlet property="scrollView" destination="xYm-hM-kZj" id="DEs-a0-C6p"/>
                         <outlet property="secondNoteLeadingCons" destination="lVT-2A-ma7" id="7OK-Kl-ksI"/>
                         <outlet property="secondNoteShadow" destination="Dz8-hJ-OmB" id="oEI-cf-Exj"/>

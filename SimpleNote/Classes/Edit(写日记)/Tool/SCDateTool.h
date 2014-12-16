@@ -111,20 +111,20 @@
  */
 + (NSString *)dateWithDate_zh;
 
-/**
- *  读取通用详细日期 例:2014-1-1
- */
-+ (NSString *)dateWithDetailDate;
+///**
+// *  读取通用详细日期 例:2014-1-1
+// */
+//+ (NSString *)dateWithDetailDate;
 
-/**
- *  读取通用详细日期+时间 例:2014-1-1 3:07
- */
-+ (NSString *)dateWithDetailDateAndTime;
-
-/**
- *  读取通用详细日期+详细时间 例:2014-1-1 3:07:13
- */
-+ (NSString *)dateWithDetailDateAndDetailTime;
+///**
+// *  读取通用详细日期+时间 例:2014-1-1 3:07
+// */
+//+ (NSString *)dateWithDetailDateAndTime;
+//
+///**
+// *  读取通用详细日期+详细时间 例:2014-1-1 3:07:13
+// */
+//+ (NSString *)dateWithDetailDateAndDetailTime;
 
 /**
  *  读取唯一日期ID 例:20140101_030713
