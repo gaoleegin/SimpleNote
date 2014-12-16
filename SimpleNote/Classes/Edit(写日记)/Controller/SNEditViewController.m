@@ -18,7 +18,7 @@
 #import "SNNoteViewController.h"
 #import "SCDateTool.h"
 
-@interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
 /**
  *  取消
  */
@@ -292,10 +292,18 @@
 }
 
 - (IBAction)deleteNote {
-    if (self.noteVc.deleteNote) {
-        self.noteVc.deleteNote(self.curIndex);
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"确定删除吗" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
 }
+
+#pragma mark - <UIAlertDelegate>
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        if (self.noteVc.deleteNote) {
+            self.noteVc.deleteNote(self.curIndex);
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 @end

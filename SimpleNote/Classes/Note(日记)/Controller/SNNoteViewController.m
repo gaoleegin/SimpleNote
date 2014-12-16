@@ -335,7 +335,6 @@
         if (self.index == self.notes.count - 1 || self.index == 0) {
             return;
         } else {
-            NSLog(@"ok");
             self.scrollView.contentOffset = CGPointMake(SCScreenWidth, 0);
         }
 
