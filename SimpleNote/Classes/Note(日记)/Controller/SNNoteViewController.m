@@ -210,7 +210,6 @@
     CGFloat offSetH = self.scrollView.contentOffset.x; // x轴偏移量
     int curPageState = offSetH / SCScreenWidth; // 翻页状态下标: 0 or 1 or 2
 
-    NSLog(@"%zd", curPageState);
     // 循环显示数据源
     [self loopDisplay:curPageState];
 }
@@ -275,24 +274,9 @@
         self.secondNoteLeadingCons.constant = 0; // 复位初始约束
         return;
     }
-//    // 从第一篇进来后, 越过第二页, 直接翻至第三页, 更新数据
-//    else if (pageState == 2 && self.index == 0) {
-//        self.firstScrollView.contentOffset = CGPointMake(0, 0); // 第一页复位
-//        self.index = self.index + 2;
-//        
-//        return;
-//    }
-//    // 从最后一篇进来后, 越过倒数第二页, 直接翻至倒数第三页, 更新数据
-//    else if (pageState == 0 && self.index == self.notes.count - 1) {
-//        self.thirdScrollView.contentOffset = CGPointMake(0, 0); // 最后一页复位
-//        self.index = self.index - 2;
-//        
-//        return;;
-//    }
     // 往后翻或往前翻, 模型下标加一或减一, 更新数据, (图片只更新上一页或下一页)
     else {
         if (pageState == 2 && self.index == 0) {
-            NSLog(@"ok");
             self.firstScrollView.contentOffset = CGPointMake(0, 0); // 第一页复位
             self.index = self.index + 2;
         } else if (pageState == 0 && self.index == self.notes.count - 1) {
