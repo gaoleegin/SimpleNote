@@ -1250,6 +1250,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="arrow_first_left" destination="eY8-U5-U4P" id="qld-Zk-F6x"/>
+                        <outlet property="arrow_first_right" destination="Qbr-Gt-dZK" id="P04-u8-4ef"/>
+                        <outlet property="arrow_second_right" destination="INC-YY-MCf" id="0kK-8P-478"/>
+                        <outlet property="arrow_third_right" destination="pXZ-Ne-0YM" id="Ikc-1I-dXz"/>
                         <outlet property="firstNoteShadow" destination="8Jk-oo-i0L" id="L4w-X3-5DQ"/>
                         <outlet property="firstNoteView" destination="tL1-EY-2td" id="Wu9-9I-pFa"/>
                         <outlet property="firstScrollView" destination="2U7-Uj-RuW" id="hev-eY-39P"/>

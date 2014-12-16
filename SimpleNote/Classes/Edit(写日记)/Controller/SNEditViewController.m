@@ -92,6 +92,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteNoteButton;
 
+
+
 @end
 
 @implementation SNEditViewController

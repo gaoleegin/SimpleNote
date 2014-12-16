@@ -81,6 +81,14 @@
  */
 - (IBAction)editNoteBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *arrow_first_left;
+
+@property (weak, nonatomic) IBOutlet UIButton *arrow_first_right;
+
+@property (weak, nonatomic) IBOutlet UIButton *arrow_second_right;
+
+@property (weak, nonatomic) IBOutlet UIButton *arrow_third_right;
+
 @end
 
 @implementation SNNoteViewController
@@ -93,6 +101,41 @@
     
     [self setNoteBlock];
     
+    [self setArrowState];
+    
+}
+
+- (void)setArrowState {
+    
+    if (self.notes.count == 1) {
+        self.arrow_first_left.hidden = YES;
+        self.arrow_first_right.hidden = YES;
+    } else {
+        self.arrow_first_right.hidden = NO;
+    }
+    
+    if (self.notes.count == 2) {
+        self.arrow_first_left.hidden = YES;
+        self.arrow_second_right.hidden = YES;
+    } else {
+        self.arrow_second_right.hidden = NO;
+    }
+    
+    if (self.notes.count == 3) {
+        self.arrow_first_left.hidden = YES;
+        self.arrow_third_right.hidden = YES;
+    }
+    
+    if (self.notes.count > 3) {
+        if (self.index <= 1) {
+            self.arrow_first_left.hidden = YES;
+            self.arrow_third_right.hidden = NO;
+        }
+        if (self.index >= self.notes.count - 2) {
+            self.arrow_third_right.hidden = YES;
+            self.arrow_first_left.hidden = NO;
+        }
+    }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -237,6 +280,8 @@
 
     // 循环显示数据源
     [self loopDisplay:curPageState];
+    
+    [self setArrowState];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
