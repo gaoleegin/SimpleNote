@@ -257,21 +257,27 @@
     NSMutableArray *imageNames = [NSMutableArray array];
     for (UIImage *image in self.images) {
         // 图片路径
+//        NSLog(@"%@", self.images);
         NSString *imageName = [NSString stringWithFormat:@"%@_%02d", [SCDateTool dateWithDateID], self.i++];
         NSString *imageNameID = [imageName stringByAppendingPathExtension:@"png"];
         [SCImageTool save:image imageName:imageNameID];
         [imageNames addObject:imageNameID];
+//        NSLog(@"image = %@---ID = %@", image, imageNameID);
     }
     
-    NSDictionary *noteDict = @{@"date":[SCDateTool dateWithDate_en], @"body":self.textView.text, @"imageNames":imageNames};
-    SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
     
     
     if (self.isEditing) {
+        NSDictionary *noteDict = @{@"date":self.curNote.date, @"body":self.textView.text, @"imageNames":imageNames};
+        SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
+
         if (self.noteVc.editNote) {
             self.noteVc.editNote(newNote);
         }
     } else {
+        NSDictionary *noteDict = @{@"date":[SCDateTool dateWithDate_en], @"body":self.textView.text, @"imageNames":imageNames};
+        SNNoteModel *newNote = [SNNoteModel objectWithKeyValues:noteDict];
+
         if (self.listVc.saveNote) {
             self.listVc.saveNote(newNote);
         }

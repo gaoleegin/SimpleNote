@@ -166,7 +166,11 @@
         if (weakSelf.index == 0) {
             weakSelf.firstNoteView.note = newNote;
         } else if (weakSelf.index == weakSelf.notes.count - 1) {
-            weakSelf.thirdNoteView.note = newNote;
+            if (weakSelf.notes.count > 2) {
+                weakSelf.thirdNoteView.note = newNote;
+            } else if (weakSelf.notes.count == 2) {
+                weakSelf.secondNoteView.note = newNote;
+            }
         } else {
             weakSelf.secondNoteView.note = newNote;
         }
@@ -395,7 +399,11 @@
     if (self.index == 0) {
         editVc.curImages = self.firstNoteView.curImages;
     } else if (self.index == self.notes.count - 1) {
-        editVc.curImages = self.thirdNoteView.curImages;
+        if (self.notes.count > 2) {
+            editVc.curImages = self.thirdNoteView.curImages;
+        } else if (self.notes.count == 2) {
+            editVc.curImages = self.secondNoteView.curImages;
+        }
     } else {
         editVc.curImages = self.secondNoteView.curImages;
     }
