@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Edit(&#x5199;&#x65e5;&#x8bb0;)/Controller/SNEditViewController.m"
-            timestampString = "440476422.191995"
+            timestampString = "440478531.960017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "-dismissEditVcWithContent"
             landmarkType = "5">
             <Locations>
@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Edit(&#x5199;&#x65e5;&#x8bb0;)/Controller/SNEditViewController.m"
-            timestampString = "440476807.544601"
+            timestampString = "440478531.960017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "-dismissEditVcWithContent"
             landmarkType = "5">
          </BreakpointContent>

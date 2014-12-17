@@ -93,6 +93,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteNoteButton;
 
 
+@property (nonatomic, assign) int preImageCount;
+
 
 @end
 
@@ -116,6 +118,7 @@
         [self.textView setText:self.curNote.body];
         self.textView.placeholderLabel.hidden = YES;
         self.images = self.curImages;
+        self.preImageCount = (int)self.curImages.count;
         if (self.curImages.count) {
             self.addImageView.image = self.curImages[0];
             self.addImageCount++;
@@ -238,6 +241,11 @@
 }
 
 - (IBAction)dismissEditVc {
+    
+    int curImagesCount = (int)self.images.count;
+    
+    [self.images removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.preImageCount, curImagesCount - self.preImageCount)]];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // 收回键盘
