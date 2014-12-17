@@ -14,6 +14,7 @@
 #import "SNNoteModel.h"
 #import "SNEditViewController.h"
 #import "SNNoteTool.h"
+#import "SNImageView.h"
 
 
 #define SNSHADOW_ALPHA 0.6 //页尾阴影透明度
@@ -89,6 +90,25 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *arrow_third_right;
 
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageFirst1;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageFirst2;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageFirst3;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageSecond1;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageSecond2;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageSecond3;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageThird1;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageThird2;
+
+@property (weak, nonatomic) IBOutlet SNImageView *imageThird3;
+
 @end
 
 @implementation SNNoteViewController
@@ -103,6 +123,21 @@
     
     [self setArrowState];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+
+- (void)statusBarOrientationChange:(NSNotification *)noti {
+    [self.imageFirst1 setNeedsLayout];
+    [self.imageFirst2 setNeedsLayout];
+    [self.imageFirst3 setNeedsLayout];
+    [self.imageSecond1 setNeedsLayout];
+    [self.imageSecond2 setNeedsLayout];
+    [self.imageSecond3 setNeedsLayout];
+    [self.imageThird1 setNeedsLayout];
+    [self.imageThird2 setNeedsLayout];
+    [self.imageThird3 setNeedsLayout];
+    NSLog(@"ok");
 }
 
 - (void)setArrowState {

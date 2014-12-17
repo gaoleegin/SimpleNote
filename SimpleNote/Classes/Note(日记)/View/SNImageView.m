@@ -57,7 +57,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     if (self.image) {
         if (Iphone) self.heightCons.constant = 280;
         else self.heightCons.constant = 480;

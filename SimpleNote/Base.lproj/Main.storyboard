@@ -1241,6 +1241,15 @@
                         <outlet property="firstNoteShadow" destination="8Jk-oo-i0L" id="L4w-X3-5DQ"/>
                         <outlet property="firstNoteView" destination="tL1-EY-2td" id="Wu9-9I-pFa"/>
                         <outlet property="firstScrollView" destination="2U7-Uj-RuW" id="hev-eY-39P"/>
+                        <outlet property="imageFirst1" destination="33N-UQ-vxb" id="vaB-xI-Nlg"/>
+                        <outlet property="imageFirst2" destination="Y4F-SB-U0K" id="Jrj-tk-bl1"/>
+                        <outlet property="imageFirst3" destination="v2u-9p-Eve" id="Es5-gH-FeN"/>
+                        <outlet property="imageSecond1" destination="kaG-HV-Oiv" id="0Fm-lH-8Wo"/>
+                        <outlet property="imageSecond2" destination="tFw-j0-dws" id="rW0-jt-eIU"/>
+                        <outlet property="imageSecond3" destination="AoO-hf-lt8" id="GK4-Is-flz"/>
+                        <outlet property="imageThird1" destination="bpP-4z-3jn" id="EQ8-gQ-nQ7"/>
+                        <outlet property="imageThird2" destination="TVL-B1-ynH" id="9il-NQ-ohl"/>
+                        <outlet property="imageThird3" destination="fCh-qm-vEO" id="wrM-nu-Hr3"/>
                         <outlet property="scrollView" destination="xYm-hM-kZj" id="DEs-a0-C6p"/>
                         <outlet property="secondNoteLeadingCons" destination="lVT-2A-ma7" id="7OK-Kl-ksI"/>
                         <outlet property="secondNoteShadow" destination="Dz8-hJ-OmB" id="oEI-cf-Exj"/>
