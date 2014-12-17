@@ -14,6 +14,13 @@
 // 屏幕宽度
 #define SCScreenWidth [UIScreen mainScreen].bounds.size.width
 
+// 是否为竖屏
+#define DeviceProtrait [UIDevice currentDevice].orientation == UIDeviceOrientationPortrait || [UIDevice currentDevice].orientation == UIDeviceOrientationPortraitUpsideDown
+
+// 是否为横屏
+#define DeviceLandscape [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight
+
+
 // 是否为IOS8以上的系统
 #define IOS8 ([UIDevice currentDevice].systemVersion.floatValue >= 8.0)
 

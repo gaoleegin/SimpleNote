@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Note(&#x65e5;&#x8bb0;)/View/SNImageView.m"
-            timestampString = "440300208.131042"
+            timestampString = "440497493.693003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Note(&#x65e5;&#x8bb0;)/View/SNImageView.m"
-            timestampString = "440300208.131042"
+            timestampString = "440497698.923841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-layoutSubviews"
             landmarkType = "5">
          </BreakpointContent>

@@ -50,7 +50,7 @@
                 
                 switch (error.code) {
                     case LAErrorUserCancel:
-                        alert.message = @"验证取消";
+                        alert.message = @"验证取消, 直接点击登录您的个人日记";
                         break;
                         
                     case LAErrorAuthenticationFailed:
@@ -66,7 +66,7 @@
                         break;
                         
                     case LAErrorUserFallback:
-                        alert.message = @"使用密码登录";
+                        alert.message = @"没有密码模块, 直接点击登录您的个人日记";
                         break;
                         
                     default:
@@ -82,7 +82,7 @@
         if(error.code == LAErrorTouchIDNotEnrolled) {
             alert.message = @"你没有登记任何指纹, 直接点击登录您的个人日记";
         }else if(error.code == LAErrorTouchIDNotAvailable) {
-            alert.message = @"您的手机没有TouchID, 直接点击登录您的个人日记";
+            alert.message = @"您的手机不支持TouchID, 直接点击登录您的个人日记";
         }else if(error.code == LAErrorPasscodeNotSet){
             alert.message = @"你没有设置你的密码, 直接点击登录您的个人日记";
         }
