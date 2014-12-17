@@ -137,7 +137,6 @@
     [self.imageThird1 setNeedsLayout];
     [self.imageThird2 setNeedsLayout];
     [self.imageThird3 setNeedsLayout];
-    NSLog(@"ok");
 }
 
 - (void)setArrowState {
