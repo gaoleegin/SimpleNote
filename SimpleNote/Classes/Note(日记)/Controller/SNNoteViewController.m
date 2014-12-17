@@ -332,6 +332,14 @@
         self.index--;
         return;
     }
+    else if (pageState == 2 && self.index == 0 && self.notes.count == 3) {
+        self.firstScrollView.contentOffset = CGPointMake(0, 0); // 第一页复位
+        return;
+    }
+    else if (pageState == 0 && self.index == self.notes.count - 1 && self.notes.count == 3) {
+        self.thirdScrollView.contentOffset = CGPointMake(0, 0);
+        return;
+    }
     // 翻页状态不变时, 不更新数据
     else if (pageState == 1 || (pageState == 0 && self.index == 0) || (pageState == 2 && self.index == self.notes.count - 1)) return;
     
