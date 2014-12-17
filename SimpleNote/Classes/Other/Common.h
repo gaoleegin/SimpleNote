@@ -37,4 +37,3 @@
 
 // 沙盒Preferences路径
 #define SCUserDefaults [NSUserDefaults standardUserDefaults]
-
