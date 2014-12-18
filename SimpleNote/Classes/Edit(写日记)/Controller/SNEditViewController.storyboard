@@ -31,7 +31,7 @@
                         <viewControllerLayoutGuide type="top" id="ffs-2j-kFj"/>
                         <viewControllerLayoutGuide type="bottom" id="yUS-G0-DMR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="r9V-cK-GXe">
+                    <view key="view" contentMode="scaleToFill" id="r9V-cK-GXe" customClass="GPUImageView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

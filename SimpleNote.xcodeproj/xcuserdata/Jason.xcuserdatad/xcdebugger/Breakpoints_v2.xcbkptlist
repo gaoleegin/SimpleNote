@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Edit(&#x5199;&#x65e5;&#x8bb0;)/Controller/SNEditViewController.m"
-            timestampString = "440478531.960017"
+            timestampString = "440563303.816995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "-dismissEditVcWithContent"
             landmarkType = "5">
             <Locations>
@@ -98,12 +98,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleNote/Classes/Edit(&#x5199;&#x65e5;&#x8bb0;)/Controller/SNEditViewController.m"
-            timestampString = "440478531.960017"
+            timestampString = "440563303.816995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "-dismissEditVcWithContent"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleNote/Classes/Edit(&#x5199;&#x65e5;&#x8bb0;)/Controller/SNEditViewController.m"
+            timestampString = "440561705.353468"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

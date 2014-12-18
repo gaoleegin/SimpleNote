@@ -17,8 +17,12 @@
 #import "MJExtension.h"
 #import "SNNoteViewController.h"
 #import "SCDateTool.h"
+#import "DLCImagePickerController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface SNEditViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
+
+
+@interface SNEditViewController ()<UITextViewDelegate, UIAlertViewDelegate, DLCImagePickerDelegate>
 /**
  *  取消
  */
@@ -107,6 +111,7 @@
     
     // 编辑页面初始化
     [self setUpEditView];
+    
 }
 
 
@@ -160,30 +165,49 @@
         return;
     }
     
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
-        imagePickerVc.delegate = self;
-        imagePickerVc.allowsEditing = YES;
-        imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        
-        [self presentViewController:imagePickerVc animated:YES completion:nil];
-    }
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+//        UIImagePickerController * imagePickerVc = [[UIImagePickerController alloc] init];
+//        imagePickerVc.delegate = self;
+//        imagePickerVc.allowsEditing = YES;
+//        imagePickerVc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//        
+//        [self presentViewController:imagePickerVc animated:YES completion:nil];
+//    }
+    
+    DLCImagePickerController *picker = [[DLCImagePickerController alloc] init];
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+
 }
 
 #pragma mark - 照片选择控制器代理方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    NSString *mediaType = info[UIImagePickerControllerMediaType];
+//    NSString *mediaType = info[UIImagePickerControllerMediaType];
     
-    if ([mediaType isEqual:(NSString *)kUTTypeImage]) {
+    if (info) {
         // 1.1.1判断图片选择器是否允许编辑
-        UIImage *resultImage = nil;
-        if (picker.allowsEditing) {
-            // 允许编辑
-            resultImage = info[UIImagePickerControllerEditedImage];
-        }else
-        {
-            resultImage = info[UIImagePickerControllerOriginalImage];
-        }
+        UIImage *resultImage = [info objectForKey:@"image"];
+//        if (picker.allowsEditing) {
+//            // 允许编辑
+//            resultImage = info[UIImagePickerControllerEditedImage];
+//        }else
+//        {
+//            resultImage = info[UIImagePickerControllerOriginalImage];
+//        }
+        
+        
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        [library writeImageDataToSavedPhotosAlbum:[info objectForKey:@"data"] metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
+         {
+             if (error) {
+                 NSLog(@"ERROR: the image failed to be written");
+             }
+             else {
+                 NSLog(@"PHOTO SAVED - assetURL: %@", assetURL);
+             }
+         }];
+        
+        
         // 添加图片至数组
         [self.images addObject:resultImage];
         // 设置图片到图片容器上
