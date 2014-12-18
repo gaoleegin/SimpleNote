@@ -42,9 +42,15 @@
 
 @property (nonatomic, strong) UIButton *cover;
 
+@property (nonatomic, weak) UIButton *unlockButton;
+
 @end
 
 @implementation SNListViewController
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,6 +102,8 @@
     
 }
 
+
+
 - (void)checkTouchID {
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
@@ -122,7 +130,7 @@
                 }
                 
                 if (error.code == LAErrorAuthenticationFailed) {
-                    alert.message = @"验证失败";
+                    alert.message = @"再次验证";
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [alert show];
                     });
@@ -130,13 +138,6 @@
                 
                 if (error.code == LAErrorPasscodeNotSet) {
                     alert.message = @"未设密码";
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [alert show];
-                    });
-                }
-                
-                if (error.code == LAErrorSystemCancel) {
-                    alert.message = @"系统取消了你的验证";
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [alert show];
                     });
@@ -160,6 +161,7 @@
 
 - (void)showUnlockButton {
     UIButton *unlockButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.unlockButton = unlockButton;
     [unlockButton setImage:[UIImage imageNamed:@"button_locked"] forState:UIControlStateNormal];
     [unlockButton setImage:[UIImage imageNamed:@"button_locked_push"] forState:UIControlStateHighlighted];
     [unlockButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
@@ -172,7 +174,8 @@
     }];
 }
 
-- (void)login {
+- (void)login{
+    [self.unlockButton removeFromSuperview];
     [self checkTouchID];
 }
 
@@ -202,6 +205,7 @@
     }
     return _cover;
 }
+
 
 - (void)showCover {
     [self.view addSubview:self.cover];
@@ -246,6 +250,7 @@
 
 - (IBAction)lockView {
     [self showCover];
+    [self showUnlockButton];
 }
 
 - (IBAction)showEditView {
@@ -262,5 +267,6 @@
         [self showUnlockButton];
     }
 }
+
 
 @end
