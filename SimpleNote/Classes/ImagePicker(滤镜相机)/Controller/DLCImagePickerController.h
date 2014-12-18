@@ -12,10 +12,16 @@
 
 @class DLCImagePickerController;
 
+// info dictionary keys
+UIKIT_EXTERN NSString *const UIImagePickerControllerImage;  // a UIImage
+UIKIT_EXTERN NSString *const UIImagePickerControllerDate;   // a Date
+
 @protocol DLCImagePickerDelegate <NSObject>
+
 @optional
 - (void)imagePickerController:(DLCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(DLCImagePickerController *)picker;
+
 @end
 
 @interface DLCImagePickerController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate> 

@@ -186,7 +186,8 @@
     
     if (info) {
         // 1.1.1判断图片选择器是否允许编辑
-        UIImage *resultImage = [info objectForKey:@"image"];
+//        UIImage *resultImage = [info objectForKey:@"image"];
+        UIImage *resultImage = info[@"image"];
 //        if (picker.allowsEditing) {
 //            // 允许编辑
 //            resultImage = info[UIImagePickerControllerEditedImage];
@@ -197,7 +198,7 @@
         
         
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library writeImageDataToSavedPhotosAlbum:[info objectForKey:@"data"] metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
+        [library writeImageDataToSavedPhotosAlbum:info[@"date"] metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
          {
              if (error) {
                  NSLog(@"ERROR: the image failed to be written");

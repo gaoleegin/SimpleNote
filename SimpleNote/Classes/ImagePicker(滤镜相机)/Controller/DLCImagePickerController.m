@@ -11,6 +11,9 @@
 
 #define kStaticBlurSize 2.0f
 
+NSString *const UIImagePickerControllerImage = @"image";  // a UIImage
+NSString *const UIImagePickerControllerDate = @"date";   // a Date
+
 @interface DLCImagePickerController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *consImageY;
@@ -484,7 +487,7 @@
         UIImage *currentFilteredVideoFrame = [processUpTo imageFromCurrentlyProcessedOutputWithOrientation:staticPictureOriginalOrientation];
 
         NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality), @"data", currentFilteredVideoFrame, @"image", nil];
+                              UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality), UIImagePickerControllerDate, currentFilteredVideoFrame, UIImagePickerControllerImage, nil];
         [self.delegate imagePickerController:self didFinishPickingMediaWithInfo:info];
     }
 }

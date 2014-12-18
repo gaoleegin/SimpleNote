@@ -47,7 +47,7 @@
                         <outletCollection property="gestureRecognizers" destination="89" appends="YES" id="90"/>
                     </connections>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
                     <rect key="frame" x="0.0" y="545" width="600" height="75"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="344" id="92"/>
@@ -67,7 +67,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31" userLabel="dock">
                     <rect key="frame" x="0.0" y="551" width="600" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32" userLabel="Button1">
                             <rect key="frame" x="255" y="9" width="90" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="142"/>
@@ -84,7 +84,7 @@
                                 <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="46"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35" userLabel="Button2">
                             <rect key="frame" x="543" y="9" width="65" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="65" id="145"/>
@@ -102,7 +102,7 @@
                                 <action selector="toggleFilters:" destination="-1" eventType="touchUpInside" id="68"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83" userLabel="Button3">
                             <rect key="frame" x="-8" y="9" width="65" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="37" id="140"/>
