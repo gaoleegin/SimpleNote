@@ -17,34 +17,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="eRw-YY-Qts" kind="relationship" relationship="rootViewController" id="pmC-MO-NQR"/>
+                        <segue destination="dHH-qq-kQT" kind="relationship" relationship="rootViewController" id="DCV-29-ZED"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNx-bO-Ww9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-581" y="145"/>
-        </scene>
-        <!--登录控制器-->
-        <scene sceneID="lWi-lk-ilc">
-            <objects>
-                <viewController id="eRw-YY-Qts" userLabel="登录控制器" customClass="SNLoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SWb-Hf-hTW"/>
-                        <viewControllerLayoutGuide type="bottom" id="YIf-pa-3kD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jW2-Ml-cnm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="X1S-1X-tQ7"/>
-                    <connections>
-                        <segue destination="dHH-qq-kQT" kind="show" identifier="login2List" id="1Up-jg-ttx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtC-Is-kks" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="123" y="145"/>
+            <point key="canvasLocation" x="105" y="145"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="KsE-wG-n1w">
@@ -72,12 +50,12 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
-                                        <state key="normal" image="button_logout">
+                                        <state key="normal" image="button_locked">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="highlighted" image="button_logout_push"/>
+                                        <state key="highlighted" image="button_locked_push"/>
                                         <connections>
-                                            <action selector="back" destination="dHH-qq-kQT" eventType="touchUpInside" id="asS-Rc-m2h"/>
+                                            <action selector="lockView" destination="dHH-qq-kQT" eventType="touchUpInside" id="CLJ-QA-zyW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJU-Fk-B79">
@@ -251,14 +229,16 @@
                             <constraint firstItem="aZE-Wt-Vo8" firstAttribute="top" secondItem="QR5-pw-qOf" secondAttribute="bottom" constant="63" id="xnB-su-IxC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3pw-EZ-0aC"/>
                     <connections>
+                        <outlet property="lockButton" destination="rik-sE-ak5" id="euM-hA-dxa"/>
                         <outlet property="tableView" destination="aZE-Wt-Vo8" id="Knk-jU-Fnh"/>
                         <segue destination="EF5-iy-zZ7" kind="show" identifier="list2Note" id="wCW-vO-xrf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xD-aC-v4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="145"/>
+            <point key="canvasLocation" x="790" y="145"/>
         </scene>
         <!--日记控制器-->
         <scene sceneID="Bdr-d5-Mbb">
@@ -1271,8 +1251,8 @@
         <image name="button_edit_2" width="32" height="32"/>
         <image name="button_list" width="32" height="32"/>
         <image name="button_list_push" width="32" height="32"/>
-        <image name="button_logout" width="32" height="32"/>
-        <image name="button_logout_push" width="32" height="32"/>
+        <image name="button_locked" width="32" height="32"/>
+        <image name="button_locked_push" width="32" height="32"/>
         <image name="diary_arrow_left" width="8" height="16"/>
         <image name="diary_arrow_right" width="8" height="16"/>
         <image name="diary_dot" width="8" height="8"/>

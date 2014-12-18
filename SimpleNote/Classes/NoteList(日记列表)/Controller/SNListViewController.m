@@ -16,10 +16,19 @@
 #import "MJExtension.h"
 #import "SCDateTool.h"
 #import "SCImageTool.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+#import "Masonry.h"
 
-@interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate>
+// 定义这个宏可以使用一些更简洁的方法
+#define MAS_SHORTHAND
 
-- (IBAction)back;
+// 定义这个宏可以使用自动装箱功能
+#define MAS_SHORTHAND_GLOBALS
+
+
+@interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+
+- (IBAction)lockView;
 
 @property (nonatomic, strong) NSMutableArray *notes;
 
@@ -29,12 +38,22 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *lockButton;
+
+@property (nonatomic, strong) UIButton *cover;
+
 @end
 
 @implementation SNListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 添加覆盖蒙版
+    [self showCover];
+    // 指纹识别
+    [self checkTouchID];
+    
     // 从沙盒读取数据
     _notes = [SNNoteTool notes];
     
@@ -77,6 +96,85 @@
     
 }
 
+- (void)checkTouchID {
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+    
+    LAContext *context = [[LAContext alloc] init];
+    NSError *error = nil;
+    
+    context.localizedFallbackTitle = @""; // fallback按钮需要设置为空字符串, 才能隐藏
+    
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+        
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"使用指纹登录", nil) reply:^(BOOL success, NSError *error) {
+            if (success) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.cover removeFromSuperview];
+                });
+            } else {
+                
+                if (error.code == LAErrorUserCancel) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // 用户点击了取消, 显示解锁按钮
+                        [self showUnlockButton];
+                    });
+                }
+                
+                if (error.code == LAErrorAuthenticationFailed) {
+                    alert.message = @"验证失败";
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [alert show];
+                    });
+                }
+                
+                if (error.code == LAErrorPasscodeNotSet) {
+                    alert.message = @"未设密码";
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [alert show];
+                    });
+                }
+                
+                if (error.code == LAErrorSystemCancel) {
+                    alert.message = @"系统取消了你的验证";
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [alert show];
+                    });
+                }
+            }
+        }];
+    } else {
+        
+        if (error.code == kLAErrorTouchIDNotEnrolled) {
+            // 没有登记指纹
+            alert.message = @"请在设置里登记指纹";
+            [alert show];
+        }
+        if (error.code == LAErrorTouchIDNotAvailable) {
+            // 手机不支持TouchID
+            self.lockButton.hidden = YES;
+            [self.cover removeFromSuperview];
+        }
+    }
+}
+
+- (void)showUnlockButton {
+    UIButton *unlockButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [unlockButton setImage:[UIImage imageNamed:@"button_locked"] forState:UIControlStateNormal];
+    [unlockButton setImage:[UIImage imageNamed:@"button_locked_push"] forState:UIControlStateHighlighted];
+    [unlockButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    [self.cover addSubview:unlockButton];
+    unlockButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [unlockButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        //                    make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(100, 100, 100, 100));
+        //                    make.left.and.top.equalTo(self.cover).with.offset(100);
+        make.centerX.and.centerY.equalTo(self.cover).with.offset(0);
+    }];
+}
+
+- (void)login {
+    [self checkTouchID];
+}
 
 #pragma mark - 懒加载
 - (NSMutableArray *)notes {
@@ -93,6 +191,25 @@
     return _dictArr;
 }
 
+- (UIButton *)cover {
+    if (!_cover) {
+        UIButton *cover = [UIButton buttonWithType:UIButtonTypeCustom];
+        _cover = cover;
+        _cover.backgroundColor = [UIColor blackColor];
+        _cover.alpha = 0.7;
+        _cover.enabled = YES;
+        _cover.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    return _cover;
+}
+
+- (void)showCover {
+    [self.view addSubview:self.cover];
+    
+    [self.cover mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.notes.count;
@@ -127,8 +244,8 @@
 }
 
 
-- (IBAction)back {
-    [self.navigationController popViewControllerAnimated:YES];
+- (IBAction)lockView {
+    [self showCover];
 }
 
 - (IBAction)showEditView {
@@ -136,6 +253,14 @@
     SNEditViewController *editNc = [editSb instantiateInitialViewController];
     [self presentViewController:editNc animated:YES completion:nil];
     [editNc.childViewControllers[0] setListVc:self];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // 用户点击了取消, 显示解锁按钮
+    if (buttonIndex == 0) {
+        [self showUnlockButton];
+    }
 }
 
 @end
