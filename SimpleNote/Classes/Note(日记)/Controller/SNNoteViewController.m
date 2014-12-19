@@ -273,6 +273,7 @@
         self.firstNoteView.note = self.notes[self.index - curPageState];
         self.secondNoteView.note = self.notes[self.index - curPageState + 1];
         self.thirdNoteView.note = self.notes[self.index - curPageState + 2];
+//        NSLog(@"%@",self.thirdNoteView.note.imageNames);
     } else if (self.notes.count == 2 && self.index == 0) {
         self.firstNoteView.note = self.notes[self.index - curPageState];
         self.secondNoteView.note = self.notes[self.index - curPageState + 1];
@@ -357,6 +358,8 @@
  
 #pragma mark <更新数据>
 - (void)loopDisplay:(int)pageState {
+//    NSLog(@"%d",self.index);
+//    NSLog(@"%d",pageState);
     // 从第一篇进来后, 翻至第二页时, 模型下标加一 ,不更新数据
     if (pageState == 1 && self.index == 0) {
         self.firstScrollView.contentOffset = CGPointMake(0, 0); // 上一页复位
@@ -420,6 +423,9 @@
             self.firstNoteView.curImages = self.secondNoteView.curImages;
             self.secondNoteView.curImages = self.thirdNoteView.curImages;
             self.thirdNoteView.curImages = nil;
+//            NSLog(@"%@",self.firstNoteView.curImages);
+//            NSLog(@"%@",self.secondNoteView.curImages);
+//            NSLog(@"%@",self.thirdNoteView.curImages);
         }
 
         self.firstNoteView.note = self.notes[self.index - 1];

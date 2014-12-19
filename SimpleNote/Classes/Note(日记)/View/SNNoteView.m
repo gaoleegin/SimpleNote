@@ -89,8 +89,8 @@
             // 这里循环添加image, 先取出第一张配图,存进数组
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 UIImage *image = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[0]]];
+                [self.curImages addObject:image];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.curImages addObject:image];
                     self.imageView.image = image;
                     [self.imageView setNeedsLayout];
                 });
@@ -99,8 +99,8 @@
             if (note.imageNames.count > 1) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     UIImage *image2 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[1]]];
+                    [self.curImages addObject:image2];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.curImages addObject:image2];
                         self.imageView2.image = image2;
                         [self.imageView2 setNeedsLayout];
                     });
@@ -116,8 +116,8 @@
             if (note.imageNames.count > 2) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];
+                    [self.curImages addObject:image3];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.curImages addObject:image3];
                         self.imageView3.image = image3;
                         [self.imageView3 setNeedsLayout];
                     });
@@ -135,6 +135,7 @@
             // 这里循环添加数组中的image
             if (self.curImages.count > 0) {
                 self.imageView.image = self.curImages[0];
+                NSLog(@"%@",self.imageView.image);
             } else {
                 self.imageView.image = nil;
                 self.imageView2.image = nil;

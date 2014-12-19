@@ -191,7 +191,10 @@
     if (info) {
         // 1.1.1判断图片选择器是否允许编辑
 //        UIImage *resultImage = [info objectForKey:@"image"];
-        UIImage *resultImage = info[@"image"];
+//        NSString *const UIImagePickerControllerImage = @"image";  // a UIImage
+//        NSString *const UIImagePickerControllerDate = @"date";   // a Date
+
+        UIImage *resultImage = info[UIImagePickerControllerImage];
 //        if (picker.allowsEditing) {
 //            // 允许编辑
 //            resultImage = info[UIImagePickerControllerEditedImage];
@@ -202,7 +205,7 @@
         
         
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library writeImageDataToSavedPhotosAlbum:info[@"date"] metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
+        [library writeImageDataToSavedPhotosAlbum:info[UIImagePickerControllerDate] metadata:nil completionBlock:^(NSURL *assetURL, NSError *error)
          {
              if (error) {
 //                 NSLog(@"ERROR: the image failed to be written");
@@ -296,7 +299,7 @@
         // 图片路径
 //        NSLog(@"%@", self.images);
         NSString *imageName = [NSString stringWithFormat:@"%@_%02d", [SCDateTool dateWithDateID], self.i++];
-        NSString *imageNameID = [imageName stringByAppendingPathExtension:@"png"];
+        NSString *imageNameID = [imageName stringByAppendingPathExtension:@"jpg"];
         [SCImageTool save:image imageName:imageNameID];
         [imageNames addObject:imageNameID];
 //        NSLog(@"image = %@---ID = %@", image, imageNameID);

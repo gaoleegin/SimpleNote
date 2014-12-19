@@ -8,6 +8,7 @@
 
 #import "DLCImagePickerController.h"
 #import "DLCGrayscaleContrastFilter.h"
+#import "UIImage+Extension.h"
 
 #define kStaticBlurSize 2.0f
 
@@ -486,8 +487,12 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
         
         UIImage *currentFilteredVideoFrame = [processUpTo imageFromCurrentlyProcessedOutputWithOrientation:staticPictureOriginalOrientation];
 
+        NSData *jpegDate = UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality);
+        UIImage *jpegImage = [UIImage OriginImage:currentFilteredVideoFrame scaleToSize:CGSizeMake(1024, 1024)];
+        
         NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality), UIImagePickerControllerDate, currentFilteredVideoFrame, UIImagePickerControllerImage, nil];
+                              jpegDate,UIImagePickerControllerDate,
+                              jpegImage, UIImagePickerControllerImage, nil];
         [self.delegate imagePickerController:self didFinishPickingMediaWithInfo:info];
     }
 }
