@@ -1195,7 +1195,7 @@
                                     <constraint firstItem="1Mx-wX-kiC" firstAttribute="top" secondItem="xYm-hM-kZj" secondAttribute="top" id="mxz-Bm-NwW"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="EF5-iy-zZ7" id="wUz-H2-Nj1"/>
+                                    <outlet property="delegate" destination="EF5-iy-zZ7" id="BcP-iT-MTk"/>
                                 </connections>
                             </scrollView>
                         </subviews>
