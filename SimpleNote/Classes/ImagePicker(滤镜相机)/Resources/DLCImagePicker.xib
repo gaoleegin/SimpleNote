@@ -47,7 +47,7 @@
                         <outletCollection property="gestureRecognizers" destination="89" appends="YES" id="90"/>
                     </connections>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
                     <rect key="frame" x="0.0" y="545" width="600" height="75"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="344" id="92"/>
@@ -128,7 +128,7 @@
                                 <constraint firstAttribute="height" constant="29" id="137"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                            <state key="normal" title="Retake" backgroundImage="camera-button.png">
+                            <state key="normal" title="重拍" backgroundImage="camera-button.png">
                                 <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>

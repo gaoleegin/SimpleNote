@@ -124,7 +124,7 @@
     label.backgroundColor = backgroundColor;
     label.textAlignment = NSTextAlignmentCenter;
     label.frame = CGRectMake(0, 0, 150, 25);
-    label.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 1.7);
+    label.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
     label.alpha = 0.0;
     label.layer.cornerRadius = 5;
     label.clipsToBounds = YES;
@@ -140,6 +140,36 @@
         }];
     }];
 }
+
+- (void)setSheetWithContent:(NSString *)content
+                   fontSize:(NSInteger)fontSize
+                  fontColor:(UIColor *)fontColor
+            backgroundColor:(UIColor *)backgroundColor
+                      coorY:(CGFloat)coorY {
+    UILabel *label = [[UILabel alloc] init];
+    label.text = content;
+    label.font = [UIFont systemFontOfSize:fontSize];
+    label.textColor = fontColor;
+    label.backgroundColor = backgroundColor;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.frame = CGRectMake(0, 0, 150, 25);
+    label.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * coorY);
+    label.alpha = 0.0;
+    label.layer.cornerRadius = 5;
+    label.clipsToBounds = YES;
+    [self addSubview:label];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        label.alpha = 0.7;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 animations:^{
+            label.alpha = 0.0;
+        }completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }];
+}
+
 
 
 - (void)setSheetWithContent:(NSString *)content

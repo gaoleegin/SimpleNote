@@ -333,7 +333,7 @@
 }
 
 - (IBAction)deleteNote {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"确定删除吗" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"删除日记吗" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
 }
 

@@ -18,6 +18,7 @@
 #import "SCImageTool.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "Masonry.h"
+#import "UIView+Extension.h"
 
 // 定义这个宏可以使用一些更简洁的方法
 #define MAS_SHORTHAND
@@ -96,6 +97,7 @@
             [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.view setSheetWithContent:@"成功保存一篇日记" fontSize:14 fontColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] coorY:0.4];
             [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
         });
     };

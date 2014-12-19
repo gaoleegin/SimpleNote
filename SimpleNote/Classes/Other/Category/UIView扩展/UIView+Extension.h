@@ -44,6 +44,20 @@
             backgroundColor:(UIColor *)backgroundColor;
 
 /**
+ *  在当前视图居中展示一个提示框，然后消失
+ *  @param  content  提示框需展示的文本
+ *  @param  fontSize  内容的字体大小
+ *  @param  fontColor  内容的字体颜色
+ *  @param  backgroundColor  内容的背景颜色
+ *  @param  Y轴上的坐标值 0~2
+ **/
+- (void)setSheetWithContent:(NSString *)content
+                   fontSize:(NSInteger)fontSize
+                  fontColor:(UIColor *)fontColor
+            backgroundColor:(UIColor *)backgroundColor
+                      coorY:(CGFloat)coorY;
+
+/**
  *  抓取当前view，返回一张图片
  **/
 - (UIImage *)captureImage;

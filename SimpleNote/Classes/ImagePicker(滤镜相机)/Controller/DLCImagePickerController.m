@@ -423,7 +423,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
         
         [self prepareFilter];
         [self.retakeButton setHidden:NO];
-        [self.photoCaptureButton setTitle:@"Done" forState:UIControlStateNormal];
+        [self.photoCaptureButton setTitle:@"保存" forState:UIControlStateNormal];
         [self.photoCaptureButton setImage:nil forState:UIControlStateNormal];
         [self.photoCaptureButton setEnabled:YES];
         if(![self.filtersToggleButton isSelected]){
