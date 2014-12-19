@@ -12,6 +12,7 @@
 #import "SCImageTool.h"
 #import "Common.h"
 #import "Masonry.h"
+#import "SNImageView.h"
 
 // 定义这个宏可以使用一些更简洁的方法
 #define MAS_SHORTHAND
@@ -32,7 +33,7 @@
 /**
  *  图片容器内第一张图片
  */
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet SNImageView *imageView;
 /**
  *  第一张图片高度约束
  */
@@ -44,7 +45,7 @@
 /**
  *  图片容器内第二张图片
  */
-@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet SNImageView *imageView2;
 /**
  *  第二张图片高度约束
  */
@@ -54,7 +55,7 @@
 /**
  *  图片容器内第三张图片
  */
-@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
+@property (weak, nonatomic) IBOutlet SNImageView *imageView3;
 /**
  *  第三张图片高度约束
  */
@@ -82,18 +83,28 @@
     _note = note;
     self.date.text = note.date;
     self.textLabel.text = note.body;
-//    NSLog(@"%@", note.imageNames);
+    
     if (note.imageNames.count != 0) { // 如果该页有配图
         if (self.curImages.count == 0) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
             // 这里循环添加image, 先取出第一张配图,存进数组
-            UIImage *image = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[0]]];
-            [self.curImages addObject:image];
-            self.imageView.image = image;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                UIImage *image = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[0]]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.curImages addObject:image];
+                    self.imageView.image = image;
+                    [self.imageView setNeedsLayout];
+                });
+            });
             
             if (note.imageNames.count > 1) {
-                UIImage *image2 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[1]]];
-                [self.curImages addObject:image2];
-                self.imageView2.image = image2;
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *image2 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[1]]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.curImages addObject:image2];
+                        self.imageView2.image = image2;
+                        [self.imageView2 setNeedsLayout];
+                    });
+                });
                 self.imageView2ToimageViewMargin.constant = 40.0;
             } else {
                 self.imageView2.image = nil;
@@ -103,9 +114,14 @@
             }
             
             if (note.imageNames.count > 2) {
-                UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];
-                [self.curImages addObject:image3];
-                self.imageView3.image = image3;
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.curImages addObject:image3];
+                        self.imageView3.image = image3;
+                        [self.imageView3 setNeedsLayout];
+                    });
+                });
                 self.imageView3ToimageView2Margin.constant = 40.0;
             } else {
                 self.imageView3.image = nil;
@@ -143,7 +159,6 @@
                 self.imageView3ToimageView2Margin.constant = 0.0;
             }
         }
-        
         if (Iphone) { // 如果是iphone, 每张图的高设为280, 因为翻页时高度会更新成0
             if (self.imageView.image) {
                 self.imageViewHeightCons.constant = 280;
@@ -160,7 +175,7 @@
             } else {
                 self.imageViewHeightCons3.constant = 0;
             }
-        } else { // 如果是ipad, 高度为560
+        } else { // 如果是ipad, 高度为480
             if (self.imageView.image) {
                 self.imageViewHeightCons.constant = 480;
             } else {
@@ -184,8 +199,6 @@
         self.imageViewHeightCons.constant = 0;
         self.imageViewHeightCons2.constant = 0;
         self.imageViewHeightCons3.constant = 0;
-//        self.imageView2ToimageViewMargin.constant = 0;
-//        self.imageView3ToimageView2Margin.constant = 0;
 
     }
 }

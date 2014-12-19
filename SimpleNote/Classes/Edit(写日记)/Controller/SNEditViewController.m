@@ -121,7 +121,11 @@
         self.deleteNoteButton.hidden = NO;
         self.editing = YES;
         [self.textView setText:self.curNote.body];
-        self.textView.placeholderLabel.hidden = YES;
+        if (self.curNote.body.length) {
+            self.textView.placeholderLabel.hidden = YES;
+        } else {
+            self.textView.placeholderLabel.hidden = NO;
+        }
         self.images = self.curImages;
         self.preImageCount = (int)self.curImages.count;
         if (self.curImages.count) {
