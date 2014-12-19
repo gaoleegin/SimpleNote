@@ -584,7 +584,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
                 
                 [device unlockForConfiguration];
 			} else {
-                NSLog(@"ERROR = %@", error);
+//                NSLog(@"ERROR = %@", error);
 			}
 		}
 	}
