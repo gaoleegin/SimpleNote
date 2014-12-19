@@ -335,11 +335,15 @@
     }
     CGFloat offsetH = self.scrollView.contentOffset.x - SCScreenWidth;
     // 翻页动画效果
+#warning 这里导致6plus不能翻页BUG
+//    NSLog(@"%f", self.thirdNoteLeadingCons.constant);
+//    NSLog(@"%f", self.secondNoteLeadingCons.constant);
     if (offsetH > 0) { // 翻至下一页
         self.thirdNoteLeadingCons.constant = - (SCScreenWidth * 0.5) + offsetH * 0.5;
         // 刷新图片数据
-    } else if (offsetH < 0) { // 翻至上一页
+    } else if (offsetH <= 0) { // 翻至上一页
         self.secondNoteLeadingCons.constant = offsetH * 0.5;
+        NSLog(@"%f", self.secondNoteLeadingCons.constant);
         // 刷新图片数据
     }
     
