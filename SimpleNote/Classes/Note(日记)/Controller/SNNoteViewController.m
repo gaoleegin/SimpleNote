@@ -343,7 +343,6 @@
         // 刷新图片数据
     } else if (offsetH <= 0) { // 翻至上一页
         self.secondNoteLeadingCons.constant = offsetH * 0.5;
-        NSLog(@"%f", self.secondNoteLeadingCons.constant);
         // 刷新图片数据
     }
     
