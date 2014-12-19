@@ -389,7 +389,7 @@
                                                                             <constraint firstItem="bpP-4z-3jn" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="top" id="ceE-Ig-6zz"/>
                                                                             <constraint firstItem="U8w-Vd-lFY" firstAttribute="top" secondItem="TVL-B1-ynH" secondAttribute="bottom" id="hJP-CT-8Ju"/>
                                                                             <constraint firstItem="TVL-B1-ynH" firstAttribute="top" secondItem="bpP-4z-3jn" secondAttribute="bottom" constant="40" id="j5g-Pb-meX"/>
-                                                                            <constraint firstItem="fCh-qm-vEO" firstAttribute="top" secondItem="OxY-Ln-81A" secondAttribute="bottom" id="sfF-V3-H31"/>
+                                                                            <constraint firstItem="fCh-qm-vEO" firstAttribute="bottom" secondItem="OxY-Ln-81A" secondAttribute="top" id="sfF-V3-H31"/>
                                                                             <constraint firstItem="fCh-qm-vEO" firstAttribute="centerX" secondItem="TVL-B1-ynH" secondAttribute="centerX" id="uzW-Ix-KRE"/>
                                                                         </constraints>
                                                                     </view>

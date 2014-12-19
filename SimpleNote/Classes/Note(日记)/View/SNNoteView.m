@@ -61,6 +61,10 @@
  */
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *imageViewHeightCons3;
 
+/**
+ *  并发队列
+ */
+@property (nonatomic, strong) NSOperationQueue *opQueue;
 
 @end
 
@@ -73,6 +77,14 @@
     }
     return _curImages;
 }
+
+- (NSOperationQueue *)opQueue {
+    if (_opQueue == nil) {
+        _opQueue = [[NSOperationQueue alloc] init];
+    }
+    return _opQueue;
+}
+
 
 /**
  *  更新UI数据
@@ -87,25 +99,47 @@
     if (note.imageNames.count != 0) { // 如果该页有配图
         if (self.curImages.count == 0) { // 如果该页是新页, (比如 1 2 3 跳转 2 3 4 , 4就是新页, 2,3是旧页, 旧页不需要去沙盒读取图片, 新页需要去沙盒读取图片)
             // 这里循环添加image, 先取出第一张配图,存进数组
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
                 UIImage *image = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[0]]];
-                [self.curImages addObject:image];
-                dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.curImages addObject:image];
                     self.imageView.image = image;
                     [self.imageView setNeedsLayout];
-                });
-            });
+                }];
+            }];
+            [self.opQueue addOperation:op1];
             
             if (note.imageNames.count > 1) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
                     UIImage *image2 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[1]]];
-                    [self.curImages addObject:image2];
-                    dispatch_async(dispatch_get_main_queue(), ^{
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        [self.curImages addObject:image2];
                         self.imageView2.image = image2;
                         [self.imageView2 setNeedsLayout];
-                    });
-                });
+                    }];
+                }];
                 self.imageView2ToimageViewMargin.constant = 40.0;
+                [op2 addDependency:op1];
+                [self.opQueue addOperation:op2];
+                
+                if (note.imageNames.count > 2) {
+                    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+                        UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];;
+                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                            [self.curImages addObject:image3];
+                            self.imageView3.image = image3;
+                            [self.imageView3 setNeedsLayout];
+                        }];
+                    }];
+                    self.imageView3ToimageView2Margin.constant = 40.0;
+                    [op3 addDependency:op2];
+                    [self.opQueue addOperation:op3];
+                } else {
+                    self.imageView3.image = nil;
+                    self.imageView3ToimageView2Margin.constant = 0.0;
+                }
+                
             } else {
                 self.imageView2.image = nil;
                 self.imageView3.image = nil;
@@ -113,21 +147,49 @@
                 self.imageView3ToimageView2Margin.constant = 0.0;
             }
             
-            if (note.imageNames.count > 2) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UIImage *image3 = [UIImage imageWithContentsOfFile:[SCImageTool imagePath:note.imageNames[2]]];
-                    [self.curImages addObject:image3];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.imageView3.image = image3;
-                        [self.imageView3 setNeedsLayout];
-                    });
-                });
-                self.imageView3ToimageView2Margin.constant = 40.0;
-            } else {
-                self.imageView3.image = nil;
-                self.imageView3ToimageView2Margin.constant = 0.0;
-            }
+
             
+//            [self.opQueue addOperations:@[op1, op2, op3] waitUntilFinished:YES];
+
+
+            
+            
+            
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    self.imageView.image = image;
+//                    [self.imageView setNeedsLayout];
+//                });
+//            });
+            
+//            if (note.imageNames.count > 1) {
+//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        self.imageView2.image = image2;
+//                        [self.imageView2 setNeedsLayout];
+//                    });
+//                });
+//                self.imageView2ToimageViewMargin.constant = 40.0;
+//            } else {
+//                self.imageView2.image = nil;
+//                self.imageView3.image = nil;
+//                self.imageView2ToimageViewMargin.constant = 0.0;
+//                self.imageView3ToimageView2Margin.constant = 0.0;
+//            }
+            
+//            if (note.imageNames.count > 2) {
+//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        self.imageView3.image = image3;
+//                        [self.imageView3 setNeedsLayout];
+//                    });
+//                });
+//                self.imageView3ToimageView2Margin.constant = 40.0;
+//            } else {
+//                self.imageView3.image = nil;
+//                self.imageView3ToimageView2Margin.constant = 0.0;
+//            }
+//            
             
             
             
@@ -135,7 +197,6 @@
             // 这里循环添加数组中的image
             if (self.curImages.count > 0) {
                 self.imageView.image = self.curImages[0];
-                NSLog(@"%@",self.imageView.image);
             } else {
                 self.imageView.image = nil;
                 self.imageView2.image = nil;
