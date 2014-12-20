@@ -30,4 +30,9 @@
  */
 @property (nonatomic, copy) void(^deleteNote)(int curIndex);
 
+/**
+ *  日记列表控制器
+ */
+@property (nonatomic, strong) SNListViewController *listVc;
+
 @end

@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) void(^saveNote)(SNNoteModel *newNote);
 
+@property (nonatomic, copy) void(^deleteNote)();
 
 @end

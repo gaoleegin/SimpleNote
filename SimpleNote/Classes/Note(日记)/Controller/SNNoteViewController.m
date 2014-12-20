@@ -15,6 +15,7 @@
 #import "SNEditViewController.h"
 #import "SNNoteTool.h"
 #import "SNImageView.h"
+#import "SNListViewController.h"
 
 
 #define SNSHADOW_ALPHA 0.6 //页尾阴影透明度
@@ -216,6 +217,9 @@
     self.deleteNote = ^(int curIndex){
         [weakSelf.notes removeObjectAtIndex:curIndex];
         [SNNoteTool save:weakSelf.notes];
+        if (weakSelf.listVc.deleteNote) {
+            weakSelf.listVc.deleteNote();
+        }
         [weakSelf.navigationController popViewControllerAnimated:NO];
     };
 }
