@@ -47,7 +47,7 @@
                         <outletCollection property="gestureRecognizers" destination="89" appends="YES" id="90"/>
                     </connections>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dock_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="71">
                     <rect key="frame" x="0.0" y="545" width="600" height="75"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="344" id="92"/>
@@ -158,49 +158,76 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="导航">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
+                            <rect key="frame" x="542" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="MjW-TK-nzK"/>
+                                <constraint firstAttribute="height" constant="44" id="bTe-6E-Hcx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="close.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="cancel:" destination="-1" eventType="touchUpInside" id="47"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77">
+                            <rect key="frame" x="8" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="TZD-mH-mgT"/>
+                                <constraint firstAttribute="width" constant="50" id="quw-eV-2Ur"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="flash-off.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="flash.png"/>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="79"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
+                            <rect key="frame" x="275" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="6rD-2a-lSI"/>
+                                <constraint firstAttribute="height" constant="44" id="BtW-SC-hch"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="front-camera.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="switchCamera" destination="-1" eventType="touchUpInside" id="49"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="77" firstAttribute="top" secondItem="34" secondAttribute="top" id="DPF-hH-9Jz"/>
+                        <constraint firstAttribute="centerY" secondItem="37" secondAttribute="centerY" id="LOw-5f-Mhk"/>
+                        <constraint firstItem="36" firstAttribute="top" secondItem="34" secondAttribute="top" id="Q6I-g9-QiP"/>
+                        <constraint firstAttribute="centerX" secondItem="37" secondAttribute="centerX" id="Twa-K1-76t"/>
+                        <constraint firstAttribute="height" constant="44" id="hE1-8d-EQf"/>
+                        <constraint firstAttribute="trailing" secondItem="36" secondAttribute="trailing" constant="8" id="oXc-XB-TJw"/>
+                        <constraint firstItem="77" firstAttribute="leading" secondItem="34" secondAttribute="leading" constant="8" id="r57-5n-G0N"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36">
-                    <rect key="frame" x="516" y="0.0" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="44" id="143"/>
-                        <constraint firstAttribute="height" constant="44" id="144"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="close.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="47"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37">
-                    <rect key="frame" x="104" y="0.0" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="104"/>
-                        <constraint firstAttribute="width" constant="44" id="105"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="front-camera.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="switchCamera" destination="-1" eventType="touchUpInside" id="49"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50">
-                    <rect key="frame" x="442" y="0.0" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="44" id="106"/>
-                    </constraints>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50">
+                    <rect key="frame" x="462" y="0.0" width="44" height="44"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" image="blur.png">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,57 +241,26 @@
                         <action selector="toggleBlur:" destination="-1" eventType="touchUpInside" id="62"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77">
-                    <rect key="frame" x="30" y="0.0" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="138"/>
-                        <constraint firstAttribute="width" constant="44" id="139"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="flash-off.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="flash.png"/>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="79"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="31" firstAttribute="leading" secondItem="7" secondAttribute="leading" id="107"/>
-                <constraint firstItem="77" firstAttribute="top" secondItem="4" secondAttribute="top" id="108"/>
-                <constraint firstItem="37" firstAttribute="bottom" secondItem="34" secondAttribute="bottom" id="109"/>
-                <constraint firstItem="37" firstAttribute="baseline" secondItem="77" secondAttribute="baseline" id="110"/>
                 <constraint firstItem="34" firstAttribute="leading" secondItem="4" secondAttribute="leading" id="111"/>
                 <constraint firstAttribute="trailing" secondItem="34" secondAttribute="trailing" id="112"/>
                 <constraint firstItem="34" firstAttribute="leading" secondItem="7" secondAttribute="leading" id="113"/>
                 <constraint firstAttribute="bottom" secondItem="16" secondAttribute="bottom" constant="-32" id="114"/>
-                <constraint firstItem="36" firstAttribute="top" secondItem="37" secondAttribute="top" id="116"/>
                 <constraint firstItem="71" firstAttribute="centerX" secondItem="31" secondAttribute="centerX" id="118"/>
-                <constraint firstItem="77" firstAttribute="bottom" secondItem="37" secondAttribute="bottom" id="119"/>
-                <constraint firstItem="36" firstAttribute="firstBaseline" secondItem="37" secondAttribute="firstBaseline" id="121"/>
-                <constraint firstItem="77" firstAttribute="leading" secondItem="4" secondAttribute="leading" constant="30" id="122"/>
                 <constraint firstItem="34" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" id="123"/>
                 <constraint firstItem="16" firstAttribute="leading" secondItem="31" secondAttribute="leading" id="124"/>
                 <constraint firstAttribute="bottom" secondItem="31" secondAttribute="bottom" constant="-1" id="125"/>
-                <constraint firstItem="77" firstAttribute="top" secondItem="34" secondAttribute="top" id="126"/>
                 <constraint firstItem="31" firstAttribute="top" secondItem="16" secondAttribute="top" id="127"/>
                 <constraint firstItem="71" firstAttribute="top" secondItem="4" secondAttribute="top" constant="435" id="128"/>
-                <constraint firstItem="77" firstAttribute="top" secondItem="50" secondAttribute="top" id="129"/>
                 <constraint firstItem="7" firstAttribute="trailing" secondItem="31" secondAttribute="trailing" id="131"/>
-                <constraint firstItem="37" firstAttribute="bottom" secondItem="50" secondAttribute="bottom" id="132"/>
                 <constraint firstItem="31" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" id="133"/>
                 <constraint firstItem="16" firstAttribute="top" secondItem="4" secondAttribute="top" constant="437" id="134"/>
-                <constraint firstAttribute="trailing" secondItem="36" secondAttribute="trailing" constant="40" id="135"/>
-                <constraint firstItem="37" firstAttribute="leading" secondItem="77" secondAttribute="trailing" constant="30" id="81L-ia-awr"/>
                 <constraint firstAttribute="trailing" secondItem="71" secondAttribute="trailing" id="ZzS-Nz-Svu"/>
-                <constraint firstItem="36" firstAttribute="leading" secondItem="50" secondAttribute="trailing" constant="30" id="fO6-Dj-9xk"/>
                 <constraint firstItem="71" firstAttribute="leading" secondItem="4" secondAttribute="leading" id="kPy-Qy-MF5"/>
+                <constraint firstItem="34" firstAttribute="top" secondItem="4" secondAttribute="top" id="pRY-gc-TjW"/>
                 <constraint firstAttribute="centerY" secondItem="7" secondAttribute="centerY" id="w6b-Aj-X1U"/>
                 <constraint firstAttribute="bottom" secondItem="71" secondAttribute="bottom" constant="-20" id="zHl-n6-ekg"/>
             </constraints>

@@ -43,10 +43,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rik-sE-ak5">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="YDT-Pg-hRf"/>
-                                            <constraint firstAttribute="width" constant="70" id="irq-g0-ayg">
+                                            <constraint firstAttribute="width" constant="64" id="irq-g0-ayg">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -65,9 +65,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2J-Iq-FIT">
-                                        <rect key="frame" x="530" y="0.0" width="70" height="64"/>
+                                        <rect key="frame" x="536" y="0.0" width="64" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="obh-o0-2a2">
+                                            <constraint firstAttribute="width" constant="64" id="obh-o0-2a2">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -80,9 +80,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zF-5N-QYc" userLabel="Button-没有TouchID放左边">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="izN-JG-9oe"/>
+                                            <constraint firstAttribute="width" constant="64" id="izN-JG-9oe"/>
                                         </constraints>
                                         <state key="normal" image="button_about_push">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,7 +92,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWL-h7-0xO" userLabel="Button-有TouchID放右边">
-                                        <rect key="frame" x="460" y="0.0" width="70" height="64"/>
+                                        <rect key="frame" x="472" y="0.0" width="64" height="64"/>
                                         <state key="normal" image="button_about_push">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
