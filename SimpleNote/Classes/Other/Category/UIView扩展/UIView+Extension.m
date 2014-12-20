@@ -177,6 +177,12 @@
     [self setSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor]];
 }
 
+- (void)setSheetWithContent:(NSString *)content coorY:(CGFloat)coorY
+{
+    [self setSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor] coorY:coorY];
+}
+
+
 
 - (UIImage *)captureImage
 {

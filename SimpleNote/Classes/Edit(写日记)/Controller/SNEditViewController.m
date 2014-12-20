@@ -162,10 +162,10 @@
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
     */
     if (self.addImageCount == 4) {
-        [self.view setSheetWithContent:@"购买后添加更多照片么么哒"];
+        [self.view setSheetWithContent:@"最多添加三张照片" coorY:0.4];
         return;
     } else if (self.addImageCount == 5){
-        [self.view setSheetWithContent:@"购买后添加更多照片么么哒"];
+        [self.view setSheetWithContent:@"最多添加三张照片" coorY:0.];
         return;
     }
     
@@ -340,7 +340,7 @@
 }
 
 - (IBAction)deleteNote {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"删除日记吗" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"删除日记" message:@"若删除日记, 其文本将不可恢复, 照片依然保留在本地相册中" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
 }
 
