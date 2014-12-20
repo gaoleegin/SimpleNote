@@ -165,8 +165,7 @@
         if (self.index <= 1) {
             self.arrow_first_left.hidden = YES;
             self.arrow_third_right.hidden = NO;
-        }
-        if (self.index >= self.notes.count - 2) {
+        } else if (self.index >= self.notes.count - 2) {
             self.arrow_third_right.hidden = YES;
             self.arrow_first_left.hidden = NO;
         } else {
