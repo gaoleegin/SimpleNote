@@ -659,7 +659,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
     [self.filtersToggleButton setSelected:YES];
     self.filtersToggleButton.enabled = NO;
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.consImageY.constant += 34;
         self.consScrollViewY.constant += self.filterScrollView.frame.size.height;
         self.consDockBgY.constant += self.filtersBackgroundImageView.frame.size.height - 3;
@@ -702,7 +702,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
     [self.filtersToggleButton setSelected:NO];
     
     [self.view layoutIfNeeded];
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         self.consImageY.constant -= 34;
         self.consScrollViewY.constant -= self.filterScrollView.frame.size.height;
         self.consDockBgY.constant -= self.filtersBackgroundImageView.frame.size.height - 3;
@@ -768,7 +768,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
 - (void)viewWillDisappear:(BOOL)animated {
     [stillCamera stopCameraCapture];
     [super viewWillDisappear:animated];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
 }
 
 #pragma mark - UIImagePickerDelegate

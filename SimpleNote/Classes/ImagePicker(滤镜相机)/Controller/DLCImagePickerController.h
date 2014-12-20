@@ -48,4 +48,6 @@ UIKIT_EXTERN NSString *const UIImagePickerControllerDate;   // a Date
 @property (nonatomic, assign) CGFloat outputJPEGQuality;
 @property (nonatomic, assign) CGSize requestedImageSize;
 
+-(IBAction) retakePhoto:(UIButton *)button;
+
 @end

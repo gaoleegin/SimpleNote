@@ -19,6 +19,8 @@
 #import <LocalAuthentication/LocalAuthentication.h>
 #import "Masonry.h"
 #import "UIView+Extension.h"
+#import "DLCImagePickerController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 // 定义这个宏可以使用一些更简洁的方法
 #define MAS_SHORTHAND
@@ -27,7 +29,7 @@
 #define MAS_SHORTHAND_GLOBALS
 
 
-@interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, DLCImagePickerDelegate>
 
 - (IBAction)lockView;
 
@@ -45,6 +47,11 @@
 
 @property (nonatomic, weak) UIButton *unlockButton;
 
+- (IBAction)takePhoto;
+
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoButtonWithTouchID;
 @end
 
 @implementation SNListViewController
@@ -57,7 +64,7 @@
     [super viewDidLoad];
     
     // 添加覆盖蒙版
-//    [self showCover];
+    [self showCover];
     // 指纹识别
     [self checkTouchID];
     
@@ -162,6 +169,8 @@
         if (error.code == LAErrorTouchIDNotAvailable) {
             // 手机不支持TouchID
             self.lockButton.hidden = YES;
+            self.takePhotoButton.hidden = NO;
+            self.takePhotoButtonWithTouchID.hidden = YES;
             [self.cover removeFromSuperview];
         }
     }
@@ -242,7 +251,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"list2Note" sender:indexPath];
-        
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
     // 选中后恢复cell状态
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -278,4 +288,24 @@
 }
 
 
+- (IBAction)takePhoto {
+    DLCImagePickerController *picker = [[DLCImagePickerController alloc] init];
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+#pragma mark - 照片选择控制器代理方法
+- (void)imagePickerController:(DLCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    if (info) {
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        [library writeImageDataToSavedPhotosAlbum:info[UIImagePickerControllerDate] metadata:nil completionBlock:nil];
+    }
+    [picker.view setSheetWithContent:@"已保存至本地相册"];
+    [picker retakePhoto:nil];
+    picker.photoCaptureButton.enabled = YES;
+}
+
+- (void)imagePickerControllerDidCancel:(DLCImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

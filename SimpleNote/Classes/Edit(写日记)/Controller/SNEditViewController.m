@@ -165,7 +165,7 @@
         [self.view setSheetWithContent:@"最多添加三张照片" coorY:0.4];
         return;
     } else if (self.addImageCount == 5){
-        [self.view setSheetWithContent:@"最多添加三张照片" coorY:0.];
+        [self.view setSheetWithContent:@"最多添加三张照片" coorY:0.4];
         return;
     }
     
@@ -283,8 +283,6 @@
     // 收回键盘
     [self.textView resignFirstResponder];
     
-    [UIApplication sharedApplication].statusBarHidden = YES;
-
 }
 
 
@@ -327,8 +325,6 @@
     
     // 收回键盘
     [self.textView resignFirstResponder];
-    
-    [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
 - (void)textViewDidChange:(SCPlaceholderTextView *)textView {
