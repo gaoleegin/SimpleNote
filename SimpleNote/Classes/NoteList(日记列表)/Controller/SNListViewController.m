@@ -31,8 +31,6 @@
 
 @interface SNListViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, DLCImagePickerDelegate>
 
-- (IBAction)lockView;
-
 @property (nonatomic, strong) NSMutableArray *notes;
 
 @property (nonatomic, strong) NSMutableArray *dictArr;
@@ -41,7 +39,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIButton *lockButton;
+@property (weak, nonatomic) UIButton *lockButton;
 
 @property (nonatomic, strong) UIButton *cover;
 
@@ -49,9 +47,6 @@
 
 - (IBAction)takePhoto;
 
-@property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *takePhotoButtonWithTouchID;
 @end
 
 @implementation SNListViewController
@@ -163,8 +158,6 @@
         if (error.code == LAErrorTouchIDNotAvailable) {
             // 手机不支持TouchID
             self.lockButton.hidden = YES;
-            self.takePhotoButton.hidden = NO;
-            self.takePhotoButtonWithTouchID.hidden = YES;
             [self.cover removeFromSuperview];
         }
     }
@@ -210,7 +203,7 @@
         UIButton *cover = [UIButton buttonWithType:UIButtonTypeCustom];
         _cover = cover;
         _cover.backgroundColor = [UIColor blackColor];
-        _cover.alpha = 0.7;
+        _cover.alpha = 0.5;
         _cover.enabled = YES;
         _cover.translatesAutoresizingMaskIntoConstraints = NO;
     }

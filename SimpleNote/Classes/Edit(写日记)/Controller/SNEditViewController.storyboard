@@ -240,9 +240,9 @@
                                     <outlet property="delegate" destination="IJD-g0-vcs" id="PD0-Cc-dRk"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jum-SE-gAG" userLabel="删除日记">
-                                <rect key="frame" x="555" y="564" width="30" height="30"/>
-                                <state key="normal" title="删除">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jum-SE-gAG" userLabel="删除日记">
+                                <rect key="frame" x="548" y="564" width="32" height="32"/>
+                                <state key="normal" image="button_trash">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -252,13 +252,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yUS-G0-DMR" firstAttribute="top" secondItem="jum-SE-gAG" secondAttribute="bottom" constant="6" id="2I2-jb-le6"/>
+                            <constraint firstItem="yUS-G0-DMR" firstAttribute="top" secondItem="jum-SE-gAG" secondAttribute="bottom" constant="4" id="2I2-jb-le6"/>
                             <constraint firstAttribute="trailing" secondItem="k2J-Bo-VTD" secondAttribute="trailing" id="5N9-JB-XvS"/>
                             <constraint firstItem="VbG-4a-nmE" firstAttribute="top" secondItem="ffs-2j-kFj" secondAttribute="bottom" id="E6x-dm-sln"/>
                             <constraint firstAttribute="trailing" secondItem="wNC-OR-qF1" secondAttribute="trailing" id="GwG-56-2Ct"/>
                             <constraint firstItem="k2J-Bo-VTD" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="K1l-NF-rCX"/>
                             <constraint firstAttribute="trailing" secondItem="VbG-4a-nmE" secondAttribute="trailing" id="KyD-zi-Zrn"/>
-                            <constraint firstAttribute="trailing" secondItem="jum-SE-gAG" secondAttribute="trailing" constant="15" id="PRc-i6-9RU"/>
+                            <constraint firstAttribute="trailing" secondItem="jum-SE-gAG" secondAttribute="trailing" constant="20" id="PRc-i6-9RU"/>
                             <constraint firstItem="wNC-OR-qF1" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="XV8-hR-hwz"/>
                             <constraint firstAttribute="height" secondItem="VbG-4a-nmE" secondAttribute="height" multiplier="2.5" id="aE3-jb-5Uo"/>
                             <constraint firstItem="VbG-4a-nmE" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="nll-p9-nfR"/>
@@ -306,5 +306,6 @@
     </scenes>
     <resources>
         <image name="button_add" width="50" height="50"/>
+        <image name="button_trash" width="32" height="32"/>
     </resources>
 </document>

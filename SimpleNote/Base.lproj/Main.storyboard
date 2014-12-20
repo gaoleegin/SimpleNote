@@ -42,33 +42,16 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nld-6h-0c5">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rik-sE-ak5">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="YDT-Pg-hRf"/>
-                                            <constraint firstAttribute="width" constant="64" id="irq-g0-ayg">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
-                                            </constraint>
-                                        </constraints>
-                                        <state key="normal" image="button_locked">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" image="button_locked_push"/>
-                                        <variation key="heightClass=regular-widthClass=regular"/>
-                                        <connections>
-                                            <action selector="lockView" destination="dHH-qq-kQT" eventType="touchUpInside" id="CLJ-QA-zyW"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJU-Fk-B79">
                                         <rect key="frame" x="261" y="17" width="79" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2J-Iq-FIT">
-                                        <rect key="frame" x="536" y="0.0" width="64" height="64"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2J-Iq-FIT" userLabel="Edit">
+                                        <rect key="frame" x="530" y="0.0" width="70" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="obh-o0-2a2">
+                                            <constraint firstAttribute="width" constant="70" id="obh-o0-2a2">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                         </constraints>
@@ -80,50 +63,40 @@
                                             <action selector="showEditView" destination="dHH-qq-kQT" eventType="touchUpInside" id="vRw-fS-fu9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zF-5N-QYc" userLabel="Button-没有TouchID放左边">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zF-5N-QYc" userLabel="Cramer">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="izN-JG-9oe"/>
+                                            <constraint firstAttribute="width" constant="70" id="oN9-e8-sm2"/>
                                         </constraints>
-                                        <state key="normal" image="button_about_push">
+                                        <state key="normal" image="button_camera">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="takePhoto" destination="dHH-qq-kQT" eventType="touchUpInside" id="QjK-NG-sRK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWL-h7-0xO" userLabel="Button-有TouchID放右边">
-                                        <rect key="frame" x="472" y="0.0" width="64" height="64"/>
-                                        <state key="normal" image="button_about_push">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="takePhoto" destination="dHH-qq-kQT" eventType="touchUpInside" id="lbr-Jl-6mD"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="O2J-Iq-FIT" firstAttribute="height" secondItem="nld-6h-0c5" secondAttribute="height" id="16C-Rw-oOR"/>
-                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="leading" secondItem="UWL-h7-0xO" secondAttribute="trailing" id="26T-3d-dTn"/>
+                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="1x2-Xe-bSW"/>
+                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="8fg-Il-9WX"/>
                                     <constraint firstItem="O2J-Iq-FIT" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="HFS-DU-885"/>
                                     <constraint firstAttribute="bottom" secondItem="nld-6h-0c5" secondAttribute="bottom" id="JvV-rk-YLd"/>
                                     <constraint firstAttribute="trailing" secondItem="O2J-Iq-FIT" secondAttribute="trailing" id="MP1-gI-am4"/>
                                     <constraint firstAttribute="height" constant="64" id="P8f-pg-PkK"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="R9j-6J-Qvw"/>
-                                    <constraint firstAttribute="centerY" secondItem="9zF-5N-QYc" secondAttribute="centerY" id="WsO-Z1-FAU"/>
+                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="height" secondItem="t71-DR-9DD" secondAttribute="height" id="Vih-P9-LCC"/>
                                     <constraint firstAttribute="trailing" secondItem="nld-6h-0c5" secondAttribute="trailing" id="Xez-js-qWm"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="YJY-Il-Gi2"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="caq-6f-Uce"/>
-                                    <constraint firstItem="UWL-h7-0xO" firstAttribute="height" secondItem="O2J-Iq-FIT" secondAttribute="height" id="e0H-tU-VN1"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="height" secondItem="t71-DR-9DD" secondAttribute="height" id="lJ0-je-vbi"/>
-                                    <constraint firstItem="rik-sE-ak5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="lPm-Wq-LuF"/>
-                                    <constraint firstItem="rik-sE-ak5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="mXA-09-Xlk"/>
-                                    <constraint firstItem="UWL-h7-0xO" firstAttribute="centerY" secondItem="O2J-Iq-FIT" secondAttribute="centerY" id="mtL-lC-9UK"/>
+                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="height" secondItem="nld-6h-0c5" secondAttribute="height" id="iOO-nh-nlb"/>
                                     <constraint firstAttribute="centerX" secondItem="MJU-Fk-B79" secondAttribute="centerX" id="pjP-a2-Ar4"/>
                                     <constraint firstAttribute="centerY" secondItem="MJU-Fk-B79" secondAttribute="centerY" id="x1B-EC-VB2"/>
-                                    <constraint firstItem="UWL-h7-0xO" firstAttribute="width" secondItem="O2J-Iq-FIT" secondAttribute="width" id="zKS-wj-GLO"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=regular"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Vih-P9-LCC"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-Wt-Vo8">
                                 <rect key="frame" x="0.0" y="63" width="600" height="537"/>
@@ -261,10 +234,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3pw-EZ-0aC"/>
                     <connections>
-                        <outlet property="lockButton" destination="rik-sE-ak5" id="euM-hA-dxa"/>
                         <outlet property="tableView" destination="aZE-Wt-Vo8" id="Knk-jU-Fnh"/>
-                        <outlet property="takePhotoButton" destination="9zF-5N-QYc" id="62i-ai-cAN"/>
-                        <outlet property="takePhotoButtonWithTouchID" destination="UWL-h7-0xO" id="DOi-sk-BFL"/>
                         <segue destination="EF5-iy-zZ7" kind="show" identifier="list2Note" id="wCW-vO-xrf"/>
                     </connections>
                 </viewController>
@@ -321,7 +291,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-M4-Km9" userLabel="image Container">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn" userLabel="Image View - 1-third" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn" userLabel="Image View - 1-third" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="Lc0-14-yKA">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -344,7 +314,7 @@
                                                                                     <outlet property="navBar" destination="mG7-6v-gJF" id="vue-ky-zoq"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVL-B1-ynH" userLabel="Image View - 2-third" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVL-B1-ynH" userLabel="Image View - 2-third" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="Tcz-0o-PFo">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -367,7 +337,7 @@
                                                                                     <outlet property="navBar" destination="mG7-6v-gJF" id="Dd5-EO-8P4"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCh-qm-vEO" userLabel="Image View - 3-third" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fCh-qm-vEO" userLabel="Image View - 3-third" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="fCh-qm-vEO" secondAttribute="height" multiplier="1:1" id="KKO-H9-DV3"/>
                                                                                     <constraint firstAttribute="height" id="yan-J5-ZWj">
@@ -390,17 +360,17 @@
                                                                                     <outlet property="navBar" destination="mG7-6v-gJF" id="yes-KE-CBa"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="lPU-qV-Z8m" userLabel="Image Shadow - 1 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="lPU-qV-Z8m" userLabel="Image Shadow - 1 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="EQX-No-vUk"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Vd-lFY" userLabel="Image Shadow - 2 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Vd-lFY" userLabel="Image Shadow - 2 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="Tp1-cX-c68"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="OxY-Ln-81A" userLabel="Image Shadow - 3 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="OxY-Ln-81A" userLabel="Image Shadow - 3 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="TcQ-6F-gUy"/>
                                                                                 </constraints>
@@ -619,7 +589,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-k6-Xsc" userLabel="image Container">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv" userLabel="Image View - 1-second" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv" userLabel="Image View - 1-second" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="kaG-HV-Oiv" secondAttribute="height" multiplier="1:1" id="1lP-6B-Kls"/>
                                                                                     <constraint firstAttribute="height" id="uRA-qe-wfE">
@@ -642,7 +612,7 @@
                                                                                     <outlet property="navBar" destination="Oca-uO-A7b" id="HCc-wQ-GIq"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-j0-dws" userLabel="Image View - 2-second" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-j0-dws" userLabel="Image View - 2-second" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="tFw-j0-dws" secondAttribute="height" multiplier="1:1" id="H7n-U6-LVU"/>
                                                                                     <constraint firstAttribute="height" id="i9w-30-HiU">
@@ -665,7 +635,7 @@
                                                                                     <outlet property="navBar" destination="Oca-uO-A7b" id="hRK-u1-oi5"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoO-hf-lt8" userLabel="Image View - 3-second" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AoO-hf-lt8" userLabel="Image View - 3-second" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="HJ4-RS-cLw">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -688,17 +658,17 @@
                                                                                     <outlet property="navBar" destination="Oca-uO-A7b" id="jNf-b1-Pk5"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="wO3-3C-mnG" userLabel="Image Shadow - 1 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="wO3-3C-mnG" userLabel="Image Shadow - 1 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="Hch-Pp-5fG"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="RuP-yl-2Ue" userLabel="Image Shadow - 2 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="RuP-yl-2Ue" userLabel="Image Shadow - 2 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="qxL-t6-xzm"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-9V-18H" userLabel="Image Shadow - 3 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-9V-18H" userLabel="Image Shadow - 3 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="DDP-xK-oUf"/>
                                                                                 </constraints>
@@ -934,7 +904,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="image Container">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb" userLabel="Image View -1-first" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb" userLabel="Image View -1-first" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="694-GH-ABC">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -957,7 +927,7 @@
                                                                                     <outlet property="navBar" destination="at1-Li-Ezf" id="HKF-8x-xsn"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4F-SB-U0K" userLabel="Image View - 2-first" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y4F-SB-U0K" userLabel="Image View - 2-first" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="Ltj-w6-BOe">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -980,7 +950,7 @@
                                                                                     <outlet property="navBar" destination="at1-Li-Ezf" id="Rvi-n2-6DV"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2u-9p-Eve" userLabel="Image View - 3-first" customClass="SNImageView">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v2u-9p-Eve" userLabel="Image View - 3-first" customClass="SNImageView">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" id="KWK-Lz-rEh">
                                                                                         <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -1003,17 +973,17 @@
                                                                                     <outlet property="navBar" destination="at1-Li-Ezf" id="bGF-SU-VVX"/>
                                                                                 </connections>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-pr-E0K" userLabel="Image Shadow - 1 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-pr-E0K" userLabel="Image Shadow - 1 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="eIs-On-ehd"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="MUr-E1-JiG" userLabel="Image Shadow - 2 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="MUr-E1-JiG" userLabel="Image Shadow - 2 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="E1J-e7-JRD"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="q9L-rY-M4k" userLabel="Image Shadow - 3 - first">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropshadow" translatesAutoresizingMaskIntoConstraints="NO" id="q9L-rY-M4k" userLabel="Image Shadow - 3 - first">
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="16" id="S2z-cK-1zR"/>
                                                                                 </constraints>
@@ -1279,13 +1249,11 @@
     </scenes>
     <resources>
         <image name="bar" width="384" height="64"/>
-        <image name="button_about_push" width="32" height="32"/>
+        <image name="button_camera" width="32" height="32"/>
         <image name="button_edit" width="32" height="32"/>
         <image name="button_edit_2" width="32" height="32"/>
         <image name="button_list" width="32" height="32"/>
         <image name="button_list_push" width="32" height="32"/>
-        <image name="button_locked" width="32" height="32"/>
-        <image name="button_locked_push" width="32" height="32"/>
         <image name="diary_arrow_left" width="8" height="16"/>
         <image name="diary_arrow_right" width="8" height="16"/>
         <image name="diary_dot" width="8" height="8"/>
