@@ -74,22 +74,16 @@
     if (!_notes) {
         
         // 程序第一次载入时候显示
-        UIImage *image1 = [UIImage imageNamed:@"dec28_windmill"];
-        UIImage *image2 = [UIImage imageNamed:@"sep30_box"];
+        UIImage *image1 = [UIImage imageNamed:@"img_default"];
         NSString *image1Name = [NSString stringWithFormat:@"%@_01",[SCDateTool dateWithDateID]];
-        NSString *image2Name = [NSString stringWithFormat:@"%@_02",[SCDateTool dateWithDateID]];
 
-        [SCImageTool save:image1 imageName:[image1Name stringByAppendingPathExtension:@"png"]];
-        [SCImageTool save:image2 imageName:[image2Name stringByAppendingPathExtension:@"png"]];
+        [SCImageTool save:image1 imageName:image1Name];
         
-        NSMutableArray *image1Names = [NSMutableArray arrayWithObject:image1Name];
-        NSMutableArray *image2Names = [NSMutableArray arrayWithObject:image2Name];
+        NSMutableArray *image1Names = [NSMutableArray arrayWithObject:[image1Name stringByAppendingPathExtension:@"jpg"]];
         
-        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"我今天感觉自己萌萌哒!", @"imageNames" : image1Names};
-        NSDictionary *noteDict2 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"你呢?", @"imageNames" : image2Names};
+        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"Marry Christmas!", @"imageNames" : image1Names};
         SNNoteModel *note1 = [SNNoteModel objectWithKeyValues:noteDict1];
-        SNNoteModel *note2 = [SNNoteModel objectWithKeyValues:noteDict2];
-        [self.notes addObjectsFromArray:@[note1, note2]];
+        [self.notes addObjectsFromArray:@[note1]];
         
         [SNNoteTool save:self.notes];
         

@@ -15,12 +15,10 @@
 
 + (void)save:(UIImage *)image imageName:(NSString *)imageName {
     NSString *imagePath = [SNImagePath stringByAppendingPathComponent:imageName];
-//    [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
     [UIImageJPEGRepresentation(image, 1) writeToFile:imagePath atomically:YES];
 }
 
 + (NSString *)imagePath:(NSString *)imageName {
-//    NSLog(@"%@", [SNImagePath stringByAppendingPathComponent:imageName]);
     return [SNImagePath stringByAppendingPathComponent:imageName];
 }
 
