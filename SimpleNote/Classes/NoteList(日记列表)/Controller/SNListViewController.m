@@ -74,16 +74,16 @@
     if (!_notes) {
         
         // 程序第一次载入时候显示
-        UIImage *image1 = [UIImage imageNamed:@"img_default"];
-        NSString *image1Name = [NSString stringWithFormat:@"%@_01",[SCDateTool dateWithDateID]];
-
-        [SCImageTool save:image1 imageName:image1Name];
+        UIImage *image = [UIImage imageNamed:@"img_default"];
+        NSString *imageName = [[NSString stringWithFormat:@"%@_01",[SCDateTool dateWithDateID]] stringByAppendingPathExtension:@"jpg"];
         
-        NSMutableArray *image1Names = [NSMutableArray arrayWithObject:[image1Name stringByAppendingPathExtension:@"jpg"]];
+        [SCImageTool save:image imageName:imageName];
         
-        NSDictionary *noteDict1 = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"Marry Christmas!", @"imageNames" : image1Names};
-        SNNoteModel *note1 = [SNNoteModel objectWithKeyValues:noteDict1];
-        [self.notes addObjectsFromArray:@[note1]];
+        NSMutableArray *imageNames = [NSMutableArray arrayWithObject:imageName];
+        
+        NSDictionary *noteDict = @{@"date" : [SCDateTool dateWithDate_en], @"body" : @"Marry Christmas!", @"imageNames" : imageNames};
+        SNNoteModel *note = [SNNoteModel objectWithKeyValues:noteDict];
+        [self.notes addObjectsFromArray:@[note]];
         
         [SNNoteTool save:self.notes];
         
