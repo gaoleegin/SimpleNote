@@ -10,7 +10,6 @@
 		9632D5631A38A35D00A6F746 /* SCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5621A38A35D00A6F746 /* SCPlaceholderTextView.m */; };
 		9632D5661A38A41200A6F746 /* SNEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632D5651A38A41200A6F746 /* SNEditViewController.m */; };
 		9632D5681A38A44B00A6F746 /* SNEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */; };
-		963C5BAF1A35E5430052A2DD /* note.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963C5BAE1A35E5430052A2DD /* note.plist */; };
 		963C5BB51A35ECD70052A2DD /* SNNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C5BB41A35ECD70052A2DD /* SNNoteModel.m */; };
 		963E27B11A426D79008232FA /* DLCBlurOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 963E261E1A426D78008232FA /* DLCBlurOverlayView.m */; };
 		963E27B21A426D79008232FA /* DLCGrayscaleContrastFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 963E26201A426D78008232FA /* DLCGrayscaleContrastFilter.m */; };
@@ -303,7 +302,6 @@
 		9632D5641A38A41200A6F746 /* SNEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNEditViewController.h; sourceTree = "<group>"; };
 		9632D5651A38A41200A6F746 /* SNEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNEditViewController.m; sourceTree = "<group>"; };
 		9632D5671A38A44B00A6F746 /* SNEditViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SNEditViewController.storyboard; sourceTree = "<group>"; };
-		963C5BAE1A35E5430052A2DD /* note.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = note.plist; sourceTree = "<group>"; };
 		963C5BB31A35ECD70052A2DD /* SNNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNoteModel.h; sourceTree = "<group>"; };
 		963C5BB41A35ECD70052A2DD /* SNNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNoteModel.m; sourceTree = "<group>"; };
 		963E261D1A426D78008232FA /* DLCBlurOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCBlurOverlayView.h; sourceTree = "<group>"; };
@@ -1542,7 +1540,6 @@
 			children = (
 				96CF4DE51A309A5000D5A16B /* Classes */,
 				96CF4DC91A3099AF00D5A16B /* Main.storyboard */,
-				963C5BAE1A35E5430052A2DD /* note.plist */,
 				96CF4DCC1A3099AF00D5A16B /* Images.xcassets */,
 				96CF4DCE1A3099AF00D5A16B /* LaunchScreen.xib */,
 				96CF4DBF1A3099AF00D5A16B /* Supporting Files */,
@@ -1816,7 +1813,6 @@
 				963E28581A426D79008232FA /* 1@2x.jpg in Resources */,
 				963E28871A426D79008232FA /* front-camera@2x.png in Resources */,
 				963E28841A426D79008232FA /* focus-crosshair.png in Resources */,
-				963C5BAF1A35E5430052A2DD /* note.plist in Resources */,
 				963E287A1A426D79008232FA /* filter-open.png in Resources */,
 				963E28811A426D79008232FA /* flash-off@2x.png in Resources */,
 				963E28571A426D79008232FA /* 10@2x.jpg in Resources */,
