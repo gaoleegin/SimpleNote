@@ -61,7 +61,7 @@
                                             <action selector="showEditView" destination="dHH-qq-kQT" eventType="touchUpInside" id="vRw-fS-fu9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swb-qn-48L">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swb-qn-48L">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="CM2-qN-NdH"/>
@@ -131,14 +131,14 @@
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="uMR-uY-wVE" secondAttribute="trailing" constant="30" id="4fs-lM-vFc">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="47"/>
                                                         </constraint>
                                                         <constraint firstItem="1mu-mb-0fk" firstAttribute="top" secondItem="URY-Hk-ooG" secondAttribute="top" constant="23" id="EgJ-Ir-QOC"/>
                                                         <constraint firstItem="LGT-h4-4Dh" firstAttribute="centerY" secondItem="1mu-mb-0fk" secondAttribute="centerY" constant="-0.5" id="LTV-BX-2LM"/>
                                                         <constraint firstItem="uMR-uY-wVE" firstAttribute="top" secondItem="URY-Hk-ooG" secondAttribute="top" constant="15" id="Tt2-Zr-QER"/>
                                                         <constraint firstAttribute="height" constant="55" id="dk3-TC-9lW"/>
                                                         <constraint firstItem="1mu-mb-0fk" firstAttribute="leading" secondItem="URY-Hk-ooG" secondAttribute="leading" constant="30" id="hVM-kg-7uH">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="49"/>
                                                         </constraint>
                                                         <constraint firstItem="LGT-h4-4Dh" firstAttribute="leading" secondItem="1mu-mb-0fk" secondAttribute="trailing" constant="31" id="vJd-gw-Xh0"/>
                                                     </constraints>
@@ -189,13 +189,13 @@
                                                         <constraint firstItem="erV-2n-MYZ" firstAttribute="top" secondItem="AgW-G3-9HM" secondAttribute="top" constant="23" id="JXD-Mg-Ilq"/>
                                                         <constraint firstItem="QGM-qG-ASS" firstAttribute="top" secondItem="AgW-G3-9HM" secondAttribute="top" constant="15" id="Rle-bI-NSe"/>
                                                         <constraint firstAttribute="trailing" secondItem="QGM-qG-ASS" secondAttribute="trailing" constant="30" id="X0g-e4-dkT">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="47"/>
                                                         </constraint>
                                                         <constraint firstItem="erV-2n-MYZ" firstAttribute="centerY" secondItem="pLd-CX-p7M" secondAttribute="centerY" constant="0.5" id="auK-kA-rpe"/>
                                                         <constraint firstItem="pLd-CX-p7M" firstAttribute="leading" secondItem="erV-2n-MYZ" secondAttribute="trailing" constant="31" id="ixd-lH-iDA"/>
                                                         <constraint firstAttribute="height" constant="55" id="taL-5L-ZUJ"/>
                                                         <constraint firstItem="erV-2n-MYZ" firstAttribute="leading" secondItem="AgW-G3-9HM" secondAttribute="leading" constant="30" id="wKp-Xq-uin">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="49"/>
                                                         </constraint>
                                                     </constraints>
                                                 </view>

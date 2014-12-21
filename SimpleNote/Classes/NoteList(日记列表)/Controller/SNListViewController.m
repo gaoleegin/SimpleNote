@@ -119,7 +119,7 @@
     
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         
-        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"使用指纹登录", nil) reply:^(BOOL success, NSError *error) {
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:NSLocalizedString(@"使用指纹解锁", nil) reply:^(BOOL success, NSError *error) {
             if (success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.cover removeFromSuperview];
