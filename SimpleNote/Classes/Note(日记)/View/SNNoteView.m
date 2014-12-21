@@ -261,7 +261,6 @@
         self.imageViewHeightCons.constant = 0;
         self.imageViewHeightCons2.constant = 0;
         self.imageViewHeightCons3.constant = 0;
-
     }
 }
 

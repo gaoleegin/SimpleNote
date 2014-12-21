@@ -2190,7 +2190,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: quanlan huang (K6ZU7987DF)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2203,7 +2203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: quanlan huang (K6ZU7987DF)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -277,6 +277,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                         <connections>
                                                                             <outlet property="arrowView" destination="Xag-eo-Duc" id="99Q-kl-3u8"/>
+                                                                            <outlet property="conW" destination="etl-vu-Yed" id="8aJ-mF-PwJ"/>
                                                                             <outlet property="cons" destination="Mn1-8K-AKO" id="dsW-ro-Jpm"/>
                                                                             <outlet property="consMiddle" destination="ZiB-3j-UHn" id="hlC-QT-9HM"/>
                                                                             <outlet property="consTop" destination="7Fz-n7-Enr" id="3Jb-yC-vDH"/>
@@ -575,6 +576,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                         <connections>
                                                                             <outlet property="arrowView" destination="eFP-Bw-JUJ" id="FZF-J0-qSw"/>
+                                                                            <outlet property="conW" destination="1gF-Ue-tk8" id="CPk-20-eua"/>
                                                                             <outlet property="cons" destination="8gm-LD-r8y" id="wke-67-8xg"/>
                                                                             <outlet property="consMiddle" destination="mEK-YY-2lP" id="UHb-W8-hFv"/>
                                                                             <outlet property="consTop" destination="7Fz-n7-Enr" id="bfE-sw-l8X"/>
@@ -890,6 +892,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                         <connections>
                                                                             <outlet property="arrowView" destination="3ge-hV-ktr" id="Qc8-dF-zpF"/>
+                                                                            <outlet property="conW" destination="85F-JU-p9n" id="LJH-Aj-NuN"/>
                                                                             <outlet property="cons" destination="6ku-AO-1YT" id="WtT-MM-51L"/>
                                                                             <outlet property="consMiddle" destination="LIQ-Lu-h62" id="YWv-rd-A4l"/>
                                                                             <outlet property="consTop" destination="7Fz-n7-Enr" id="t5p-8k-LfZ"/>

@@ -27,6 +27,15 @@
 // 是否是iphone设备
 #define Iphone ([UIApplication sharedApplication].keyWindow.bounds.size.width <= 414)
 
+// 是否是iphone6设备
+#define Iphone6 ([UIApplication sharedApplication].keyWindow.bounds.size.width == 375)
+
+// 是否是iphone6plus设备
+#define Iphone6plus ([UIApplication sharedApplication].keyWindow.bounds.size.width == 414)
+
+// 是否是iphone4s 5 5s设备
+#define IphoneW320 ([UIApplication sharedApplication].keyWindow.bounds.size.width == 320)
+
 // 创建随机数
 #define SCNumber(n) arc4random_uniform(n)
 

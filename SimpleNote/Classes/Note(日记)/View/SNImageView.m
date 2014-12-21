@@ -42,7 +42,6 @@
  */
 @property (nonatomic, weak) IBOutlet UIView *arrowView;
 
-
 @end
 @implementation SNImageView
 
@@ -58,7 +57,18 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     if (self.image) {
-        if (Iphone) self.heightCons.constant = 280;
+        if (Iphone) {
+            if (IphoneW320) {
+            self.heightCons.constant = 280;
+            }
+            if (Iphone6) {
+                self.heightCons.constant = 320;
+            }
+            if (Iphone6plus) {
+                self.heightCons.constant = 340;
+            }
+        }
+        
         else self.heightCons.constant = 480;
     }
     else self.heightCons.constant = 0;

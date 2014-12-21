@@ -345,7 +345,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
     UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickerController.delegate = self;
-    imagePickerController.allowsEditing = YES;
+    imagePickerController.allowsEditing = NO;
     [self presentViewController:imagePickerController animated:YES completion:NULL];
 }
 
@@ -488,7 +488,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
         UIImage *currentFilteredVideoFrame = [processUpTo imageFromCurrentlyProcessedOutputWithOrientation:staticPictureOriginalOrientation];
 
         NSData *jpegDate = UIImageJPEGRepresentation(currentFilteredVideoFrame, self.outputJPEGQuality);
-        UIImage *jpegImage = [UIImage OriginImage:currentFilteredVideoFrame scaleToSize:CGSizeMake(1024, 1024)];
+        UIImage *jpegImage = [UIImage OriginImage:currentFilteredVideoFrame scaleToSize:CGSizeMake(512, 512)];
         
         NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:
                               jpegDate,UIImagePickerControllerDate,

@@ -7,6 +7,7 @@
 //
 
 #import "SNBodyLabel.h"
+#import "Common.h"
 
 @interface SNBodyLabel()
 /**
@@ -34,6 +35,7 @@
  */
 @property (nonatomic, weak) IBOutlet UIView *arrowView;
 
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *conW;
 
 @end
 
@@ -44,13 +46,27 @@
  */
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.cons.constant = 20.0; // 默认值:如果内容超出屏幕使用此约束
-    CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.consMiddle.constant + self.imageView.bounds.size.height + self.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-//    NSLog(@"%f<--->%f",self.cons.constant,self.consMiddle.constant);
-    if (preRunTimeHeight < screenHeight) {
-        self.cons.constant = [UIScreen mainScreen].bounds.size.height - self.consTop.constant - self.navBar.bounds.size.height - self.consMiddle.constant - self.imageView.bounds.size.height - self.bounds.size.height - self.arrowView.bounds.size.height;
+    
+    if (Iphone) {
+        if (IphoneW320) {
+            self.conW.constant = 280;
+        }
+        if (Iphone6) {
+            self.conW.constant = 320;
+        }
+        if (Iphone6plus) {
+            self.conW.constant = 340;
+        }
     }
+    else self.conW.constant = 480;
+    
+//    self.cons.constant = 20.0; // 默认值:如果内容超出屏幕使用此约束
+//    CGFloat preRunTimeHeight = self.navBar.bounds.size.height + self.consTop.constant + self.consMiddle.constant + self.imageView.bounds.size.height + self.bounds.size.height + self.cons.constant +  self.arrowView.bounds.size.height;
+//    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+////    NSLog(@"%f<--->%f",self.cons.constant,self.consMiddle.constant);
+//    if (preRunTimeHeight < screenHeight) {
+//        self.cons.constant = [UIScreen mainScreen].bounds.size.height - self.consTop.constant - self.navBar.bounds.size.height - self.consMiddle.constant - self.imageView.bounds.size.height - self.bounds.size.height - self.arrowView.bounds.size.height;
+//    }
 //    NSLog(@"%f",self.cons.constant);
 }
 
