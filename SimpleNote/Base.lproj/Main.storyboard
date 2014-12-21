@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t71-DR-9DD" customClass="GPUImageView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t71-DR-9DD" userLabel="自定义导航" customClass="GPUImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nld-6h-0c5">
@@ -51,9 +51,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2J-Iq-FIT" userLabel="Edit">
                                         <rect key="frame" x="530" y="0.0" width="70" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="obh-o0-2a2">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
-                                            </constraint>
+                                            <constraint firstAttribute="width" constant="70" id="Rn7-E9-Trg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" image="button_edit">
@@ -63,40 +61,38 @@
                                             <action selector="showEditView" destination="dHH-qq-kQT" eventType="touchUpInside" id="vRw-fS-fu9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zF-5N-QYc" userLabel="Cramer">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swb-qn-48L">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="oN9-e8-sm2"/>
+                                            <constraint firstAttribute="width" constant="70" id="CM2-qN-NdH"/>
                                         </constraints>
                                         <state key="normal" image="button_camera">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="takePhoto" destination="dHH-qq-kQT" eventType="touchUpInside" id="QjK-NG-sRK"/>
+                                            <action selector="takePhoto" destination="dHH-qq-kQT" eventType="touchUpInside" id="x7v-En-FmL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="height" secondItem="nld-6h-0c5" secondAttribute="height" id="16C-Rw-oOR"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="1x2-Xe-bSW"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="8fg-Il-9WX"/>
-                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="HFS-DU-885"/>
+                                    <constraint firstItem="O2J-Iq-FIT" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="5uP-yw-m8K"/>
+                                    <constraint firstItem="swb-qn-48L" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="BKD-Qf-Cvu">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
+                                    <constraint firstItem="nld-6h-0c5" firstAttribute="height" secondItem="O2J-Iq-FIT" secondAttribute="height" id="JMh-HX-vvZ"/>
                                     <constraint firstAttribute="bottom" secondItem="nld-6h-0c5" secondAttribute="bottom" id="JvV-rk-YLd"/>
-                                    <constraint firstAttribute="trailing" secondItem="O2J-Iq-FIT" secondAttribute="trailing" id="MP1-gI-am4"/>
                                     <constraint firstAttribute="height" constant="64" id="P8f-pg-PkK"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="height" secondItem="t71-DR-9DD" secondAttribute="height" id="Vih-P9-LCC"/>
                                     <constraint firstAttribute="trailing" secondItem="nld-6h-0c5" secondAttribute="trailing" id="Xez-js-qWm"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="YJY-Il-Gi2"/>
+                                    <constraint firstItem="swb-qn-48L" firstAttribute="top" secondItem="t71-DR-9DD" secondAttribute="top" id="af2-po-71u"/>
                                     <constraint firstItem="nld-6h-0c5" firstAttribute="leading" secondItem="t71-DR-9DD" secondAttribute="leading" id="caq-6f-Uce"/>
-                                    <constraint firstItem="9zF-5N-QYc" firstAttribute="height" secondItem="nld-6h-0c5" secondAttribute="height" id="iOO-nh-nlb"/>
                                     <constraint firstAttribute="centerX" secondItem="MJU-Fk-B79" secondAttribute="centerX" id="pjP-a2-Ar4"/>
+                                    <constraint firstItem="swb-qn-48L" firstAttribute="height" secondItem="t71-DR-9DD" secondAttribute="height" id="ted-wh-myr"/>
                                     <constraint firstAttribute="centerY" secondItem="MJU-Fk-B79" secondAttribute="centerY" id="x1B-EC-VB2"/>
+                                    <constraint firstAttribute="trailing" secondItem="O2J-Iq-FIT" secondAttribute="trailing" id="yNi-Uw-QYu">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Vih-P9-LCC"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-Wt-Vo8">
                                 <rect key="frame" x="0.0" y="63" width="600" height="537"/>
