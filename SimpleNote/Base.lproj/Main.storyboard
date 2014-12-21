@@ -262,8 +262,8 @@
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-oT-TIC">
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-UU-3pr" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="305"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-UU-3pr" userLabel="Content View -3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="315"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrN-WC-XJj" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="160" y="40" width="280" height="80"/>
@@ -285,7 +285,7 @@
                                                                             <outlet property="navBar" destination="mG7-6v-gJF" id="Irt-qk-zyJ"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-M4-Km9" userLabel="image Container">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-M4-Km9" userLabel="image Container -3" customClass="SNImageContainerView">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpP-4z-3jn" userLabel="Image View - 1-third" customClass="SNImageView">
@@ -391,9 +391,14 @@
                                                                             <constraint firstItem="fCh-qm-vEO" firstAttribute="bottom" secondItem="OxY-Ln-81A" secondAttribute="top" id="sfF-V3-H31"/>
                                                                             <constraint firstItem="fCh-qm-vEO" firstAttribute="centerX" secondItem="TVL-B1-ynH" secondAttribute="centerX" id="uzW-Ix-KRE"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <outlet property="conMargin1" destination="j5g-Pb-meX" id="oyB-bO-gRO"/>
+                                                                            <outlet property="conMargin2" destination="PW4-lS-Ss1" id="jGG-ZD-f6w"/>
+                                                                            <outlet property="conMarginToTop" destination="ZiB-3j-UHn" id="6od-YW-RRi"/>
+                                                                        </connections>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-eo-Duc" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="250" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="260" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXf-3X-rr5" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -446,7 +451,7 @@
                                                                     <constraint firstItem="Xag-eo-Duc" firstAttribute="leading" secondItem="AeU-UU-3pr" secondAttribute="leading" constant="30" id="95g-BG-Hdt"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Xag-eo-Duc" secondAttribute="trailing" constant="30" id="ATI-oy-YzK"/>
                                                                     <constraint firstAttribute="centerX" secondItem="JrN-WC-XJj" secondAttribute="centerX" id="CbZ-vm-Nbz"/>
-                                                                    <constraint firstItem="Xag-eo-Duc" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="bottom" constant="20" id="Mn1-8K-AKO"/>
+                                                                    <constraint firstItem="Xag-eo-Duc" firstAttribute="top" secondItem="ULY-M4-Km9" secondAttribute="bottom" constant="30" id="Mn1-8K-AKO"/>
                                                                     <constraint firstAttribute="trailing" secondItem="JrN-WC-XJj" secondAttribute="trailing" constant="30" id="QCi-Zy-WWM"/>
                                                                     <constraint firstAttribute="bottom" secondItem="Xag-eo-Duc" secondAttribute="bottom" id="V7E-mc-7wG"/>
                                                                     <constraint firstItem="ULY-M4-Km9" firstAttribute="leading" secondItem="AeU-UU-3pr" secondAttribute="leading" constant="30" id="XFi-ol-yC4"/>
@@ -561,8 +566,8 @@
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-Yi-AqB">
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-lR-wf0" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="305"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-lR-wf0" userLabel="Content View -2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="315"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="文本2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU2-5S-yjz" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="160" y="40" width="280" height="80"/>
@@ -584,7 +589,7 @@
                                                                             <outlet property="navBar" destination="Oca-uO-A7b" id="11s-8k-eCd"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-k6-Xsc" userLabel="image Container">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-k6-Xsc" userLabel="image Container -2" customClass="SNImageContainerView">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-HV-Oiv" userLabel="Image View - 1-second" customClass="SNImageView">
@@ -698,9 +703,14 @@
                                                                                 <exclude reference="fWW-0W-jxO"/>
                                                                             </mask>
                                                                         </variation>
+                                                                        <connections>
+                                                                            <outlet property="conMargin1" destination="Pgj-5u-T5C" id="50I-xa-GgB"/>
+                                                                            <outlet property="conMargin2" destination="MfG-kT-dDG" id="aXd-FD-Gxl"/>
+                                                                            <outlet property="conMarginToTop" destination="mEK-YY-2lP" id="4WI-DC-dG6"/>
+                                                                        </connections>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-Bw-JUJ" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="250" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="260" width="540" height="55"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-kt-SOs" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -750,7 +760,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="eFP-Bw-JUJ" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="bottom" constant="20" id="8gm-LD-r8y"/>
+                                                                    <constraint firstItem="eFP-Bw-JUJ" firstAttribute="top" secondItem="EIN-k6-Xsc" secondAttribute="bottom" constant="30" id="8gm-LD-r8y"/>
                                                                     <constraint firstAttribute="bottom" secondItem="eFP-Bw-JUJ" secondAttribute="bottom" id="NAz-nv-o1u"/>
                                                                     <constraint firstAttribute="trailing" secondItem="EIN-k6-Xsc" secondAttribute="trailing" constant="30" id="PfI-ic-YNU"/>
                                                                     <constraint firstAttribute="trailing" secondItem="SU2-5S-yjz" secondAttribute="trailing" constant="30" id="Q8e-wO-4GP"/>
@@ -877,8 +887,8 @@
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2U7-Uj-RuW">
                                                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtM-p6-l2T" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="305"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtM-p6-l2T" userLabel="Content View -1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="315"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="540" placeholderIntrinsicHeight="80" text="正文..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-WU-Lt0" customClass="SNBodyLabel">
                                                                         <rect key="frame" x="160" y="40" width="280" height="80"/>
@@ -900,7 +910,7 @@
                                                                             <outlet property="navBar" destination="at1-Li-Ezf" id="ypY-GE-BSD"/>
                                                                         </connections>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="image Container">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-03-QIh" userLabel="image Container -1" customClass="SNImageContainerView">
                                                                         <rect key="frame" x="30" y="150" width="540" height="80"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33N-UQ-vxb" userLabel="Image View -1-first" customClass="SNImageView">
@@ -1006,9 +1016,14 @@
                                                                             <constraint firstItem="v2u-9p-Eve" firstAttribute="centerX" secondItem="Y4F-SB-U0K" secondAttribute="centerX" id="vWg-Mg-Tnq"/>
                                                                             <constraint firstItem="Y4F-SB-U0K" firstAttribute="top" secondItem="33N-UQ-vxb" secondAttribute="bottom" constant="40" id="wRc-a6-git"/>
                                                                         </constraints>
+                                                                        <connections>
+                                                                            <outlet property="conMargin1" destination="wRc-a6-git" id="9CR-5s-6gv"/>
+                                                                            <outlet property="conMargin2" destination="SkF-DT-pn2" id="jMa-QA-SgN"/>
+                                                                            <outlet property="conMarginToTop" destination="LIQ-Lu-h62" id="YzM-jj-iHo"/>
+                                                                        </connections>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-hV-ktr" userLabel="底部视图">
-                                                                        <rect key="frame" x="30" y="250" width="540" height="55"/>
+                                                                        <rect key="frame" x="30" y="260" width="540" height="55"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary_dot" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-PN-GDD">
                                                                                 <rect key="frame" x="265" y="23" width="10" height="10"/>
@@ -1062,7 +1077,7 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="3ge-hV-ktr" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="bottom" constant="20" id="6ku-AO-1YT"/>
+                                                                    <constraint firstItem="3ge-hV-ktr" firstAttribute="top" secondItem="9xz-03-QIh" secondAttribute="bottom" constant="30" id="6ku-AO-1YT"/>
                                                                     <constraint firstItem="IEg-WU-Lt0" firstAttribute="top" secondItem="BtM-p6-l2T" secondAttribute="top" constant="40" id="7Fz-n7-Enr"/>
                                                                     <constraint firstAttribute="trailing" secondItem="9xz-03-QIh" secondAttribute="trailing" constant="30" id="H7o-54-lCt"/>
                                                                     <constraint firstItem="9xz-03-QIh" firstAttribute="top" secondItem="IEg-WU-Lt0" secondAttribute="bottom" constant="30" id="LIQ-Lu-h62"/>

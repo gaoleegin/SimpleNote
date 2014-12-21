@@ -245,6 +245,7 @@
 		963E289D1A426DCB008232FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963E289C1A426DCB008232FA /* QuartzCore.framework */; };
 		963E289F1A426DD6008232FA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963E289E1A426DD6008232FA /* CoreVideo.framework */; };
 		963E28A11A426DE0008232FA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963E28A01A426DE0008232FA /* CoreMedia.framework */; };
+		96527C2E1A46ED22009D4B5D /* SNImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96527C2D1A46ED22009D4B5D /* SNImageContainerView.m */; };
 		96599EE81A31778B00ABF0B1 /* SNBodyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */; };
 		96599EF91A3194EA00ABF0B1 /* SNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96599EF81A3194EA00ABF0B1 /* SNNoteView.m */; };
 		968E16F41A3BD00500CA81F6 /* SCImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E16F31A3BD00500CA81F6 /* SCImageTool.m */; };
@@ -702,6 +703,8 @@
 		963E289C1A426DCB008232FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		963E289E1A426DD6008232FA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		963E28A01A426DE0008232FA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		96527C2C1A46ED22009D4B5D /* SNImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImageContainerView.h; sourceTree = "<group>"; };
+		96527C2D1A46ED22009D4B5D /* SNImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImageContainerView.m; sourceTree = "<group>"; };
 		96599EE61A31778B00ABF0B1 /* SNBodyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBodyLabel.h; sourceTree = "<group>"; };
 		96599EE71A31778B00ABF0B1 /* SNBodyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBodyLabel.m; sourceTree = "<group>"; };
 		96599EF61A3191FF00ABF0B1 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -1656,6 +1659,8 @@
 				96599EF81A3194EA00ABF0B1 /* SNNoteView.m */,
 				96CA995C1A3E6507002F3F1C /* SNImageView.h */,
 				96CA995D1A3E6507002F3F1C /* SNImageView.m */,
+				96527C2C1A46ED22009D4B5D /* SNImageContainerView.h */,
+				96527C2D1A46ED22009D4B5D /* SNImageContainerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1953,6 +1958,7 @@
 				963E28201A426D79008232FA /* GPUImageRawDataInput.m in Sources */,
 				963E27FA1A426D79008232FA /* GPUImageLevelsFilter.m in Sources */,
 				963E28081A426D79008232FA /* GPUImageMonochromeFilter.m in Sources */,
+				96527C2E1A46ED22009D4B5D /* SNImageContainerView.m in Sources */,
 				963E27F81A426D79008232FA /* GPUImageLanczosResamplingFilter.m in Sources */,
 				963E27F71A426D79008232FA /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				963E27E61A426D79008232FA /* GPUImageGlassSphereFilter.m in Sources */,
@@ -2190,7 +2196,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: quanlan huang (K6ZU7987DF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2203,7 +2209,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: quanlan huang (K6ZU7987DF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
