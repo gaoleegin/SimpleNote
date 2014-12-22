@@ -562,7 +562,7 @@ NSString *const UIImagePickerControllerDate = @"date";   // a Date
 	if (!isStatic && tgr.state == UIGestureRecognizerStateRecognized) {
 		CGPoint location = [tgr locationInView:self.imageView];
 		AVCaptureDevice *device = stillCamera.inputCamera;
-		CGPoint pointOfInterest = CGPointMake(.5f, .5f);
+		CGPoint pointOfInterest;
 		CGSize frameSize = [[self imageView] frame].size;
 		if ([stillCamera cameraPosition] == AVCaptureDevicePositionFront) {
             location.x = frameSize.width - location.x;
