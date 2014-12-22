@@ -99,7 +99,6 @@
 
 @property (nonatomic, assign) int preImageCount;
 
-
 @end
 
 @implementation SNEditViewController

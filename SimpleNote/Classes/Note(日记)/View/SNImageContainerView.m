@@ -45,6 +45,15 @@
             self.conMargin2.constant = 0;
             self.conMarginToTop.constant = 30;
         }
+        if (i == 2) {
+            self.conMargin1.constant = 40;
+            self.conMarginToTop.constant = 30;
+        }
+        if (i == 3) {
+            self.conMargin1.constant = 40;
+            self.conMargin2.constant = 40;
+            self.conMarginToTop.constant = 30;
+        }
     }
     
 }
