@@ -59,7 +59,7 @@
     [super viewDidLoad];
     
     // 添加覆盖蒙版
-//    [self showCover];
+    [self showCover];
     // 指纹识别
     [self checkTouchID];
     

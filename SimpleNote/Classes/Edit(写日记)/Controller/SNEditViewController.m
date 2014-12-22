@@ -330,7 +330,11 @@
     if (self.textView.text.length > 0) {
         self.commitBtn.enabled = YES;
     } else {
+        if (self.images.count) {
+            self.commitBtn.enabled = YES;
+        } else {
         self.commitBtn.enabled = NO;
+        }
     }
 }
 
