@@ -111,37 +111,16 @@
 }
 
 
-- (void)setSheetWithContent:(NSString *)content
+- (void)showSheetWithContent:(NSString *)content
                    fontSize:(NSInteger)fontSize
                   fontColor:(UIColor *)fontColor
             backgroundColor:(UIColor *)backgroundColor
 
 {
-    UILabel *label = [[UILabel alloc] init];
-    label.text = content;
-    label.font = [UIFont systemFontOfSize:fontSize];
-    label.textColor = fontColor;
-    label.backgroundColor = backgroundColor;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.frame = CGRectMake(0, 0, 150, 25);
-    label.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
-    label.alpha = 0.0;
-    label.layer.cornerRadius = 5;
-    label.clipsToBounds = YES;
-    [self addSubview:label];
-    
-    [UIView animateWithDuration:1.0 animations:^{
-        label.alpha = 0.7;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1.0 animations:^{
-            label.alpha = 0.0;
-        }completion:^(BOOL finished) {
-            [label removeFromSuperview];
-        }];
-    }];
+    [self showSheetWithContent:content fontSize:fontSize fontColor:fontColor backgroundColor:backgroundColor coorY:self.bounds.size.height * 0.5];
 }
 
-- (void)setSheetWithContent:(NSString *)content
+- (void)showSheetWithContent:(NSString *)content
                    fontSize:(NSInteger)fontSize
                   fontColor:(UIColor *)fontColor
             backgroundColor:(UIColor *)backgroundColor
@@ -172,14 +151,14 @@
 
 
 
-- (void)setSheetWithContent:(NSString *)content
+- (void)showSheetWithContent:(NSString *)content
 {
-    [self setSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor]];
+    [self showSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor]];
 }
 
-- (void)setSheetWithContent:(NSString *)content coorY:(CGFloat)coorY
+- (void)showSheetWithContent:(NSString *)content coorY:(CGFloat)coorY
 {
-    [self setSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor] coorY:coorY];
+    [self showSheetWithContent:content fontSize:12 fontColor:[UIColor whiteColor] backgroundColor:[UIColor blackColor] coorY:coorY];
 }
 
 

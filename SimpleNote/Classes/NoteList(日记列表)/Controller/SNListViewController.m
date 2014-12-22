@@ -93,7 +93,7 @@
             [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.view setSheetWithContent:@"已保存一篇新日记" fontSize:14 fontColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] coorY:0.4];
+            [weakSelf.view showSheetWithContent:@"已保存一篇新日记" fontSize:14 fontColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] coorY:0.4];
             [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
         });
     };
@@ -104,7 +104,7 @@
 }
 
 - (void)showAlert:(NSString *)text {
-    [self.view setSheetWithContent:text fontSize:14 fontColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] coorY:0.3];
+    [self.view showSheetWithContent:text fontSize:14 fontColor:[UIColor blackColor] backgroundColor:[UIColor whiteColor] coorY:0.3];
 }
 
 
@@ -287,7 +287,7 @@
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
         [library writeImageDataToSavedPhotosAlbum:info[UIImagePickerControllerDate] metadata:nil completionBlock:nil];
     }
-    [picker.view setSheetWithContent:@"已保存至本地相册"];
+    [picker.view showSheetWithContent:@"已保存至本地相册"];
     [picker retakePhoto:nil];
     picker.photoCaptureButton.enabled = YES;
 }
