@@ -254,11 +254,6 @@
 }
 
 
-- (IBAction)lockView {
-    [self showCover];
-    [self showUnlockButton];
-}
-
 - (IBAction)showEditView {
     UIStoryboard *editSb = [UIStoryboard storyboardWithName:@"SNEditViewController" bundle:nil];
     SNEditViewController *editNc = [editSb instantiateInitialViewController];
