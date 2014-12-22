@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-OR-qF1" userLabel="图片输入框">
-                                <rect key="frame" x="0.0" y="321" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="321" width="600" height="246"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMo-7d-RLH" userLabel="间隔线2">
                                         <rect key="frame" x="0.0" y="-1" width="600" height="1"/>
@@ -52,7 +52,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ors-AN-Xyk" userLabel="间隔线2">
-                                        <rect key="frame" x="0.0" y="300" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="246" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="kPV-Af-zLf"/>
@@ -256,14 +256,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yUS-G0-DMR" firstAttribute="top" secondItem="jum-SE-gAG" secondAttribute="bottom" constant="4" id="2I2-jb-le6">
-                                <variation key="heightClass=regular-widthClass=regular" constant="8"/>
-                            </constraint>
+                            <constraint firstItem="yUS-G0-DMR" firstAttribute="top" secondItem="jum-SE-gAG" secondAttribute="bottom" constant="4" id="2I2-jb-le6"/>
                             <constraint firstAttribute="trailing" secondItem="k2J-Bo-VTD" secondAttribute="trailing" id="5N9-JB-XvS"/>
                             <constraint firstItem="VbG-4a-nmE" firstAttribute="top" secondItem="ffs-2j-kFj" secondAttribute="bottom" id="E6x-dm-sln"/>
                             <constraint firstAttribute="trailing" secondItem="wNC-OR-qF1" secondAttribute="trailing" id="GwG-56-2Ct"/>
                             <constraint firstItem="k2J-Bo-VTD" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="K1l-NF-rCX"/>
                             <constraint firstAttribute="trailing" secondItem="VbG-4a-nmE" secondAttribute="trailing" id="KyD-zi-Zrn"/>
+                            <constraint firstItem="yUS-G0-DMR" firstAttribute="top" secondItem="wNC-OR-qF1" secondAttribute="bottom" constant="33" id="OUW-fx-qKm"/>
                             <constraint firstAttribute="trailing" secondItem="jum-SE-gAG" secondAttribute="trailing" constant="15" id="PRc-i6-9RU"/>
                             <constraint firstItem="wNC-OR-qF1" firstAttribute="leading" secondItem="r9V-cK-GXe" secondAttribute="leading" id="XV8-hR-hwz"/>
                             <constraint firstAttribute="height" secondItem="VbG-4a-nmE" secondAttribute="height" multiplier="2.5" id="aE3-jb-5Uo"/>
@@ -275,6 +274,11 @@
                             <constraint firstItem="wNC-OR-qF1" firstAttribute="top" secondItem="VbG-4a-nmE" secondAttribute="bottom" constant="17" id="xPz-39-DeX"/>
                             <constraint firstItem="k2J-Bo-VTD" firstAttribute="top" secondItem="VbG-4a-nmE" secondAttribute="bottom" id="yiv-qo-St2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pO3-kH-xFQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="写日记" id="Sx3-cy-Iew">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="FiH-es-5hb">

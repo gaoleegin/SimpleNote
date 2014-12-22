@@ -295,4 +295,5 @@
 - (void)imagePickerControllerDidCancel:(DLCImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end
