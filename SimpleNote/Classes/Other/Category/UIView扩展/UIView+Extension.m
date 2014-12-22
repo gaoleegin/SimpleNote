@@ -117,7 +117,7 @@
             backgroundColor:(UIColor *)backgroundColor
 
 {
-    [self showSheetWithContent:content fontSize:fontSize fontColor:fontColor backgroundColor:backgroundColor coorY:self.bounds.size.height * 0.5];
+    [self showSheetWithContent:content fontSize:fontSize fontColor:fontColor backgroundColor:backgroundColor coorY:0.5];
 }
 
 - (void)showSheetWithContent:(NSString *)content
