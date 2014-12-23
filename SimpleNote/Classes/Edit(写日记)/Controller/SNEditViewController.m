@@ -427,6 +427,7 @@
 }
 
 - (IBAction)deleteImage2:(UIButton *)sender {
+    self.commitBtn.enabled = YES;
     [self.images removeObjectAtIndex:1];
     if (self.addImageView3.image) {
         self.addImageView2.image = self.addImageView3.image;
@@ -440,6 +441,7 @@
 }
 
 - (IBAction)deleteImage3:(UIButton *)sender {
+    self.commitBtn.enabled = YES;
     [self.images removeObjectAtIndex:2];
     self.addImageView3.image = nil;
     self.deleteButton3.hidden = YES;
