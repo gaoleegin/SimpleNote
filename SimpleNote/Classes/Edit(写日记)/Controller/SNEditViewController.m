@@ -112,6 +112,15 @@
 
 - (IBAction)deleteImage3:(UIButton *)sender;
 
+@property (nonatomic, strong) UIImage *image1;
+
+@property (nonatomic, strong) UIImage *image2;
+
+@property (nonatomic, strong) UIImage *image3;
+
+@property (nonatomic, strong) NSMutableArray *preImages;
+
+
 @end
 
 @implementation SNEditViewController
@@ -124,6 +133,19 @@
     // 编辑页面初始化
     [self setUpEditView];
     
+    // 将编辑前的图片储存起来, 如果用户取消编辑, 则复原编辑前的图片
+    if (self.images.count) {
+        self.image1 = self.images[0];
+        [self.preImages addObject:self.image1];
+        if (self.images.count > 1) {
+            self.image2 = self.images[1];
+            [self.preImages addObject:self.image2];
+            if (self.images.count > 2) {
+                self.image3 = self.images[2];
+                [self.preImages addObject:self.image3];
+            }
+        }
+    }
 }
 
 
@@ -140,15 +162,15 @@
         }
         self.images = self.curImages;
         self.preImageCount = (int)self.curImages.count;
-        if (self.curImages.count) {
+        if (self.images.count) {
             self.addImageView.image = self.curImages[0];
             self.deleteButton1.hidden = NO;
             self.addImageCount++;
-            if (self.curImages.count > 1) {
+            if (self.images.count > 1) {
                 self.addImageView2.image = self.curImages[1];
                 self.deleteButton2.hidden = NO;
                 self.addImageCount++;
-                if (self.curImages.count > 2) {
+                if (self.images.count > 2) {
                     self.addImageView3.image = self.curImages[2];
                     self.deleteButton3.hidden = NO;
                     self.addImageCount++;
@@ -168,6 +190,14 @@
     }
     return _images;
 }
+
+- (NSMutableArray *)preImages {
+    if (!_preImages) {
+        _preImages = [NSMutableArray array];
+    }
+    return _preImages;
+}
+
 
 #pragma mark - 跳转照片选择控制器
 - (IBAction)addImage {
@@ -292,9 +322,9 @@
 
 - (IBAction)dismissEditVc {
     
-    int curImagesCount = (int)self.images.count;
     
-    [self.images removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.preImageCount, curImagesCount - self.preImageCount)]];
+    [self.images removeAllObjects];
+    [self.images addObjectsFromArray:self.preImages];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -373,6 +403,11 @@
 }
 
 - (IBAction)deleteImage1:(UIButton *)sender {
+    if (self.textView.text.length) {
+        self.commitBtn.enabled = YES;
+    } else {
+        self.commitBtn.enabled = NO;
+    }
     [self.images removeObjectAtIndex:0];
     if (self.addImageView2.image) {
         self.addImageView.image = self.addImageView2.image;

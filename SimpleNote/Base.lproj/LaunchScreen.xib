@@ -11,16 +11,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32G-if-JTc">
-                    <rect key="frame" x="160" y="215" width="161" height="50"/>
+                    <rect key="frame" x="165" y="200" width="150" height="80"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOTE." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-Pj-h1X">
-                            <rect key="frame" x="32" y="11" width="64" height="27"/>
+                            <rect key="frame" x="30" y="27" width="64" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJr-OH-dMP">
-                            <rect key="frame" x="97" y="18" width="35" height="18"/>
+                            <rect key="frame" x="99" y="33" width="35" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -28,8 +28,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="161" id="DBe-Wb-CGE"/>
-                        <constraint firstAttribute="height" constant="50" id="ikz-S9-kAA"/>
+                        <constraint firstAttribute="width" constant="150" id="DBe-Wb-CGE"/>
+                        <constraint firstAttribute="height" constant="80" id="ikz-S9-kAA"/>
                     </constraints>
                 </view>
             </subviews>

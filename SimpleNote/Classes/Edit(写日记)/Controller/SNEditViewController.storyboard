@@ -319,7 +319,7 @@
                                 <action selector="dismissEditVc" destination="IJD-g0-vcs" id="pB2-UN-RWd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="发表" id="aqa-x4-yaQ">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="aqa-x4-yaQ">
                             <connections>
                                 <action selector="dismissEditVcWithContent" destination="IJD-g0-vcs" id="atd-Wo-zvn"/>
                             </connections>
