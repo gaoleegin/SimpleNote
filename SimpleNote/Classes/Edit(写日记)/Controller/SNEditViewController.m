@@ -99,6 +99,19 @@
 
 @property (nonatomic, assign) int preImageCount;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton1;
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton2;
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton3;
+
+- (IBAction)deleteImage1:(UIButton *)sender;
+
+- (IBAction)deleteImage2:(UIButton *)sender;
+
+- (IBAction)deleteImage3:(UIButton *)sender;
+
 @end
 
 @implementation SNEditViewController
@@ -129,12 +142,15 @@
         self.preImageCount = (int)self.curImages.count;
         if (self.curImages.count) {
             self.addImageView.image = self.curImages[0];
+            self.deleteButton1.hidden = NO;
             self.addImageCount++;
             if (self.curImages.count > 1) {
                 self.addImageView2.image = self.curImages[1];
+                self.deleteButton2.hidden = NO;
                 self.addImageCount++;
                 if (self.curImages.count > 2) {
                     self.addImageView3.image = self.curImages[2];
+                    self.deleteButton3.hidden = NO;
                     self.addImageCount++;
                 }
             }
@@ -221,13 +237,16 @@
         switch (self.addImageCount) {
             case 1:
                 self.addImageView.image = resultImage;
+                self.deleteButton1.hidden = NO;
                 break;
             case 2:
                 self.addImageView2.image = resultImage;
+                self.deleteButton2.hidden = NO;
                 break;
             case 3:
                 self.addImageView3.image = resultImage;
                 if (Iphone) self.addImageCount++;
+                self.deleteButton3.hidden = NO;
                 break;
             case 4:
                 self.addImageViewForIpad.image = resultImage;
@@ -353,4 +372,42 @@
     }
 }
 
+- (IBAction)deleteImage1:(UIButton *)sender {
+    [self.images removeObjectAtIndex:0];
+    if (self.addImageView2.image) {
+        self.addImageView.image = self.addImageView2.image;
+        if (self.addImageView3.image) {
+            self.addImageView2.image = self.addImageView3.image;
+            self.addImageView3.image = nil;
+            self.deleteButton3.hidden = YES;
+        } else {
+            self.addImageView2.image = nil;
+            self.deleteButton2.hidden = YES;
+        }
+    } else {
+        self.addImageView.image = nil;
+        self.deleteButton1.hidden = YES;
+    }
+    self.addImageCount--;
+}
+
+- (IBAction)deleteImage2:(UIButton *)sender {
+    [self.images removeObjectAtIndex:1];
+    if (self.addImageView3.image) {
+        self.addImageView2.image = self.addImageView3.image;
+        self.addImageView3.image = nil;
+        self.deleteButton3.hidden = YES;
+    } else {
+        self.addImageView2.image = nil;
+        self.deleteButton2.hidden = YES;
+    }
+    self.addImageCount--;
+}
+
+- (IBAction)deleteImage3:(UIButton *)sender {
+    [self.images removeObjectAtIndex:2];
+    self.addImageView3.image = nil;
+    self.deleteButton3.hidden = YES;
+    self.addImageCount--;
+}
 @end

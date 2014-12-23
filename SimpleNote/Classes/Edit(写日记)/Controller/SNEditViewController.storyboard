@@ -127,6 +127,33 @@
                                             <constraint firstAttribute="width" secondItem="Smc-BE-IPm" secondAttribute="height" multiplier="1:1" id="BRK-XE-ykd"/>
                                         </constraints>
                                     </imageView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-3g-2fQ" userLabel="Button-1">
+                                        <rect key="frame" x="220" y="15" width="20" height="22"/>
+                                        <state key="normal" image="delete">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteImage1:" destination="IJD-g0-vcs" eventType="touchUpInside" id="M3y-HS-swt"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3s-OQ-FJL" userLabel="Button-2">
+                                        <rect key="frame" x="340" y="15" width="20" height="22"/>
+                                        <state key="normal" image="delete">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteImage2:" destination="IJD-g0-vcs" eventType="touchUpInside" id="62C-uI-6fc"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbc-Vn-CTt" userLabel="Button-3">
+                                        <rect key="frame" x="459" y="15" width="20" height="22"/>
+                                        <state key="normal" image="delete">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteImage3:" destination="IJD-g0-vcs" eventType="touchUpInside" id="g1t-8f-h39"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vyR-qw-D4x" userLabel="View4 - ipad">
                                         <rect key="frame" x="380" y="15" width="100" height="100"/>
                                         <constraints>
@@ -154,6 +181,7 @@
                                     <constraint firstItem="MMo-7d-RLH" firstAttribute="top" secondItem="wNC-OR-qF1" secondAttribute="top" constant="-1" id="3sy-Aa-HhB"/>
                                     <constraint firstItem="Gbt-Pw-RbJ" firstAttribute="centerY" secondItem="dtx-hi-55q" secondAttribute="centerY" id="4pg-Pv-09K"/>
                                     <constraint firstItem="rms-rS-Ena" firstAttribute="centerX" secondItem="dtx-hi-55q" secondAttribute="centerX" id="5QM-Aj-d9H"/>
+                                    <constraint firstItem="R3s-OQ-FJL" firstAttribute="top" secondItem="iRe-6y-9CG" secondAttribute="top" id="5bc-55-6js"/>
                                     <constraint firstItem="rms-rS-Ena" firstAttribute="width" secondItem="dtx-hi-55q" secondAttribute="width" id="7rV-oP-vvi"/>
                                     <constraint firstItem="rT7-WE-2QC" firstAttribute="leading" secondItem="ga6-KI-7VE" secondAttribute="trailing" constant="20" id="7vs-rS-kIe"/>
                                     <constraint firstItem="iRe-6y-9CG" firstAttribute="width" secondItem="vtC-Hl-G1U" secondAttribute="width" id="87d-Jv-6c1"/>
@@ -163,6 +191,7 @@
                                     <constraint firstItem="YRw-zm-CQS" firstAttribute="centerX" secondItem="dtx-hi-55q" secondAttribute="centerX" id="BHs-M3-9A8"/>
                                     <constraint firstItem="Gbt-Pw-RbJ" firstAttribute="width" secondItem="dtx-hi-55q" secondAttribute="width" id="BXq-pf-Jz9"/>
                                     <constraint firstItem="Gbt-Pw-RbJ" firstAttribute="leading" secondItem="dtx-hi-55q" secondAttribute="trailing" constant="20" id="Bxb-Pv-Cdx"/>
+                                    <constraint firstItem="84q-3g-2fQ" firstAttribute="trailing" secondItem="B13-VY-YJi" secondAttribute="trailing" id="Cet-Y7-QYE"/>
                                     <constraint firstItem="vyR-qw-D4x" firstAttribute="leading" secondItem="vtC-Hl-G1U" secondAttribute="trailing" constant="20" id="Dd9-JB-ZkT"/>
                                     <constraint firstItem="iRe-6y-9CG" firstAttribute="centerY" secondItem="B13-VY-YJi" secondAttribute="centerY" id="Drc-Lc-8is"/>
                                     <constraint firstItem="ga6-KI-7VE" firstAttribute="centerY" secondItem="Gbt-Pw-RbJ" secondAttribute="centerY" id="DyZ-j2-upG"/>
@@ -180,6 +209,9 @@
                                     <constraint firstItem="vyR-qw-D4x" firstAttribute="width" secondItem="vtC-Hl-G1U" secondAttribute="width" id="VOH-c4-saj"/>
                                     <constraint firstAttribute="trailing" secondItem="MMo-7d-RLH" secondAttribute="trailing" id="W6d-8v-zyI"/>
                                     <constraint firstItem="iRe-6y-9CG" firstAttribute="leading" secondItem="B13-VY-YJi" secondAttribute="trailing" constant="20" id="WUw-yG-JUn"/>
+                                    <constraint firstItem="84q-3g-2fQ" firstAttribute="top" secondItem="B13-VY-YJi" secondAttribute="top" id="Wdo-rX-WGx"/>
+                                    <constraint firstItem="vtC-Hl-G1U" firstAttribute="top" secondItem="Nbc-Vn-CTt" secondAttribute="top" id="YZ4-pq-uvs"/>
+                                    <constraint firstItem="vtC-Hl-G1U" firstAttribute="trailing" secondItem="Nbc-Vn-CTt" secondAttribute="trailing" id="aMk-yX-2Ap"/>
                                     <constraint firstItem="klm-kP-lYi" firstAttribute="leading" secondItem="rms-rS-Ena" secondAttribute="trailing" constant="20" id="afe-Wc-7iu"/>
                                     <constraint firstItem="vtC-Hl-G1U" firstAttribute="leading" secondItem="iRe-6y-9CG" secondAttribute="trailing" constant="20" id="cp6-D7-fla"/>
                                     <constraint firstItem="YRw-zm-CQS" firstAttribute="width" secondItem="B13-VY-YJi" secondAttribute="width" id="fDi-JL-Uef"/>
@@ -191,6 +223,7 @@
                                     <constraint firstItem="klm-kP-lYi" firstAttribute="width" secondItem="Smc-BE-IPm" secondAttribute="width" id="k2M-Fg-vEq"/>
                                     <constraint firstItem="YRw-zm-CQS" firstAttribute="width" secondItem="dtx-hi-55q" secondAttribute="width" id="n8S-M5-aF0"/>
                                     <constraint firstItem="ga6-KI-7VE" firstAttribute="width" secondItem="Gbt-Pw-RbJ" secondAttribute="width" id="pB3-M0-l8l"/>
+                                    <constraint firstItem="R3s-OQ-FJL" firstAttribute="trailing" secondItem="iRe-6y-9CG" secondAttribute="trailing" id="pPP-Ya-Dtx"/>
                                     <constraint firstItem="k7E-gp-bRa" firstAttribute="width" secondItem="k7E-gp-bRa" secondAttribute="height" multiplier="1:1" id="pnG-Zr-eHZ"/>
                                     <constraint firstAttribute="bottom" secondItem="ors-AN-Xyk" secondAttribute="bottom" constant="-1" id="qnn-o2-vvw"/>
                                     <constraint firstItem="rms-rS-Ena" firstAttribute="centerY" secondItem="klm-kP-lYi" secondAttribute="centerY" id="sjb-Kk-TWp"/>
@@ -208,10 +241,10 @@
                                         <exclude reference="054-LY-cfu"/>
                                         <exclude reference="Dd9-JB-ZkT"/>
                                         <exclude reference="VOH-c4-saj"/>
-                                        <exclude reference="AMA-9I-1SI"/>
-                                        <exclude reference="MVB-mB-hHj"/>
                                         <exclude reference="pnG-Zr-eHZ"/>
                                         <exclude reference="wIV-qp-fKE"/>
+                                        <exclude reference="AMA-9I-1SI"/>
+                                        <exclude reference="MVB-mB-hHj"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -224,10 +257,10 @@
                                         <include reference="054-LY-cfu"/>
                                         <include reference="Dd9-JB-ZkT"/>
                                         <include reference="VOH-c4-saj"/>
-                                        <include reference="AMA-9I-1SI"/>
-                                        <include reference="MVB-mB-hHj"/>
                                         <include reference="pnG-Zr-eHZ"/>
                                         <include reference="wIV-qp-fKE"/>
+                                        <include reference="AMA-9I-1SI"/>
+                                        <include reference="MVB-mB-hHj"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -307,6 +340,9 @@
                         <outlet property="addImageViewForIpad" destination="vyR-qw-D4x" id="jQC-CC-8QK"/>
                         <outlet property="addImageViewForIpad2" destination="k7E-gp-bRa" id="ahF-Z5-v6E"/>
                         <outlet property="commitBtn" destination="aqa-x4-yaQ" id="h4r-g3-BlH"/>
+                        <outlet property="deleteButton1" destination="84q-3g-2fQ" id="5VR-pd-TCO"/>
+                        <outlet property="deleteButton2" destination="R3s-OQ-FJL" id="uIX-yP-d7p"/>
+                        <outlet property="deleteButton3" destination="Nbc-Vn-CTt" id="00r-TC-DSX"/>
                         <outlet property="deleteNoteButton" destination="jum-SE-gAG" id="Gdy-Ge-RQo"/>
                         <outlet property="imageContainerView" destination="wNC-OR-qF1" id="tu7-it-Nql"/>
                         <outlet property="textView" destination="VbG-4a-nmE" id="cBH-vc-8Tm"/>
@@ -320,5 +356,6 @@
     <resources>
         <image name="button_add" width="50" height="50"/>
         <image name="button_trash" width="32" height="32"/>
+        <image name="delete" width="20" height="20"/>
     </resources>
 </document>
