@@ -408,9 +408,6 @@
                                                                                 <state key="normal" image="diary_arrow_left">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="preNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="p65-xB-6Qy"/>
-                                                                                </connections>
                                                                             </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary_dot" translatesAutoresizingMaskIntoConstraints="NO" id="Ass-mP-7b3">
                                                                                 <rect key="frame" x="265" y="23" width="10" height="10"/>
@@ -427,9 +424,6 @@
                                                                                 <state key="normal" image="diary_arrow_right">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="nextNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="Ih5-rN-XuQ"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -720,9 +714,6 @@
                                                                                 <state key="normal" image="diary_arrow_left">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="preNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="SQZ-iY-hxM"/>
-                                                                                </connections>
                                                                             </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diary_dot" translatesAutoresizingMaskIntoConstraints="NO" id="2yb-t7-1YL">
                                                                                 <rect key="frame" x="265" y="23" width="10" height="10"/>
@@ -739,9 +730,6 @@
                                                                                 <state key="normal" image="diary_arrow_right">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="nextNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="yA2-jc-vL9"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1042,9 +1030,6 @@
                                                                                 <state key="normal" image="diary_arrow_right">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="nextNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="rWc-xQ-Pqs"/>
-                                                                                </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-U5-U4P" userLabel="Button_Left">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
@@ -1054,9 +1039,6 @@
                                                                                 <state key="normal" image="diary_arrow_left">
                                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 </state>
-                                                                                <connections>
-                                                                                    <action selector="preNote" destination="EF5-iy-zZ7" eventType="touchUpInside" id="EJn-Xt-s0f"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

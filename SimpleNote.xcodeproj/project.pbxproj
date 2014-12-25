@@ -1754,6 +1754,7 @@
 				TargetAttributes = {
 					96CF4DBB1A3099AF00D5A16B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6MZW7C8429;
 					};
 					96CF4DD41A3099AF00D5A16B = {
 						CreatedOnToolsVersion = 6.1;
@@ -2196,11 +2197,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: SICHEN WANG (CG8A74SY7Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SICHEN WANG (CG8A74SY7Z)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2209,11 +2212,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Weifeng (59Z3DV5VL8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: SICHEN WANG (CG8A74SY7Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SICHEN WANG (CG8A74SY7Z)";
 				INFOPLIST_FILE = SimpleNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

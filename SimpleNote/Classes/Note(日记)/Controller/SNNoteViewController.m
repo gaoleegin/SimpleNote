@@ -26,14 +26,14 @@
  *  返回日记列表控制器
  */
 - (IBAction)back;
-/**
- *  翻页至上一页按钮
- */
-- (IBAction)preNote;
-/**
- *  翻页至下一页按钮
- */
-- (IBAction)nextNote;
+///**
+// *  翻页至上一页按钮
+// */
+//- (IBAction)preNote;
+///**
+// *  翻页至下一页按钮
+// */
+//- (IBAction)nextNote;
 /**
  *  滚动视图, 用来监听偏移量
  */
