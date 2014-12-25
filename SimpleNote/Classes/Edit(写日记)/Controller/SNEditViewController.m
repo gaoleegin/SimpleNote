@@ -275,7 +275,7 @@
                 break;
             case 3:
                 self.addImageView3.image = resultImage;
-                if (Iphone) self.addImageCount++;
+                //if (Iphone) self.addImageCount++;
                 self.deleteButton3.hidden = NO;
                 break;
             case 4:
